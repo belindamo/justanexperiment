@@ -25,41 +25,41 @@ import { getSiteFromPostId } from "@/lib/actions";
 import Image from "next/image";
 
 const externalLinks = [
-  {
-    name: "Read announcement",
-    href: "https://vercel.com/blog/platforms-starter-kit",
-    icon: <Megaphone width={18} />,
-  },
+  // {
+  //   name: "Read announcement",
+  //   href: "https://vercel.com/blog/platforms-starter-kit",
+  //   icon: <Megaphone width={18} />,
+  // },
   {
     name: "Star on GitHub",
-    href: "https://github.com/vercel/platforms",
+    href: "https://github.com/justanexperiment/justanexperiment",
     icon: <Github width={18} />,
   },
-  {
-    name: "Read the guide",
-    href: "https://vercel.com/guides/nextjs-multi-tenant-application",
-    icon: <FileCode width={18} />,
-  },
-  {
-    name: "View demo site",
-    href: "https://demo.vercel.pub",
-    icon: <Layout width={18} />,
-  },
-  {
-    name: "Deploy your own",
-    href: "https://vercel.com/templates/next.js/platforms-starter-kit",
-    icon: (
-      <svg
-        width={18}
-        viewBox="0 0 76 76"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="py-1 text-black dark:text-white"
-      >
-        <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="currentColor" />
-      </svg>
-    ),
-  },
+  // {
+  //   name: "Read the guide",
+  //   href: "https://vercel.com/guides/nextjs-multi-tenant-application",
+  //   icon: <FileCode width={18} />,
+  // },
+  // {
+  //   name: "View demo site",
+  //   href: "https://demo.vercel.pub",
+  //   icon: <Layout width={18} />,
+  // },
+  // {
+  //   name: "Deploy your own",
+  //   href: "https://vercel.com/templates/next.js/platforms-starter-kit",
+  //   icon: (
+  //     <svg
+  //       width={18}
+  //       viewBox="0 0 76 76"
+  //       fill="none"
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       className="py-1 text-black dark:text-white"
+  //     >
+  //       <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="currentColor" />
+  //     </svg>
+  //   ),
+  // },
 ];
 
 export default function Nav({ children }: { children: ReactNode }) {
@@ -90,12 +90,12 @@ export default function Nav({ children }: { children: ReactNode }) {
           isActive: segments.length === 2,
           icon: <Newspaper width={18} />,
         },
-        {
-          name: "Analytics",
-          href: `/site/${id}/analytics`,
-          isActive: segments.includes("analytics"),
-          icon: <BarChart3 width={18} />,
-        },
+        // {
+        //   name: "Analytics",
+        //   href: `/site/${id}/analytics`,
+        //   isActive: segments.includes("analytics"),
+        //   icon: <BarChart3 width={18} />,
+        // },
         {
           name: "Settings",
           href: `/site/${id}/settings`,

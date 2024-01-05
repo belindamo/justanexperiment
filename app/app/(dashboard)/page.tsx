@@ -13,13 +13,13 @@ export default function Overview() {
         <h1 className="font-cal text-3xl font-bold dark:text-white">
           Overview
         </h1>
-        <OverviewStats />
+        {/* <OverviewStats /> */}
       </div>
 
       <div className="flex flex-col space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="font-cal text-3xl font-bold dark:text-white">
-            Top Sites
+            My Sites
           </h1>
           <Suspense fallback={null}>
             <OverviewSitesCTA />

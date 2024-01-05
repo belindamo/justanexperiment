@@ -1,5 +1,4 @@
 <a href="https://justanexperiment.ai">
-  <img alt="Just an Experiment!" src="/public/thumbnail.png">
   <h1 align="center">Just an Experiment!</h1>
 </a>
 

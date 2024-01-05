@@ -6,15 +6,15 @@ import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 
 const title =
-  "Platforms Starter Kit – The all-in-one starter kit for building multi-tenant applications.";
+  "Just an Experiment";
 const description =
-  "The Platforms Starter Kit is a full-stack Next.js app with multi-tenancy and custom domain support. Built with Next.js App Router, Vercel Postgres and the Vercel Domains API.";
-const image = "https://vercel.pub/thumbnail.png";
+  "AI, knowledge, and distribution experiments";
+const image = "https://bmo.cafe/thumbnail.png";
 
 export const metadata: Metadata = {
   title,
   description,
-  icons: ["https://vercel.pub/favicon.ico"],
+  icons: ["https://bmo.cafe/favicon.ico"], 
   openGraph: {
     title,
     description,
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     title,
     description,
     images: [image],
-    creator: "@vercel",
+    creator: "@justanexperim",
   },
-  metadataBase: new URL("https://vercel.pub"),
+  metadataBase: new URL("https://bmo.cafe"),
 };
 
 export default function RootLayout({
