@@ -9,12 +9,12 @@ const title =
   "Just an Experiment";
 const description =
   "AI, knowledge, and distribution experiments";
-const image = "https://bmo.cafe/thumbnail.png";
+const image = "https://justanexperiment.com/thumbnail.png";
 
 export const metadata: Metadata = {
   title,
   description,
-  icons: ["https://bmo.cafe/favicon.ico"], 
+  icons: ["https://justanexperiment.com/favicon.ico"], 
   openGraph: {
     title,
     description,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [image],
     creator: "@justanexperim",
   },
-  metadataBase: new URL("https://bmo.cafe"),
+  metadataBase: new URL("https://justanexperiment.com"),
 };
 
 export default function RootLayout({

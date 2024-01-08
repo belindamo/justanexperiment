@@ -24,11 +24,11 @@ export default function BlogCard({ data }: BlogCardProps) {
           placeholder="blur"
           blurDataURL={data.imageBlurhash ?? placeholderBlurhash}
         />
-        <div className="h-36 border-t border-stone-200 px-5 py-8 dark:border-stone-700 dark:bg-black">
+        <div className="h-36 border-t border-stone-200 px-5 py-5 dark:border-stone-700 dark:bg-black">
           <h3 className="font-title text-xl tracking-wide dark:text-white">
             {data.title}
           </h3>
-          <p className="text-md my-2 truncate italic text-stone-600 dark:text-stone-400">
+          <p className="text-md my-2 truncate text-stone-600 dark:text-stone-400">
             {data.description}
           </p>
           <p className="my-2 text-sm text-stone-600 dark:text-stone-400">
