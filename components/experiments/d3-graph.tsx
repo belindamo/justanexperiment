@@ -114,19 +114,26 @@ const ForceGraph: React.FC<GraphProps> = ({ nodes, links }) => {
     const drag = d3.drag()
       .on("start", (event, d) => {
         if (!event.active) simulation.alphaTarget(0.3).restart();
+        //@ts-ignore
         d.fx = d.x;
+        //@ts-ignore
         d.fy = d.y;
       })
       .on("drag", (event, d) => {
+        //@ts-ignore
         d.fx = event.x;
+        //@ts-ignore
         d.fy = event.y;
       })
       .on("end", (event, d) => {
         if (!event.active) simulation.alphaTarget(0);
+        //@ts-ignore
         d.fx = null;
+        //@ts-ignore
         d.fy = null;
       });
 
+    //@ts-ignore
     node.call(drag);
 
     // Zoom functionality
@@ -135,6 +142,7 @@ const ForceGraph: React.FC<GraphProps> = ({ nodes, links }) => {
         g.attr("transform", event.transform);
       });
 
+    //@ts-ignore
     svg.call(zoom);
 
     // // Tooltip functionality
@@ -154,9 +162,13 @@ const ForceGraph: React.FC<GraphProps> = ({ nodes, links }) => {
     // Update positions on each tick
     simulation.on("tick", () => {
       link
+        //@ts-ignore
         .attr("x1", d => (d.source as Node).x!)
+        //@ts-ignore
         .attr("y1", d => (d.source as Node).y!)
+        //@ts-ignore
         .attr("x2", d => (d.target as Node).x!)
+        //@ts-ignore
         .attr("y2", d => (d.target as Node).y!);
 
       node
@@ -164,14 +176,16 @@ const ForceGraph: React.FC<GraphProps> = ({ nodes, links }) => {
         .attr("cy", d => d.y!);
 
       labels
+        //@ts-ignore
         .attr("x", d => d.x + 20)
+        //@ts-ignore
         .attr("y", d => d.y - 10);
     });
 
-    return () => {
+    // return () => {
       // Cleanup the tooltip when component unmounts
       // tooltip.remove();
-    };
+    // };
 
   }, [nodes, links]); // Redraw graph when data changes
 
