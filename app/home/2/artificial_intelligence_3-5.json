@@ -1,0 +1,964 @@
+{
+  "nodes": [
+      {
+          "id": "0 - artificial intelligence",
+          "name": "artificial intelligence"
+      },
+      {
+          "id": "1 - Machine Learning",
+          "name": "Machine Learning",
+          "description": "The study of algorithms and statistical models that computer systems use to perform specific tasks without explicit instructions."
+      },
+      {
+          "id": "2 - Natural Language Processing",
+          "name": "Natural Language Processing",
+          "description": "The ability of a computer program to understand human language as it is spoken."
+      },
+      {
+          "id": "3 - Computer Vision",
+          "name": "Computer Vision",
+          "description": "The field of computer science that focuses on replicating aspects of human vision using computer algorithms and hardware."
+      },
+      {
+          "id": "4 - Expert Systems",
+          "name": "Expert Systems",
+          "description": "Computer-based systems that emulate the decision-making ability of a human expert."
+      },
+      {
+          "id": "5 - Knowledge Representation",
+          "name": "Knowledge Representation",
+          "description": "The study of how knowledge can be represented and manipulated by computers."
+      },
+      {
+          "id": "6 - Robotics",
+          "name": "Robotics",
+          "description": "The branch of technology that deals with the design, construction, operation, and application of robots."
+      },
+      {
+          "id": "7 - Supervised Learning",
+          "name": "Supervised Learning",
+          "description": "A type of machine learning where an algorithm learns from labeled data to make predictions or decisions."
+      },
+      {
+          "id": "8 - Unsupervised Learning",
+          "name": "Unsupervised Learning",
+          "description": "A type of machine learning where an algorithm learns patterns from unlabeled data without any specific target variable."
+      },
+      {
+          "id": "9 - Semi-Supervised Learning",
+          "name": "Semi-Supervised Learning",
+          "description": "A type of machine learning where an algorithm learns from a combination of labeled and unlabeled data."
+      },
+      {
+          "id": "10 - Reinforcement Learning",
+          "name": "Reinforcement Learning",
+          "description": "A type of machine learning where an agent learns to interact with an environment and receives rewards or punishments based on its actions."
+      },
+      {
+          "id": "11 - Deep Learning",
+          "name": "Deep Learning",
+          "description": "A subfield of machine learning that focuses on neural networks with multiple hidden layers."
+      },
+      {
+          "id": "12 - Neural Networks",
+          "name": "Neural Networks",
+          "description": "A type of machine learning model inspired by the structure and functioning of the human brain."
+      },
+      {
+          "id": "13 - Convolutional Neural Networks",
+          "name": "Convolutional Neural Networks",
+          "description": "A type of neural network commonly used for image recognition and processing tasks."
+      },
+      {
+          "id": "14 - Recurrent Neural Networks",
+          "name": "Recurrent Neural Networks",
+          "description": "A type of neural network commonly used for sequential data processing."
+      },
+      {
+          "id": "15 - Generative Adversarial Networks",
+          "name": "Generative Adversarial Networks",
+          "description": "A type of neural network architecture that consists of two networks: a generator and a discriminator, which compete with each other to improve the overall model."
+      },
+      {
+          "id": "16 - Decision Trees",
+          "name": "Decision Trees",
+          "description": "A type of machine learning model that uses tree-like graphs to make decisions or predictions."
+      },
+      {
+          "id": "17 - Tokenization",
+          "name": "Tokenization",
+          "description": "The process of breaking text into individual units called tokens."
+      },
+      {
+          "id": "18 - Text Normalization",
+          "name": "Text Normalization",
+          "description": "The process of transforming text into a standard form, such as converting all text to lowercase or removing punctuation."
+      },
+      {
+          "id": "19 - Stop Word Removal",
+          "name": "Stop Word Removal",
+          "description": "The process of removing commonly occurring words that do not carry significant meaning, such as 'the', 'is', 'and', etc."
+      },
+      {
+          "id": "20 - Part-of-Speech Tagging",
+          "name": "Part-of-Speech Tagging",
+          "description": "The process of assigning grammatical tags to words based on their role in a sentence, such as noun, verb, adjective, etc."
+      },
+      {
+          "id": "21 - Named Entity Recognition",
+          "name": "Named Entity Recognition",
+          "description": "The process of identifying and classifying named entities in text, such as person names, organization names, location names, etc."
+      },
+      {
+          "id": "22 - Sentiment Analysis",
+          "name": "Sentiment Analysis",
+          "description": "The process of determining the sentiment or emotion expressed in a piece of text, such as positive, negative, or neutral."
+      },
+      {
+          "id": "23 - Topic Modeling",
+          "name": "Topic Modeling",
+          "description": "The process of automatically discovering topics or themes in a collection of documents."
+      },
+      {
+          "id": "24 - Text Classification",
+          "name": "Text Classification",
+          "description": "The process of assigning predefined categories or labels to text based on its content, such as spam detection or sentiment classification."
+      },
+      {
+          "id": "25 - Language Generation",
+          "name": "Language Generation",
+          "description": "The process of generating human-like text using computational models, such as chatbots or language translation systems."
+      },
+      {
+          "id": "26 - Machine Translation",
+          "name": "Machine Translation",
+          "description": "The process of automatically translating text from one language to another, often using statistical or neural machine translation models."
+      },
+      {
+          "id": "27 - Image Processing",
+          "name": "Image Processing",
+          "description": "The study and application of techniques for enhancing, analyzing, and manipulating images."
+      },
+      {
+          "id": "28 - Image Segmentation",
+          "name": "Image Segmentation",
+          "description": "The process of partitioning an image into multiple segments to simplify the representation of an image into meaningful regions."
+      },
+      {
+          "id": "29 - Object Detection",
+          "name": "Object Detection",
+          "description": "The task of identifying and localizing objects in an image or video."
+      },
+      {
+          "id": "30 - Object Recognition",
+          "name": "Object Recognition",
+          "description": "The process of identifying and classifying objects in an image or video."
+      },
+      {
+          "id": "31 - Image Classification",
+          "name": "Image Classification",
+          "description": "The task of assigning a label or class to an image based on its content."
+      },
+      {
+          "id": "32 - Feature Extraction",
+          "name": "Feature Extraction",
+          "description": "The process of obtaining relevant and meaningful information from images to represent them in a more compact form."
+      },
+      {
+          "id": "33 - Object Tracking",
+          "name": "Object Tracking",
+          "description": "The task of tracking the motion and trajectory of objects in a sequence of images or videos."
+      },
+      {
+          "id": "34 - Depth Estimation",
+          "name": "Depth Estimation",
+          "description": "The process of determining the distance of objects from a camera or sensor using image or video data."
+      },
+      {
+          "id": "35 - Pose Estimation",
+          "name": "Pose Estimation",
+          "description": "The task of determining the position and orientation of objects in an image or video."
+      },
+      {
+          "id": "36 - Image Registration",
+          "name": "Image Registration",
+          "description": "The process of aligning two or more images to perform comparison or analysis."
+      },
+      {
+          "id": "37 - Inference Engine",
+          "name": "Inference Engine",
+          "description": "The component of an expert system that uses logical rules and facts to draw conclusions and make inferences."
+      },
+      {
+          "id": "38 - Knowledge Base",
+          "name": "Knowledge Base",
+          "description": "The component of an expert system that stores the relevant knowledge and information used by the inference engine."
+      },
+      {
+          "id": "39 - Rule Base",
+          "name": "Rule Base",
+          "description": "The part of the knowledge base in an expert system that contains the rules used by the inference engine."
+      },
+      {
+          "id": "40 - Fuzzy Logic",
+          "name": "Fuzzy Logic",
+          "description": "A mathematical approach that deals with uncertainty and imprecision by assigning degrees of membership to variables."
+      },
+      {
+          "id": "41 - Knowledge Acquisition",
+          "name": "Knowledge Acquisition",
+          "description": "The process of gathering, organizing, and inputting knowledge into the knowledge base of an expert system."
+      },
+      {
+          "id": "42 - Explanation Facility",
+          "name": "Explanation Facility",
+          "description": "The component of an expert system that provides explanations and justification for the system's conclusions and reasoning."
+      },
+      {
+          "id": "43 - Logic-based Knowledge Representation",
+          "name": "Logic-based Knowledge Representation",
+          "description": "Representation of knowledge using logical formalisms, such as first-order logic or description logic."
+      },
+      {
+          "id": "44 - Semantic Networks",
+          "name": "Semantic Networks",
+          "description": "Graph-based representation of knowledge, where nodes represent concepts and edges represent relationships between them."
+      },
+      {
+          "id": "45 - Frame-based Representation",
+          "name": "Frame-based Representation",
+          "description": "Representation of knowledge using frames or schema, which capture the structure and properties of objects or concepts."
+      },
+      {
+          "id": "46 - Ontologies",
+          "name": "Ontologies",
+          "description": "Formal representation of knowledge that consists of a set of concepts, relationships, and axioms used to model a domain."
+      },
+      {
+          "id": "47 - Probabilistic Knowledge Representation",
+          "name": "Probabilistic Knowledge Representation",
+          "description": "Representation of uncertainty and probabilistic information in knowledge representation systems."
+      },
+      {
+          "id": "48 - Computer Vision",
+          "name": "Computer Vision",
+          "description": "Computer vision is the field of study that focuses on teaching computers to see and understand visual data."
+      },
+      {
+          "id": "49 - Machine Learning",
+          "name": "Machine Learning",
+          "description": "Machine learning is a subset of artificial intelligence that focuses on developing algorithms and models that allow computers to learn and make predictions from data."
+      },
+      {
+          "id": "50 - Control Systems",
+          "name": "Control Systems",
+          "description": "Control systems involve the design and analysis of systems that continuously monitor and adjust the behavior of physical systems."
+      },
+      {
+          "id": "51 - Artificial Intelligence",
+          "name": "Artificial Intelligence",
+          "description": "Artificial intelligence is the development of computer systems that can perform tasks that would normally require human intelligence."
+      },
+      {
+          "id": "52 - Motion Planning",
+          "name": "Motion Planning",
+          "description": "Motion planning is the process of determining a sequence of valid and collision-free movements for a robot to navigate from its current state to a desired goal state."
+      },
+      {
+          "id": "53 - Sensors",
+          "name": "Sensors",
+          "description": "Sensors are devices that measure physical properties, such as distance, temperature, or pressure, and provide data to a robot for perception and interaction with its environment."
+      },
+      {
+          "id": "54 - Kinematics",
+          "name": "Kinematics",
+          "description": "Kinematics is the study of motion without considering the forces that cause the motion."
+      },
+      {
+          "id": "55 - Localization and Mapping",
+          "name": "Localization and Mapping",
+          "description": "Localization and mapping involve determining the position and orientation of a robot in its environment, as well as creating maps of the environment based on sensor data."
+      },
+      {
+          "id": "56 - Robot Hardware",
+          "name": "Robot Hardware",
+          "description": "Robot hardware refers to the physical components and systems that make up a robot, such as actuators, sensors, and structures."
+      },
+      {
+          "id": "57 - Human-Robot Interaction",
+          "name": "Human-Robot Interaction",
+          "description": "Human-robot interaction is the study of how humans and robots can interact and communicate with each other, including aspects such as speech recognition, gesture recognition, and natural language processing."
+      },
+      {
+          "id": "58 - Classification",
+          "name": "Classification",
+          "description": "Supervised learning technique that assigns an individual to a discrete class or label based on its features."
+      },
+      {
+          "id": "59 - Regression",
+          "name": "Regression",
+          "description": "Supervised learning technique used to predict continuous or numerical values based on input features."
+      },
+      {
+          "id": "60 - Decision Trees",
+          "name": "Decision Trees",
+          "description": "Supervised learning algorithm that partitions data into segments using a hierarchy of if-else conditions."
+      },
+      {
+          "id": "61 - Random Forest",
+          "name": "Random Forest",
+          "description": "Ensemble learning method that combines multiple decision trees to improve prediction accuracy and reduce overfitting."
+      },
+      {
+          "id": "62 - Naive Bayes",
+          "name": "Naive Bayes",
+          "description": "Probabilistic classification algorithm based on Bayes' theorem and the assumption of independence between features."
+      },
+      {
+          "id": "63 - K-nearest Neighbors",
+          "name": "K-nearest Neighbors",
+          "description": "Supervised learning algorithm that classifies examples based on their similarity to k-nearest neighbors in the training data."
+      },
+      {
+          "id": "64 - Support Vector Machines",
+          "name": "Support Vector Machines",
+          "description": "Supervised learning model that finds the best hyperplane to separate different classes by maximizing the margin."
+      },
+      {
+          "id": "65 - Neural Networks",
+          "name": "Neural Networks",
+          "description": "Connectionist models loosely inspired by the human brain, used to approximate functions or classify data."
+      },
+      {
+          "id": "66 - Ensemble Learning",
+          "name": "Ensemble Learning",
+          "description": "Technique that combines multiple individual models to improve overall prediction performance."
+      },
+      {
+          "id": "67 - Evaluation Metrics",
+          "name": "Evaluation Metrics",
+          "description": "Measures used to evaluate the performance of supervised learning models, such as accuracy, precision, recall, and F1-score."
+      },
+      {
+          "id": "68 - Clustering algorithms",
+          "name": "Clustering algorithms",
+          "description": "Algorithms that group data points based on their similarity."
+      },
+      {
+          "id": "69 - Dimensionality reduction",
+          "name": "Dimensionality reduction",
+          "description": "Techniques that reduce the number of features in a dataset."
+      },
+      {
+          "id": "70 - Anomaly detection",
+          "name": "Anomaly detection",
+          "description": "Methods that identify unusual patterns or outliers in data."
+      },
+      {
+          "id": "71 - Association rule mining",
+          "name": "Association rule mining",
+          "description": "Techniques that discover interesting relationships between variables in large datasets."
+      },
+      {
+          "id": "72 - Self-organizing maps",
+          "name": "Self-organizing maps",
+          "description": "Neural network algorithms for visualizing high-dimensional data in two or three dimensions."
+      },
+      {
+          "id": "73 - Labelled Data",
+          "name": "Labelled Data",
+          "description": "Data points that have been manually labeled with the correct output"
+      },
+      {
+          "id": "74 - Unlabelled Data",
+          "name": "Unlabelled Data",
+          "description": "Data points that have not been labeled with the correct output"
+      },
+      {
+          "id": "75 - Training Data",
+          "name": "Training Data",
+          "description": "Data points used to train a machine learning model"
+      },
+      {
+          "id": "76 - Validation Data",
+          "name": "Validation Data",
+          "description": "Data points used to validate and tune a machine learning model"
+      },
+      {
+          "id": "77 - Classifiers",
+          "name": "Classifiers",
+          "description": "Algorithms that assign labels or classify data points into distinct classes"
+      },
+      {
+          "id": "78 - Value Function",
+          "name": "Value Function",
+          "description": "The value function in reinforcement learning represents the long-term expected reward at each state of the environment."
+      },
+      {
+          "id": "79 - Policy",
+          "name": "Policy",
+          "description": "The policy in reinforcement learning is a mapping from states to actions, which determines the agent's behavior in the environment."
+      },
+      {
+          "id": "80 - Reward Function",
+          "name": "Reward Function",
+          "description": "The reward function in reinforcement learning defines the immediate feedback or reinforcement the agent receives based on its actions."
+      },
+      {
+          "id": "81 - Q-Learning",
+          "name": "Q-Learning",
+          "description": "Q-Learning is a model-free reinforcement learning algorithm that learns an optimal action-value function for an agent in an environment."
+      },
+      {
+          "id": "82 - State",
+          "name": "State",
+          "description": "The state in reinforcement learning represents the current condition or configuration of the environment where the agent is situated."
+      },
+      {
+          "id": "83 - Action",
+          "name": "Action",
+          "description": "An action in reinforcement learning represents the choices or decisions that an agent can take in a particular state of the environment."
+      },
+      {
+          "id": "84 - Markov Decision Process (MDP)",
+          "name": "Markov Decision Process (MDP)",
+          "description": "A Markov Decision Process is a mathematical framework used to model decision-making in situations where outcomes are partly random and partly under control of the decision maker."
+      },
+      {
+          "id": "85 - Exploration-Exploitation Tradeoff",
+          "name": "Exploration-Exploitation Tradeoff",
+          "description": "The exploration-exploitation tradeoff in reinforcement learning refers to the dilemma of choosing between known actions that yield high rewards (exploitation) and exploring new actions to gather more information (exploration)."
+      },
+      {
+          "id": "86 - Neural Networks",
+          "name": "Neural Networks",
+          "description": "A subfield of machine learning that is inspired by the structure and function of the brain. It consists of a collection of interconnected processing nodes called artificial neurons or nodes."
+      },
+      {
+          "id": "87 - Backpropagation",
+          "name": "Backpropagation",
+          "description": "A technique used in training neural networks. It involves calculating the gradient of the loss function with respect to the weights and biases of the network and using this gradient to update the parameters via gradient descent."
+      },
+      {
+          "id": "88 - Convolutional Neural Networks",
+          "name": "Convolutional Neural Networks",
+          "description": "A type of neural network specifically designed for processing structured grid-like data, such as images. It applies convolutional filters to the input data to detect relevant features and uses pooling to reduce the spatial dimensions."
+      },
+      {
+          "id": "89 - Recurrent Neural Networks",
+          "name": "Recurrent Neural Networks",
+          "description": "A type of neural network that is capable of processing sequential data by maintaining a hidden state that captures information from previous inputs. It is commonly used in tasks such as language modeling and speech recognition."
+      },
+      {
+          "id": "90 - Generative Adversarial Networks",
+          "name": "Generative Adversarial Networks",
+          "description": "A class of machine learning algorithms where two neural networks, a generator and a discriminator, are pitted against each other in a game-theoretic framework. The generator learns to generate synthetic samples that resemble real data, while the discriminator learns to distinguish between real and fake samples."
+      },
+      {
+          "id": "91 - Activation Function",
+          "name": "Activation Function",
+          "description": "A function that determines the output of a neural network node"
+      },
+      {
+          "id": "92 - Backpropagation",
+          "name": "Backpropagation",
+          "description": "A method used in neural networks to update the weights of the network"
+      },
+      {
+          "id": "93 - Gradient Descent",
+          "name": "Gradient Descent",
+          "description": "An optimization algorithm used to minimize the loss function in a neural network"
+      },
+      {
+          "id": "94 - Deep Learning",
+          "name": "Deep Learning",
+          "description": "A subfield of machine learning that focuses on neural networks with multiple layers"
+      },
+      {
+          "id": "95 - Convolutional Neural Networks (CNNs)",
+          "name": "Convolutional Neural Networks (CNNs)",
+          "description": "A type of neural network specifically designed for image recognition tasks"
+      },
+      {
+          "id": "96 - Recurrent Neural Networks (RNNs)",
+          "name": "Recurrent Neural Networks (RNNs)",
+          "description": "A type of neural network that can process sequential data"
+      },
+      {
+          "id": "97 - Convolutional layers",
+          "name": "Convolutional layers",
+          "description": "Layers in a Convolutional Neural Network that perform the convolution operation, extracting feature maps from input data."
+      },
+      {
+          "id": "98 - Pooling layers",
+          "name": "Pooling layers",
+          "description": "Layers in a Convolutional Neural Network that reduce the spatial dimensions of feature maps, summarizing the presence of features."
+      },
+      {
+          "id": "99 - Fully connected layers",
+          "name": "Fully connected layers",
+          "description": "Layers in a Convolutional Neural Network that connect every neuron from the previous layer to the subsequent layer."
+      },
+      {
+          "id": "100 - Activation functions",
+          "name": "Activation functions",
+          "description": "Functions applied to the output of neurons, adding non-linearity to the network and enabling complex mappings."
+      },
+      {
+          "id": "101 - Loss functions",
+          "name": "Loss functions",
+          "description": "Functions that quantify the discrepancy between predicted and actual values, guiding the optimization of the network."
+      },
+      {
+          "id": "102 - Gradient descent",
+          "name": "Gradient descent",
+          "description": "Optimization algorithm used to train Convolutional Neural Networks by iteratively adjusting the network parameters to minimize the loss function."
+      },
+      {
+          "id": "103 - Image preprocessing",
+          "name": "Image preprocessing",
+          "description": "Techniques applied to input images, such as normalization or augmentation, to improve the performance and generalization of the network."
+      },
+      {
+          "id": "104 - Transfer learning",
+          "name": "Transfer learning",
+          "description": "Technique where pre-trained Convolutional Neural Networks are used as a starting point for a new task, enabling faster and more accurate training."
+      },
+      {
+          "id": "105 - Data augmentation",
+          "name": "Data augmentation",
+          "description": "Technique that increases the diversity of the training data by applying random transformations, improving the network's ability to generalize."
+      },
+      {
+          "id": "106 - Hyperparameter tuning",
+          "name": "Hyperparameter tuning",
+          "description": "Process of finding the optimal configuration of hyperparameters for a Convolutional Neural Network, typically done through experimentation."
+      }
+  ],
+  "links": [
+      {
+          "source": "0 - artificial intelligence",
+          "target": "1 - Machine Learning"
+      },
+      {
+          "source": "0 - artificial intelligence",
+          "target": "2 - Natural Language Processing"
+      },
+      {
+          "source": "0 - artificial intelligence",
+          "target": "3 - Computer Vision"
+      },
+      {
+          "source": "0 - artificial intelligence",
+          "target": "4 - Expert Systems"
+      },
+      {
+          "source": "0 - artificial intelligence",
+          "target": "5 - Knowledge Representation"
+      },
+      {
+          "source": "0 - artificial intelligence",
+          "target": "6 - Robotics"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "7 - Supervised Learning"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "8 - Unsupervised Learning"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "9 - Semi-Supervised Learning"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "10 - Reinforcement Learning"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "11 - Deep Learning"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "12 - Neural Networks"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "13 - Convolutional Neural Networks"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "14 - Recurrent Neural Networks"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "15 - Generative Adversarial Networks"
+      },
+      {
+          "source": "1 - Machine Learning",
+          "target": "16 - Decision Trees"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "17 - Tokenization"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "18 - Text Normalization"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "19 - Stop Word Removal"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "20 - Part-of-Speech Tagging"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "21 - Named Entity Recognition"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "22 - Sentiment Analysis"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "23 - Topic Modeling"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "24 - Text Classification"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "25 - Language Generation"
+      },
+      {
+          "source": "2 - Natural Language Processing",
+          "target": "26 - Machine Translation"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "27 - Image Processing"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "28 - Image Segmentation"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "29 - Object Detection"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "30 - Object Recognition"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "31 - Image Classification"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "32 - Feature Extraction"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "33 - Object Tracking"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "34 - Depth Estimation"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "35 - Pose Estimation"
+      },
+      {
+          "source": "3 - Computer Vision",
+          "target": "36 - Image Registration"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "37 - Inference Engine"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "38 - Knowledge Base"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "39 - Rule Base"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "40 - Fuzzy Logic"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "41 - Knowledge Acquisition"
+      },
+      {
+          "source": "4 - Expert Systems",
+          "target": "42 - Explanation Facility"
+      },
+      {
+          "source": "5 - Knowledge Representation",
+          "target": "43 - Logic-based Knowledge Representation"
+      },
+      {
+          "source": "5 - Knowledge Representation",
+          "target": "44 - Semantic Networks"
+      },
+      {
+          "source": "5 - Knowledge Representation",
+          "target": "45 - Frame-based Representation"
+      },
+      {
+          "source": "5 - Knowledge Representation",
+          "target": "46 - Ontologies"
+      },
+      {
+          "source": "5 - Knowledge Representation",
+          "target": "47 - Probabilistic Knowledge Representation"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "48 - Computer Vision"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "49 - Machine Learning"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "50 - Control Systems"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "51 - Artificial Intelligence"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "52 - Motion Planning"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "53 - Sensors"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "54 - Kinematics"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "55 - Localization and Mapping"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "56 - Robot Hardware"
+      },
+      {
+          "source": "6 - Robotics",
+          "target": "57 - Human-Robot Interaction"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "58 - Classification"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "59 - Regression"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "60 - Decision Trees"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "61 - Random Forest"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "62 - Naive Bayes"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "63 - K-nearest Neighbors"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "64 - Support Vector Machines"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "65 - Neural Networks"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "66 - Ensemble Learning"
+      },
+      {
+          "source": "7 - Supervised Learning",
+          "target": "67 - Evaluation Metrics"
+      },
+      {
+          "source": "8 - Unsupervised Learning",
+          "target": "68 - Clustering algorithms"
+      },
+      {
+          "source": "8 - Unsupervised Learning",
+          "target": "69 - Dimensionality reduction"
+      },
+      {
+          "source": "8 - Unsupervised Learning",
+          "target": "70 - Anomaly detection"
+      },
+      {
+          "source": "8 - Unsupervised Learning",
+          "target": "71 - Association rule mining"
+      },
+      {
+          "source": "8 - Unsupervised Learning",
+          "target": "72 - Self-organizing maps"
+      },
+      {
+          "source": "9 - Semi-Supervised Learning",
+          "target": "73 - Labelled Data"
+      },
+      {
+          "source": "9 - Semi-Supervised Learning",
+          "target": "74 - Unlabelled Data"
+      },
+      {
+          "source": "9 - Semi-Supervised Learning",
+          "target": "75 - Training Data"
+      },
+      {
+          "source": "9 - Semi-Supervised Learning",
+          "target": "76 - Validation Data"
+      },
+      {
+          "source": "9 - Semi-Supervised Learning",
+          "target": "77 - Classifiers"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "78 - Value Function"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "79 - Policy"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "80 - Reward Function"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "81 - Q-Learning"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "82 - State"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "83 - Action"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "84 - Markov Decision Process (MDP)"
+      },
+      {
+          "source": "10 - Reinforcement Learning",
+          "target": "85 - Exploration-Exploitation Tradeoff"
+      },
+      {
+          "source": "11 - Deep Learning",
+          "target": "86 - Neural Networks"
+      },
+      {
+          "source": "11 - Deep Learning",
+          "target": "87 - Backpropagation"
+      },
+      {
+          "source": "11 - Deep Learning",
+          "target": "88 - Convolutional Neural Networks"
+      },
+      {
+          "source": "11 - Deep Learning",
+          "target": "89 - Recurrent Neural Networks"
+      },
+      {
+          "source": "11 - Deep Learning",
+          "target": "90 - Generative Adversarial Networks"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "91 - Activation Function"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "92 - Backpropagation"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "93 - Gradient Descent"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "94 - Deep Learning"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "95 - Convolutional Neural Networks (CNNs)"
+      },
+      {
+          "source": "12 - Neural Networks",
+          "target": "96 - Recurrent Neural Networks (RNNs)"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "97 - Convolutional layers"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "98 - Pooling layers"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "99 - Fully connected layers"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "100 - Activation functions"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "101 - Loss functions"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "102 - Gradient descent"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "103 - Image preprocessing"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "104 - Transfer learning"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "105 - Data augmentation"
+      },
+      {
+          "source": "13 - Convolutional Neural Networks",
+          "target": "106 - Hyperparameter tuning"
+      }
+  ]
+}

@@ -7,6 +7,10 @@ export default function HomePage() {
       <h1>
         <a href={"http://my." + process.env.NEXT_PUBLIC_ROOT_DOMAIN}>Read about my experiments here 💙</a>
       </h1>
+      <h1>Experiment demos:</h1>
+      <li>
+        <ul><a href="/2">Experiment 2</a></ul>
+      </li>
     </div>
   );
 }

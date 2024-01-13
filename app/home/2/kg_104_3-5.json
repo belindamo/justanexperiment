@@ -1,0 +1,937 @@
+{
+    "nodes": [
+        {
+            "id": "0 - knowledge graph",
+            "name": "knowledge graph"
+        },
+        {
+            "id": "1 - Ontology",
+            "name": "Ontology",
+            "description": "A formal representation of knowledge as a set of concepts within a domain, and the relationships between those concepts."
+        },
+        {
+            "id": "2 - Taxonomy",
+            "name": "Taxonomy",
+            "description": "A hierarchical classification system that organizes concepts into groups and subgroups based on their characteristics and relationships."
+        },
+        {
+            "id": "3 - Graph Theory",
+            "name": "Graph Theory",
+            "description": "The study of graphs, which are mathematical structures used to represent pairwise relationships between objects."
+        },
+        {
+            "id": "4 - Semantic Network",
+            "name": "Semantic Network",
+            "description": "A network representation of concepts and their relationships, where nodes represent concepts and edges represent relationships."
+        },
+        {
+            "id": "5 - Knowledge Representation",
+            "name": "Knowledge Representation",
+            "description": "The process of representing knowledge in a way that can be understood and processed by a computer."
+        },
+        {
+            "id": "6 - Upper Ontology",
+            "name": "Upper Ontology",
+            "description": "An upper ontology is an ontology that provides a foundational vocabulary and set of rules for other ontologies."
+        },
+        {
+            "id": "7 - Domain Ontology",
+            "name": "Domain Ontology",
+            "description": "A domain ontology is an ontology that represents concepts specific to a particular domain or subject area."
+        },
+        {
+            "id": "8 - Ontology Engineering",
+            "name": "Ontology Engineering",
+            "description": "Ontology engineering is the process of creating, updating, and maintaining ontologies."
+        },
+        {
+            "id": "9 - Ontology Mapping",
+            "name": "Ontology Mapping",
+            "description": "Ontology mapping is the process of establishing correspondences between concepts and relationships in different ontologies."
+        },
+        {
+            "id": "10 - Ontology Alignment",
+            "name": "Ontology Alignment",
+            "description": "Ontology alignment is the process of aligning and integrating multiple ontologies to enable interoperability and semantic integration."
+        },
+        {
+            "id": "11 - Cognitive Domain",
+            "name": "Cognitive Domain",
+            "description": "The domain of learning that involves the development of intellectual skills, knowledge, and understanding."
+        },
+        {
+            "id": "12 - Affective Domain",
+            "name": "Affective Domain",
+            "description": "The domain of learning that involves the development of attitudes, values, and emotions."
+        },
+        {
+            "id": "13 - Psychomotor Domain",
+            "name": "Psychomotor Domain",
+            "description": "The domain of learning that involves the development of physical and motor skills."
+        },
+        {
+            "id": "14 - Vertex",
+            "name": "Vertex",
+            "description": "A point or node in a graph"
+        },
+        {
+            "id": "15 - Edge",
+            "name": "Edge",
+            "description": "A connection between two vertices in a graph"
+        },
+        {
+            "id": "16 - Degree",
+            "name": "Degree",
+            "description": "The number of edges incident to a vertex"
+        },
+        {
+            "id": "17 - Path",
+            "name": "Path",
+            "description": "A sequence of vertices in which each adjacent pair is connected by an edge"
+        },
+        {
+            "id": "18 - Cycle",
+            "name": "Cycle",
+            "description": "A path that starts and ends at the same vertex"
+        },
+        {
+            "id": "19 - Node",
+            "name": "Node",
+            "description": "A fundamental unit in a semantic network, representing a concept or entity"
+        },
+        {
+            "id": "20 - Link",
+            "name": "Link",
+            "description": "A relationship between two nodes in a semantic network"
+        },
+        {
+            "id": "21 - Hierarchy",
+            "name": "Hierarchy",
+            "description": "A structure in which nodes are organized in a parent-child relationship"
+        },
+        {
+            "id": "22 - Attribute",
+            "name": "Attribute",
+            "description": "A characteristic or property of a node in a semantic network"
+        },
+        {
+            "id": "23 - Connection",
+            "name": "Connection",
+            "description": "An association between two nodes or concepts in a semantic network"
+        },
+        {
+            "id": "24 - Logical Representation",
+            "name": "Logical Representation",
+            "description": "Representing knowledge using formal logic and reasoning"
+        },
+        {
+            "id": "25 - Ontology",
+            "name": "Ontology",
+            "description": "Defining a common vocabulary of concepts and their relationships"
+        },
+        {
+            "id": "26 - Semantic Networks",
+            "name": "Semantic Networks",
+            "description": "Representing knowledge using a graph structure"
+        },
+        {
+            "id": "27 - Frame-based Representation",
+            "name": "Frame-based Representation",
+            "description": "Structuring knowledge using objects and their attributes"
+        },
+        {
+            "id": "28 - Production Rules",
+            "name": "Production Rules",
+            "description": "Representing knowledge using a set of condition-action rules"
+        },
+        {
+            "id": "29 - Mathematics",
+            "name": "Mathematics",
+            "description": "The study of numbers, quantities, and shapes, as well as the relationships between them."
+        },
+        {
+            "id": "30 - Physics",
+            "name": "Physics",
+            "description": "The study of matter, energy, and the interactions between them."
+        },
+        {
+            "id": "31 - Chemistry",
+            "name": "Chemistry",
+            "description": "The study of the composition, properties, and behavior of substances."
+        },
+        {
+            "id": "32 - Biology",
+            "name": "Biology",
+            "description": "The study of living organisms, including their structure, function, evolution, and interactions with the environment."
+        },
+        {
+            "id": "33 - Computer Science",
+            "name": "Computer Science",
+            "description": "The study of computational systems and their applications."
+        },
+        {
+            "id": "34 - Class",
+            "name": "Class",
+            "description": "A group or category of objects or entities that have common characteristics"
+        },
+        {
+            "id": "35 - Property",
+            "name": "Property",
+            "description": "An attribute or characteristic of a class"
+        },
+        {
+            "id": "36 - Relation",
+            "name": "Relation",
+            "description": "A connection or association between two or more entities"
+        },
+        {
+            "id": "37 - Instance",
+            "name": "Instance",
+            "description": "A particular occurrence or individual belonging to a class"
+        },
+        {
+            "id": "38 - Ontology",
+            "name": "Ontology",
+            "description": "A formal representation of a set of concepts within a domain and the relationships between those concepts"
+        },
+        {
+            "id": "39 - Formal ontology",
+            "name": "Formal ontology",
+            "description": "The study of ontology using formal methods and logic."
+        },
+        {
+            "id": "40 - Ontology languages",
+            "name": "Ontology languages",
+            "description": "The languages used for representing and expressing ontologies."
+        },
+        {
+            "id": "41 - Ontology integration",
+            "name": "Ontology integration",
+            "description": "The process of combining multiple ontologies into a single unified ontology."
+        },
+        {
+            "id": "42 - Ontology evaluation",
+            "name": "Ontology evaluation",
+            "description": "The assessment and measurement of the quality and effectiveness of ontologies."
+        },
+        {
+            "id": "43 - Ontology alignment",
+            "name": "Ontology alignment",
+            "description": "The process of matching and aligning concepts and relationships between different ontologies."
+        },
+        {
+            "id": "44 - Disambiguation",
+            "name": "Disambiguation",
+            "description": "The process of resolving multiple possible meanings or interpretations of a concept or term in ontology mapping."
+        },
+        {
+            "id": "45 - Alignment",
+            "name": "Alignment",
+            "description": "The process of establishing correspondences and mappings between concepts in different ontologies."
+        },
+        {
+            "id": "46 - Matching",
+            "name": "Matching",
+            "description": "The process of finding similar or equivalent concepts in different ontologies based on their structure, semantics, or other criteria."
+        },
+        {
+            "id": "47 - Integration",
+            "name": "Integration",
+            "description": "The process of combining multiple ontologies into a single unified ontology by resolving conflicts and overlapping concepts."
+        },
+        {
+            "id": "48 - Evaluation",
+            "name": "Evaluation",
+            "description": "The process of assessing the quality, accuracy, and effectiveness of ontology mapping techniques and tools."
+        },
+        {
+            "id": "49 - Semantic Similarity",
+            "name": "Semantic Similarity",
+            "description": "Measures the similarity between two entities based on the meaning of their attributes and relationships"
+        },
+        {
+            "id": "50 - Instance Matching",
+            "name": "Instance Matching",
+            "description": "Identifies corresponding instances or individuals in different ontologies"
+        },
+        {
+            "id": "51 - Schema Matching",
+            "name": "Schema Matching",
+            "description": "Matches the structure and elements of the ontologies to identify correspondences between the classes, properties, and relationships"
+        },
+        {
+            "id": "52 - Mapping Creation",
+            "name": "Mapping Creation",
+            "description": "Creates mappings or correspondences between the entities of two ontologies"
+        },
+        {
+            "id": "53 - Conflict Detection and Resolution",
+            "name": "Conflict Detection and Resolution",
+            "description": "Identifies and resolves conflicts or inconsistencies in the mappings between ontologies"
+        },
+        {
+            "id": "54 - Knowledge",
+            "name": "Knowledge",
+            "description": "The ability to recall or recognize facts, information, or concepts."
+        },
+        {
+            "id": "55 - Comprehension",
+            "name": "Comprehension",
+            "description": "The ability to understand the meaning of information and to explain it in one's own words."
+        },
+        {
+            "id": "56 - Application",
+            "name": "Application",
+            "description": "The ability to use information or concepts in new situations or solve problems using previously acquired knowledge or skills."
+        },
+        {
+            "id": "57 - Analysis",
+            "name": "Analysis",
+            "description": "The ability to break down complex information into its constituent parts and understand the relationships between these parts."
+        },
+        {
+            "id": "58 - Synthesis",
+            "name": "Synthesis",
+            "description": "The ability to combine parts or elements to form a new whole or create new patterns or relationships."
+        },
+        {
+            "id": "59 - Evaluation",
+            "name": "Evaluation",
+            "description": "The ability to judge the value or quality of information, ideas, or methods based on a set of criteria."
+        },
+        {
+            "id": "60 - Attitude",
+            "name": "Attitude",
+            "description": "The emotional response or evaluation of a person towards a particular object, person, or situation."
+        },
+        {
+            "id": "61 - Emotion",
+            "name": "Emotion",
+            "description": "A complex pattern of physiological, psychological, and cognitive reactions, triggered by a specific event or stimulus."
+        },
+        {
+            "id": "62 - Values",
+            "name": "Values",
+            "description": "Beliefs or principles that guide behavior and decision-making."
+        },
+        {
+            "id": "63 - Empathy",
+            "name": "Empathy",
+            "description": "The ability to understand and share the thoughts, feelings, and experiences of others."
+        },
+        {
+            "id": "64 - Self-awareness",
+            "name": "Self-awareness",
+            "description": "The knowledge and understanding of one's own thoughts, feelings, and actions."
+        },
+        {
+            "id": "65 - Perception",
+            "name": "Perception",
+            "description": "The ability to interpret and understand sensory information."
+        },
+        {
+            "id": "66 - Gross motor skills",
+            "name": "Gross motor skills",
+            "description": "The ability to control and coordinate large muscle movements."
+        },
+        {
+            "id": "67 - Fine motor skills",
+            "name": "Fine motor skills",
+            "description": "The ability to control and coordinate small muscle movements."
+        },
+        {
+            "id": "68 - Physical fitness",
+            "name": "Physical fitness",
+            "description": "The ability to engage in physical activity and maintain an overall state of health and well-being."
+        },
+        {
+            "id": "69 - Balance and coordination",
+            "name": "Balance and coordination",
+            "description": "The ability to maintain body balance and perform tasks requiring precise movements."
+        },
+        {
+            "id": "70 - Graph",
+            "name": "Graph",
+            "description": "A set of vertices and edges."
+        },
+        {
+            "id": "71 - Directed graph",
+            "name": "Directed graph",
+            "description": "A graph where each edge is directed from one vertex to another."
+        },
+        {
+            "id": "72 - Weighted graph",
+            "name": "Weighted graph",
+            "description": "A graph where each edge is assigned a weight."
+        },
+        {
+            "id": "73 - Connected graph",
+            "name": "Connected graph",
+            "description": "A graph where there is a path between every pair of vertices."
+        },
+        {
+            "id": "74 - Undirected graph",
+            "name": "Undirected graph",
+            "description": "A graph where the edges have no direction."
+        },
+        {
+            "id": "75 - Edge Length",
+            "name": "Edge Length",
+            "description": "The distance between two vertices in a graph."
+        },
+        {
+            "id": "76 - Edge Weight",
+            "name": "Edge Weight",
+            "description": "A numerical value assigned to an edge in a graph to represent a cost or distance."
+        },
+        {
+            "id": "77 - Edge Connectivity",
+            "name": "Edge Connectivity",
+            "description": "The minimum number of edges that must be removed from a graph to disconnect it."
+        },
+        {
+            "id": "78 - Edge Coloring",
+            "name": "Edge Coloring",
+            "description": "Assigning colors to the edges of a graph such that no two adjacent edges have the same color."
+        },
+        {
+            "id": "79 - Bachelor's degree",
+            "name": "Bachelor's degree",
+            "description": "An undergraduate academic degree awarded by colleges and universities upon completion of a specific course of study"
+        },
+        {
+            "id": "80 - Master's degree",
+            "name": "Master's degree",
+            "description": "A graduate academic degree awarded by colleges and universities upon completion of a specific course of study"
+        },
+        {
+            "id": "81 - Doctorate degree",
+            "name": "Doctorate degree",
+            "description": "The highest level of academic degree awarded by colleges and universities upon completion of a specific course of study and original research"
+        },
+        {
+            "id": "82 - Associate degree",
+            "name": "Associate degree",
+            "description": "An undergraduate academic degree typically awarded by community colleges upon completion of a specific course of study"
+        },
+        {
+            "id": "83 - Honours degree",
+            "name": "Honours degree",
+            "description": "An academic degree awarded to students with outstanding performance in their undergraduate studies"
+        },
+        {
+            "id": "84 - Path Planning",
+            "name": "Path Planning",
+            "description": "The process of determining an optimal path from a starting point to a goal point, considering obstacles and constraints."
+        },
+        {
+            "id": "85 - Graph Theory",
+            "name": "Graph Theory",
+            "description": "The study of mathematical structures used to model pairwise relations between objects, such as nodes and edges in a graph."
+        },
+        {
+            "id": "86 - Optimization",
+            "name": "Optimization",
+            "description": "The process of finding the best solution for a given problem, often involving maximizing or minimizing an objective function."
+        },
+        {
+            "id": "87 - Motion Planning",
+            "name": "Motion Planning",
+            "description": "The process of determining a sequence of valid motions for a robot to achieve a desired goal, considering constraints and dynamics."
+        },
+        {
+            "id": "88 - Search Algorithms",
+            "name": "Search Algorithms",
+            "description": "Methods designed to find a solution or path from a starting state to a desired goal state in a search space."
+        },
+        {
+            "id": "89 - Revolution",
+            "name": "Revolution",
+            "description": "A Cycle where a fixed point rotates around an axis"
+        },
+        {
+            "id": "90 - Recurrence",
+            "name": "Recurrence",
+            "description": "A Cycle that repeats in a pattern"
+        },
+        {
+            "id": "91 - Periodicity",
+            "name": "Periodicity",
+            "description": "A Cycle with a regular interval between occurrences"
+        },
+        {
+            "id": "92 - Pendulum",
+            "name": "Pendulum",
+            "description": "A Cycle of oscillation between two extreme points"
+        },
+        {
+            "id": "93 - Seasonality",
+            "name": "Seasonality",
+            "description": "A Cycle that is influenced by the change of seasons"
+        },
+        {
+            "id": "94 - Event-driven programming",
+            "name": "Event-driven programming",
+            "description": "A programming paradigm in which the flow of the program is determined by events, such as user actions or sensor inputs."
+        },
+        {
+            "id": "95 - Asynchronous programming",
+            "name": "Asynchronous programming",
+            "description": "A programming model that allows for non-blocking execution and handling of multiple tasks concurrently."
+        },
+        {
+            "id": "96 - Callback functions",
+            "name": "Callback functions",
+            "description": "Functions that are passed as arguments to other functions and are executed when a certain event occurs."
+        },
+        {
+            "id": "97 - File system operations",
+            "name": "File system operations",
+            "description": "Operations related to reading, writing, and managing files or directories on a computer system."
+        },
+        {
+            "id": "98 - Networking",
+            "name": "Networking",
+            "description": "The practice of connecting nodes in a network to enable communication and data exchange."
+        },
+        {
+            "id": "99 - Web page",
+            "name": "Web page",
+            "description": "A document on the World Wide Web."
+        },
+        {
+            "id": "100 - Hyperlink",
+            "name": "Hyperlink",
+            "description": "A reference to data that the reader can directly follow, either by clicking, tapping, or hovering."
+        },
+        {
+            "id": "101 - Anchor text",
+            "name": "Anchor text",
+            "description": "The clickable text in a hyperlink."
+        },
+        {
+            "id": "102 - URL",
+            "name": "URL",
+            "description": "A specific type of Uniform Resource Identifier (URI), a string of characters that provides a reference to a web resource."
+        },
+        {
+            "id": "103 - HTML",
+            "name": "HTML",
+            "description": "A markup language used to structure content on the web."
+        }
+    ],
+    "links": [
+        {
+            "source": "0 - knowledge graph",
+            "target": "1 - Ontology"
+        },
+        {
+            "source": "0 - knowledge graph",
+            "target": "2 - Taxonomy"
+        },
+        {
+            "source": "0 - knowledge graph",
+            "target": "3 - Graph Theory"
+        },
+        {
+            "source": "0 - knowledge graph",
+            "target": "4 - Semantic Network"
+        },
+        {
+            "source": "0 - knowledge graph",
+            "target": "5 - Knowledge Representation"
+        },
+        {
+            "source": "1 - Ontology",
+            "target": "6 - Upper Ontology"
+        },
+        {
+            "source": "1 - Ontology",
+            "target": "7 - Domain Ontology"
+        },
+        {
+            "source": "1 - Ontology",
+            "target": "8 - Ontology Engineering"
+        },
+        {
+            "source": "1 - Ontology",
+            "target": "9 - Ontology Mapping"
+        },
+        {
+            "source": "1 - Ontology",
+            "target": "10 - Ontology Alignment"
+        },
+        {
+            "source": "2 - Taxonomy",
+            "target": "11 - Cognitive Domain"
+        },
+        {
+            "source": "2 - Taxonomy",
+            "target": "12 - Affective Domain"
+        },
+        {
+            "source": "2 - Taxonomy",
+            "target": "13 - Psychomotor Domain"
+        },
+        {
+            "source": "3 - Graph Theory",
+            "target": "14 - Vertex"
+        },
+        {
+            "source": "3 - Graph Theory",
+            "target": "15 - Edge"
+        },
+        {
+            "source": "3 - Graph Theory",
+            "target": "16 - Degree"
+        },
+        {
+            "source": "3 - Graph Theory",
+            "target": "17 - Path"
+        },
+        {
+            "source": "3 - Graph Theory",
+            "target": "18 - Cycle"
+        },
+        {
+            "source": "4 - Semantic Network",
+            "target": "19 - Node"
+        },
+        {
+            "source": "4 - Semantic Network",
+            "target": "20 - Link"
+        },
+        {
+            "source": "4 - Semantic Network",
+            "target": "21 - Hierarchy"
+        },
+        {
+            "source": "4 - Semantic Network",
+            "target": "22 - Attribute"
+        },
+        {
+            "source": "4 - Semantic Network",
+            "target": "23 - Connection"
+        },
+        {
+            "source": "5 - Knowledge Representation",
+            "target": "24 - Logical Representation"
+        },
+        {
+            "source": "5 - Knowledge Representation",
+            "target": "25 - Ontology"
+        },
+        {
+            "source": "5 - Knowledge Representation",
+            "target": "26 - Semantic Networks"
+        },
+        {
+            "source": "5 - Knowledge Representation",
+            "target": "27 - Frame-based Representation"
+        },
+        {
+            "source": "5 - Knowledge Representation",
+            "target": "28 - Production Rules"
+        },
+        {
+            "source": "6 - Upper Ontology",
+            "target": "29 - Mathematics"
+        },
+        {
+            "source": "6 - Upper Ontology",
+            "target": "30 - Physics"
+        },
+        {
+            "source": "6 - Upper Ontology",
+            "target": "31 - Chemistry"
+        },
+        {
+            "source": "6 - Upper Ontology",
+            "target": "32 - Biology"
+        },
+        {
+            "source": "6 - Upper Ontology",
+            "target": "33 - Computer Science"
+        },
+        {
+            "source": "7 - Domain Ontology",
+            "target": "34 - Class"
+        },
+        {
+            "source": "7 - Domain Ontology",
+            "target": "35 - Property"
+        },
+        {
+            "source": "7 - Domain Ontology",
+            "target": "36 - Relation"
+        },
+        {
+            "source": "7 - Domain Ontology",
+            "target": "37 - Instance"
+        },
+        {
+            "source": "7 - Domain Ontology",
+            "target": "38 - Ontology"
+        },
+        {
+            "source": "8 - Ontology Engineering",
+            "target": "39 - Formal ontology"
+        },
+        {
+            "source": "8 - Ontology Engineering",
+            "target": "40 - Ontology languages"
+        },
+        {
+            "source": "8 - Ontology Engineering",
+            "target": "41 - Ontology integration"
+        },
+        {
+            "source": "8 - Ontology Engineering",
+            "target": "42 - Ontology evaluation"
+        },
+        {
+            "source": "8 - Ontology Engineering",
+            "target": "43 - Ontology alignment"
+        },
+        {
+            "source": "9 - Ontology Mapping",
+            "target": "44 - Disambiguation"
+        },
+        {
+            "source": "9 - Ontology Mapping",
+            "target": "45 - Alignment"
+        },
+        {
+            "source": "9 - Ontology Mapping",
+            "target": "46 - Matching"
+        },
+        {
+            "source": "9 - Ontology Mapping",
+            "target": "47 - Integration"
+        },
+        {
+            "source": "9 - Ontology Mapping",
+            "target": "48 - Evaluation"
+        },
+        {
+            "source": "10 - Ontology Alignment",
+            "target": "49 - Semantic Similarity"
+        },
+        {
+            "source": "10 - Ontology Alignment",
+            "target": "50 - Instance Matching"
+        },
+        {
+            "source": "10 - Ontology Alignment",
+            "target": "51 - Schema Matching"
+        },
+        {
+            "source": "10 - Ontology Alignment",
+            "target": "52 - Mapping Creation"
+        },
+        {
+            "source": "10 - Ontology Alignment",
+            "target": "53 - Conflict Detection and Resolution"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "54 - Knowledge"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "55 - Comprehension"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "56 - Application"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "57 - Analysis"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "58 - Synthesis"
+        },
+        {
+            "source": "11 - Cognitive Domain",
+            "target": "59 - Evaluation"
+        },
+        {
+            "source": "12 - Affective Domain",
+            "target": "60 - Attitude"
+        },
+        {
+            "source": "12 - Affective Domain",
+            "target": "61 - Emotion"
+        },
+        {
+            "source": "12 - Affective Domain",
+            "target": "62 - Values"
+        },
+        {
+            "source": "12 - Affective Domain",
+            "target": "63 - Empathy"
+        },
+        {
+            "source": "12 - Affective Domain",
+            "target": "64 - Self-awareness"
+        },
+        {
+            "source": "13 - Psychomotor Domain",
+            "target": "65 - Perception"
+        },
+        {
+            "source": "13 - Psychomotor Domain",
+            "target": "66 - Gross motor skills"
+        },
+        {
+            "source": "13 - Psychomotor Domain",
+            "target": "67 - Fine motor skills"
+        },
+        {
+            "source": "13 - Psychomotor Domain",
+            "target": "68 - Physical fitness"
+        },
+        {
+            "source": "13 - Psychomotor Domain",
+            "target": "69 - Balance and coordination"
+        },
+        {
+            "source": "14 - Vertex",
+            "target": "70 - Graph"
+        },
+        {
+            "source": "14 - Vertex",
+            "target": "71 - Directed graph"
+        },
+        {
+            "source": "14 - Vertex",
+            "target": "72 - Weighted graph"
+        },
+        {
+            "source": "14 - Vertex",
+            "target": "73 - Connected graph"
+        },
+        {
+            "source": "14 - Vertex",
+            "target": "74 - Undirected graph"
+        },
+        {
+            "source": "15 - Edge",
+            "target": "75 - Edge Length"
+        },
+        {
+            "source": "15 - Edge",
+            "target": "76 - Edge Weight"
+        },
+        {
+            "source": "15 - Edge",
+            "target": "77 - Edge Connectivity"
+        },
+        {
+            "source": "15 - Edge",
+            "target": "78 - Edge Coloring"
+        },
+        {
+            "source": "16 - Degree",
+            "target": "79 - Bachelor's degree"
+        },
+        {
+            "source": "16 - Degree",
+            "target": "80 - Master's degree"
+        },
+        {
+            "source": "16 - Degree",
+            "target": "81 - Doctorate degree"
+        },
+        {
+            "source": "16 - Degree",
+            "target": "82 - Associate degree"
+        },
+        {
+            "source": "16 - Degree",
+            "target": "83 - Honours degree"
+        },
+        {
+            "source": "17 - Path",
+            "target": "84 - Path Planning"
+        },
+        {
+            "source": "17 - Path",
+            "target": "85 - Graph Theory"
+        },
+        {
+            "source": "17 - Path",
+            "target": "86 - Optimization"
+        },
+        {
+            "source": "17 - Path",
+            "target": "87 - Motion Planning"
+        },
+        {
+            "source": "17 - Path",
+            "target": "88 - Search Algorithms"
+        },
+        {
+            "source": "18 - Cycle",
+            "target": "89 - Revolution"
+        },
+        {
+            "source": "18 - Cycle",
+            "target": "90 - Recurrence"
+        },
+        {
+            "source": "18 - Cycle",
+            "target": "91 - Periodicity"
+        },
+        {
+            "source": "18 - Cycle",
+            "target": "92 - Pendulum"
+        },
+        {
+            "source": "18 - Cycle",
+            "target": "93 - Seasonality"
+        },
+        {
+            "source": "19 - Node",
+            "target": "94 - Event-driven programming"
+        },
+        {
+            "source": "19 - Node",
+            "target": "95 - Asynchronous programming"
+        },
+        {
+            "source": "19 - Node",
+            "target": "96 - Callback functions"
+        },
+        {
+            "source": "19 - Node",
+            "target": "97 - File system operations"
+        },
+        {
+            "source": "19 - Node",
+            "target": "98 - Networking"
+        },
+        {
+            "source": "20 - Link",
+            "target": "99 - Web page"
+        },
+        {
+            "source": "20 - Link",
+            "target": "100 - Hyperlink"
+        },
+        {
+            "source": "20 - Link",
+            "target": "101 - Anchor text"
+        },
+        {
+            "source": "20 - Link",
+            "target": "102 - URL"
+        },
+        {
+            "source": "20 - Link",
+            "target": "103 - HTML"
+        }
+    ]
+}
