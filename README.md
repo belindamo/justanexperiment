@@ -4,7 +4,11 @@
 
 # Just an Experiment
 
-Welcome!
+Welcome! Experiments are all written in this monorepo. 
+
+- View experiment write-ups at https://my.bmo.cafe 
+- Create an account in the multi-tenant site at https://app.bmo.cafe
+- View experiments at https://bmo.cafe
 
 ## Built on open source
 
