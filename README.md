@@ -2,9 +2,13 @@
   <h1 align="center">Just an Experiment!</h1>
 </a>
 
+# Just an Experiment
+
+Welcome!
+
 ## Built on open source
 
-This working demo site was built using the [Platforms Starter Kit](https://demo.vercel.pub/platforms-starter-kit) and:
+This site was built using the [Platforms Starter Kit](https://demo.vercel.pub/platforms-starter-kit) and:
 
 - [Next.js](https://nextjs.org/) as the React framework
 - [Tailwind](https://tailwindcss.com/) for CSS styling
