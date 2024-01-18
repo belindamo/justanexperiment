@@ -2,9 +2,17 @@
   <h1 align="center">Just an Experiment!</h1>
 </a>
 
+# Just an Experiment
+
+Welcome! Experiments are all written in this monorepo. 
+
+- View experiment write-ups at https://my.bmo.cafe 
+- Create an account in the multi-tenant site at https://app.bmo.cafe
+- View experiments at https://bmo.cafe
+
 ## Built on open source
 
-This working demo site was built using the [Platforms Starter Kit](https://demo.vercel.pub/platforms-starter-kit) and:
+This site was built using the [Platforms Starter Kit](https://demo.vercel.pub/platforms-starter-kit) and:
 
 - [Next.js](https://nextjs.org/) as the React framework
 - [Tailwind](https://tailwindcss.com/) for CSS styling
