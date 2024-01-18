@@ -37,6 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
+      </head>
       <body className={cn(cal.variable, inter.variable)}>
         <Providers>
           {children}
