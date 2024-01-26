@@ -19,7 +19,7 @@ export default function LoginPage() {
         AI Experiments to help you learn and grow! <br />
         <a
           className="font-medium text-black hover:text-stone-800 dark:text-stone-300 dark:hover:text-stone-100"
-          href={"http://my." + process.env.NEXT_PUBLIC_ROOT_DOMAIN}
+          href={"http://write." + process.env.NEXT_PUBLIC_ROOT_DOMAIN}
           rel="noreferrer"
           target="_blank"
         >
