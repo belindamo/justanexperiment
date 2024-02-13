@@ -1,4 +1,4 @@
-<a href="https://justanexperiment.ai">
+<a href="https://justanexperiment.com">
   <h1 align="center">Just an Experiment!</h1>
 </a>
 
