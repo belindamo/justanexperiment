@@ -6,13 +6,13 @@
 
 Welcome! Experiments are all written in this monorepo. 
 
-- View experiment write-ups at https://my.bmo.cafe 
-- Create an account in the multi-tenant site at https://app.bmo.cafe
-- View experiments at https://bmo.cafe
+- Try experiments at https://justanexperiment.com
+- Create an account to customize https://app.justanexperiment.com
+- View experiment write-ups at https://write.justanexperiment.com
 
 ## Built on open source
 
-This site was built using the [Platforms Starter Kit](https://demo.vercel.pub/platforms-starter-kit) and:
+This site was built using:
 
 - [Next.js](https://nextjs.org/) as the React framework
 - [Tailwind](https://tailwindcss.com/) for CSS styling
