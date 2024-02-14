@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { ChatCompletionCreateParams } from 'openai/resources/chat';
-import ForceGraph, { Node, Link, GraphProps } from "@/components/experiments/d3-graph";
+import ForceGraph, { Node, Link, GraphProps } from "@/components/exp/2/d3-graph";
 import example_data from './graph-data/ResNet_102_3-5.json';
 
 // Constants
