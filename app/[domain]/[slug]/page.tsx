@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { getPostData, getSiteData } from "@/lib/fetchers";
-import BlogCard from "@/components/blog-card";
-import BlurImage from "@/components/blur-image";
-import MDX from "@/components/mdx";
+import BlogCard from "@/components/old-but-probably-useful/blog-card";
+import BlurImage from "@/components/old-but-probably-useful/blur-image";
+import MDX from "@/components/old-but-probably-useful/mdx";
 import { placeholderBlurhash, toDateString } from "@/lib/utils";
 
 export async function generateMetadata({
