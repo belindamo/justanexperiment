@@ -3,11 +3,28 @@
 import { NavigationMenuLink, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuList, NavigationMenu, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
+import Image from "next/image";
 import {
   HelpCircle,
 } from "lucide-react";
 import { usePathname } from 'next/navigation';
-import { options } from "@/lib/experiments";
+
+export const options = [
+  { 
+    title: 'Translate',
+    href: '/translate', 
+    description: `Translation on steroids. Like Transfiguration with Professor McGonagall 🧙🏻‍♀️`
+  },
+  {
+    title: 'Home',
+    href: '/',
+    description: `Home is where the people you love are, and not where you're doing boring af work 🏡`
+  }
+  // { title: 'Knowledge Graph', href: '/kg', description: 'Explore a knowledge graph on a topic of your choice.' },
+  // { title: 'RAG', href: '/rag', description: 'Chat with your documents' },
+  // { title: 'Agents', href: '/agents', description: 'Create and manage little AI models to do your work for you!' },
+  // { title: 'Learn', href: '/learn', description: 'Use AI to help you learn more effectively' },
+]
 
 const models = [
   'GPT-4',
@@ -21,7 +38,7 @@ const whoAreYou = [
   'Writer',
   'Input your own',
   `I'm not sure yet 🙈 help me!`,
-  '(Selecting this will help customize your experience ^^)'
+  '(Selecting this will help customize your experience when this is done ^^)'
 ]
 
 export default function Header() {
@@ -30,7 +47,10 @@ export default function Header() {
   return (
   <header className="flex justify-between w-full">
     <div className="flex flex-row">
-      <NavigationMenu className="my-4 mx-2" alignMenu="left">
+      <div className="my-8 mx-8 font-medium text-primary ">
+        Just an Experiment
+      </div>
+      {/* <NavigationMenu className="my-4 mx-2" alignMenu="left">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>
@@ -54,16 +74,16 @@ export default function Header() {
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
     </div>
     <NavigationMenu className="my-4 mx-2">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>
-            <img src="/logo.png" alt="Just an Experiment" className="h-6 w-auto pr-2" />
+            <Image src="/logo.png" alt="Just an Experiment" className="h-6 w-auto pr-2" />
             <Label className="hidden md:block"> 
             { currentUrl === '/' ? (
-              "Try out some experiments!"
+              "Experiments"
             ): currentUrl === '/what' ? (
               "About us"
             ): (
@@ -96,10 +116,10 @@ export default function Header() {
       <Label className="hidden md:block">JaE {currentUrl !== '/' && ( " | " + options.find(option => option.href === currentUrl)?.title )} </Label>
     </Link> */}
     <div className="flex flex-row">
-      <Link href="/what" className="flex items-center py-4">
+      <Link href="/what" className="flex items-center py-4 mx-8 my-4">
         <HelpCircle className="h-4" />
       </Link>
-      <NavigationMenu className="my-4 mr-2"
+      {/* <NavigationMenu className="my-4 mr-2"
       alignMenu="right">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -124,7 +144,7 @@ export default function Header() {
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
     </div>
   </header>
   )

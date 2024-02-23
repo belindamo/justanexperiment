@@ -1,114 +1,151 @@
 'use client'
 
+import React, { useState, useEffect, useRef } from 'react'
 import { Label } from "@/components/ui/label"
-import { Select } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { useChat } from 'ai/react';
+import { CopyIcon } from 'lucide-react'
+import { PresetSelector } from "@/app/home/translate/components/preset-selector"
+import { presets } from "@/app/home/translate/components/presets";
+import { PopoverTranslate } from "@/app/home/translate/components/popover-translate"
+import { DialogUnderTheHood } from '@/app/home/translate/components/dialog-under-the-hood'
+import { TranslateFilter } from '@/app/home/translate/components/translate-filter'
+import { Toolbar } from './components/toolbar'
+import { HoverCardDemo } from './components/hover-cards'
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
+import { Separator } from '@/components/ui/separator'
+import { TemplateCombobox } from './components/combobox'
+import { InlineSnippet } from '@/components/form/domain-configuration'
+import { initialMessages } from './lib/ai'
+import { Message } from 'ai/react'
+import { templates, modelOptions } from './lib/constants'
+import { Template } from './lib/types'
+import { toast } from 'sonner'
 
-// For now, hard coded
-const myOptions = [
-  'Research markdown',
-  'Research proposal',
-  'Literature review',
-]
-
-// omg whatif, dropdown?
-const options = [
-  'Blog post',
-  'Documentation',
-  'Landing page',
-  // 'Research proposal',
-  // 'Marketing copy',
-  // 'Product description',
-  // 'Social media post', // breakdown to: Twitter, Facebook, LinkedIn, Instagram, TikTok
-  // 'Custom'
-  // 'English'
-  // 'Spanish as spoken locally in Mexico'
-  // Probs like more filters that are action oriented like: shorten, summarize, expand, etc.
-];
-
-interface ChatMessage {
-  role: 'system' | 'user' | 'assistant';
-  content: string;
-}
-
-interface Option {
-  title: string;
-  description: string;
-  format: 'natural language text' | 'markdown' | 'html' | 'json' | 'yaml' | 'toml' | 'csv' | 'tsv' | 'xml' | 'yaml' | 'toml' | 'csv' | 'tsv' | 'xml';
-  sampleTexts: [{
-    text: string;
-    chatHistory?: [ChatMessage];
-    systemPrompt?: string;
-    model?: string;
-  }]
-  systemPrompt?: string;
-}
-
-interface FewShotTranslation {
-  source: Option;
-  target: Option;
-}
-
-const examplePlaceholders = [
-  {
-    source: '',
-    target: ''
-  }
-]
 export default function Translate() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+  const [sourceTemplate, setSourceTemplate] = useState<Template>(templates[0]);
+  const [targetTemplate, setTargetTemplate] = useState<Template>(templates[1]);
+
+  const chatOptions = {
+    onFinish: () => { setIsLoading(false) },
+    onError: (error: Error) => { console.error(error); setIsLoading(false); setError(error) },
+  }
+  const { messages, setMessages, handleInputChange, handleSubmit } = useChat(chatOptions);
+  const lastAssistantMessage = messages.filter(message => message.role === 'assistant').pop();
+
+  // const sourceColumn = useRef<HTMLDivElement | null>(null) 
+  // const targetTable = useRef<HTMLDivElement | null>(null)
+  // const [models , setModels] = useState<string[]>([ modelOptions[0].value ])
+  // const [sourceCell, setSourceCell] = useState<CellData>()
+  // const [targetCells, setTargetCells] = useState<TargetCellsData[]>([])
+
+  const handleSubmitWrapper = (e: React.FormEvent<HTMLFormElement>) => {
+    setError(null);
+    setIsLoading(true);
+    setMessages(initialMessages(sourceTemplate, targetTemplate).concat(messages));
+    handleSubmit(e);
+  }
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+        if (document.getElementById('translate-form')) {
+          document.getElementById('translate-form')?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  });
+
   return (
-    <div className="w-full p-8">
-      <div className="pb-8">Convert any type of text into any other text that you'd like. Connect it to tasks too!</div>
-      <Button className="mb-8">Add sample of your writing</Button>
-      <Button className="ml-8">See examples</Button>
-      {/* ^This takes them into a popup form */}
-      <div className="flex">
-        <div className="hidden lg:block pr-8 self-center"><Button>+</Button></div>
-        <div className="flex-auto grid gap-6 lg:grid-cols-2">
+    <div className="w-full px-8">
+      <div className="flex flex-row justify-between pb-8">
+        <div className="pt-2 text-primary">
+          Copy paste any type of text that you&apos;d like to convert to another format
+          <div className="pt-4 *:mb-4">
+            <div>Generate with <InlineSnippet>Cmd / Ctrl + Enter</InlineSnippet></div>
+            <form id="translate-form" onSubmit={handleSubmitWrapper} className="*:mr-2">
+              <Button type="submit">
+                {isLoading ? "Loading..." : "Run"} 
+              </Button>
+              {/* <PopoverTranslate title="Add template" /> */}
+              {/* <PresetSelector presets={presets} /> */}
+              {/* <DialogUnderTheHood /> */}
+            </form>
+          </div>
+          
+        </div>
+        <div>
+          {/* <Toolbar /> */}
+        </div>
+      </div>
+      <Separator />
+      {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
+      <ResizablePanelGroup direction="horizontal" className="*:m-8">
+        <ResizablePanel>
           <div className="grid gap-4">
             <div className="flex items-center gap-4">
-              <Label htmlFor="source-language">Source Material</Label>
-              <Select>
-                {options.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </Select>
+              <Label htmlFor="source-language">Source Text</Label>
+              {/* <TranslateFilter title="Templates" options={templateOptions} /> */}
             </div>
+            <TemplateCombobox templates={templates} template={sourceTemplate} setTemplate={setSourceTemplate}/>
             <div className="rounded-lg border border-gray-200 dark:border-gray-800">
               <Textarea
-                className="w-full min-h-[200px] p-4 text-base font-normal border-0 resize-none"
+                className="w-full min-h-[200px] p-4 text-base font-normal rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 focus:border-gray-700 dark:focus:border-gray-700"
                 id="source-text"
                 placeholder="Enter your text"
+                onChange={handleInputChange}
               />
             </div>
           </div>
-          <div className="grid gap-4">
-            <div className="flex items-center gap-4">
-              <Label htmlFor="target-language">Target Material</Label>
-              {/* You may select multiple */}
-              <Select>
-                {options.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </Select>
-            </div>
-            <div className="rounded-lg border border-gray-200 dark:border-gray-800">
-              <Textarea
-                className="w-full min-h-[200px] p-4 text-base font-normal border-0 resize-none"
-                id="translated-text"
-                placeholder="Translation"
-                readOnly
-              />
-            </div>
+        </ResizablePanel>
+        <ResizableHandle />
+        <ResizablePanel>
+          <div className="flex items-center gap-4">
+            <Label htmlFor="target-language">Target(s)</Label>
+            {/* <TranslateFilter title="Templates" options={templateOptions}/> */}
+            {/* <TranslateFilter title="Models" options={modelOptions} /> */}
           </div>
-        </div>
-        <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div>
-      </div>
+          <div className="grid grid-cols-1 gap-4 mt-4">
+            <div>
+              <div className="flex justify-between">
+                <TemplateCombobox templates={templates} template={targetTemplate} setTemplate={setTargetTemplate} />
+                {lastAssistantMessage?.content && (
+                  <Button variant="ghost"><CopyIcon className='h-4' onClick={() => {
+                    navigator.clipboard.writeText(lastAssistantMessage?.content || '')
+                    toast.success('Copied to clipboard')
+                  }}/></Button>
+                )}
+              </div>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-800 mt-4">
+                <div
+                  className="w-full min-h-[200px] p-4 text-base font-normal border-0 resize-none"
+                  id="translated-text">
+                    {lastAssistantMessage?.content || ''}
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+        </ResizablePanel>
+
+      </ResizablePanelGroup>
+        {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
+      {'For debugging: \n' + JSON.stringify(messages)}
+      { error != null  ?? (<div>Oops, looks like there was an error from the model provider. Try rerunning!</div>) }
       <div className="flex w-full py-4">
-        <Button className="ml-auto lg:hidden" type="submit">
+        {/* <Button className="ml-auto lg:hidden" type="submit">
           + Integrate with your accounts +
-        </Button>
+        </Button> */}
       </div>
     </div>
   )

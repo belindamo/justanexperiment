@@ -24,12 +24,12 @@ export default function WIP() {
         </ul>
       </div>
       <div>
-        You can also write who you are or what you'd like to use AI for. Then I can route you the right way ^^
+        {`You can also write who you are or what you'd like to use AI for. Then I can route you the right way ^^`}
       </div>
       <input placeholder="I am a 3rd year Computer Science student at University of Toronto."/>
       <div>
         Experiments:
-        Lastly, here's a long list of all the experiments I've done so far. (note to self: maybe this is in the header in home...) These are <i>very</i> messy and not at all to academic standards lol, but they're a good way to see what I've been up to.
+        {`Lastly, here's a long list of all the experiments I've done so far. (note to self: maybe this is in the header in home...) These are <i>very</i> messy and not at all to academic standards lol, but they're a good way to see what I've been up to.`}
       </div>
       <div>
         <ul>
@@ -38,7 +38,7 @@ export default function WIP() {
           <li>exp 3</li>
         </ul>
       </div>
-      <div>Writing: please feel free to browse my writing too! It's not very organized but I welcome any readers ^^"</div>
+      <div>{`Writing: please feel free to browse my writing too! It's not very organized but I welcome any readers ^^`}</div>
       <div>FAQs</div>
       <div>
         <div>
@@ -47,18 +47,18 @@ export default function WIP() {
         ChatGPT has been really useful but still lacking in a lot of ways. So, I made this interface so that AI feels even more useful.
         </div> 
         <div>
-          How is this different from ChatGPT? ---
+          {`How is this different from ChatGPT? ---
           1. This is a bit more opinionated towards the stuff that I've really enjoyed using ChatGPT for. 
           2. Also, you'll be able to access more AI models than just ChatGPT.
-          3. We never store your local info. Our code is public so you can double check this yourself. We'll only pull info from your computer if you give us permission to do so.
+          3. We never store your local info. Our code is public so you can double check this yourself. We'll only pull info from your computer if you give us permission to do so.`}
         </div>
         <div> 
           Can you tell me a bit more about how your data privacy works? ---
           Sure thing! We wrote it in more depth here, in simple everyday language. 
         </div>
         <div>
-          Why is this "Just an Experiment"? ---
-          AI is improving so fast! So things here will also improve very quickly. 
+          {`Why is this "Just an Experiment"? ---
+          AI is improving so fast! So things here will also improve very quickly. `}
         </div>
       </div>
       <div>Enjoy ❤️</div>

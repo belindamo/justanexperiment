@@ -3,6 +3,7 @@ import { InlineSnippet } from "@/components/form/domain-configuration";
 export default function What() {
   return (
     <div>
+    {`
     Thank you for visiting our website ☺️ ❤️
 
     # How it works: 
@@ -32,7 +33,7 @@ export default function What() {
     # FAQs
     - Who are you?? hiya
     - 
-
+    `}
     </div>
   );
 }
