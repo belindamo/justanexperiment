@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@hookform/resolvers':
-    specifier: ^3.3.4
-    version: 3.3.4(react-hook-form@7.50.1)
+    specifier: ^2.6.1
+    version: 2.6.1(react-hook-form@7.50.1)
   '@next-auth/prisma-adapter':
     specifier: ^1.0.7
     version: 1.0.7(@prisma/client@5.9.1)(next-auth@4.24.5)
@@ -174,8 +174,8 @@ dependencies:
     specifier: ^10.0.0
     version: 10.0.0(react@18.2.0)
   zod:
-    specifier: link:@hookform/resolvers/zod
-    version: link:@hookform/resolvers/zod
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@tailwindcss/forms':
@@ -436,8 +436,8 @@ packages:
       tailwindcss: 3.4.1
     dev: false
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.50.1):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+  /@hookform/resolvers@2.6.1(react-hook-form@7.50.1):
+    resolution: {integrity: sha512-7tml6bUUzdkk7tYb5LBk4i6ctV/1Rs4U5qVxrNBXZd8ZhxvsELI0TyYrnCK0XSlCo8Htlat8TOzxSZcKWOH5KQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
@@ -9360,6 +9360,10 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
   /zwitch@2.0.4:

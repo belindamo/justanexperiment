@@ -23,42 +23,43 @@ const formSchema = z.object({
 });
 
 export default function EnterPhoneNumber() {
+  return (<div></div>)
   // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      code: "",
-    },
-  });
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema as any),
+  //   defaultValues: {
+  //     code: "",
+  //   },
+  // });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  // // 2. Define a submit handler.
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   // Do something with the form values.
+  //   // ✅ This will be type-safe and validated.
+  //   console.log(values);
+  // }
 
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="code"
-          render={({ field }) => (
-            <FormItem>
-              {/* <FormLabel>Name</FormLabel> */}
-              {/* TODO: add phone number here */}
-              <FormControl>
-                <Input placeholder="XXXXXXX" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      </form>
-    </Form>
-  );
+  // return (
+  //   <Form {...form}>
+  //     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+  //       <FormField
+  //         control={form.control}
+  //         name="code"
+  //         render={({ field }) => (
+  //           <FormItem>
+  //             {/* <FormLabel>Name</FormLabel> */}
+  //             {/* TODO: add phone number here */}
+  //             <FormControl>
+  //               <Input placeholder="XXXXXXX" {...field} />
+  //             </FormControl>
+  //             {/* <FormDescription>
+  //               This is your public display name.
+  //             </FormDescription> */}
+  //             <FormMessage />
+  //           </FormItem>
+  //         )}
+  //       />
+  //     </form>
+  //   </Form>
+  // );
 }

@@ -71,7 +71,7 @@ export function TranslateFilter() {
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
+      {/* <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8 border-dashed">
           <PlusCircledIcon className="mr-2 h-4 w-4" />
           {title}
@@ -171,7 +171,7 @@ export function TranslateFilter() {
             )}
           </CommandList>
         </Command>
-      </PopoverContent>
+      </PopoverContent> */}
     </Popover>
   );
 }

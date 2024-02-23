@@ -23,50 +23,53 @@ const formSchema = z.object({
 });
 
 export default function Confirm() {
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      code: "",
-    },
-  });
-
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
-
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="text-center">
-        Thanks 🐱 We texted you a verification code, please add here!
-      </h1>
-      <br />
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormField
-            control={form.control}
-            name="code"
-            render={({ field }) => (
-              <FormItem>
-                {/* <FormLabel>Name</FormLabel> */}
-                {/* TODO: add phone number here */}
-                <FormControl>
-                  <Input placeholder="XXXXXXX" {...field} />
-                </FormControl>
-                {/* <FormDescription>
-                  This is your public display name.
-                </FormDescription> */}
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </form>
-      </Form>
-    </main>
+    <div></div>
   );
+  // // 1. Define your form.
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: {
+  //     code: "",
+  //   },
+  // });
+
+  // // 2. Define a submit handler.
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   // Do something with the form values.
+  //   // ✅ This will be type-safe and validated.
+  //   console.log(values);
+  // }
+
+  // return (
+  //   <main className="flex min-h-screen flex-col items-center p-24">
+  //     <h1 className="text-center">
+  //       Thanks 🐱 We texted you a verification code, please add here!
+  //     </h1>
+  //     <br />
+  //     <Form {...form}>
+  //       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+  //         <FormField
+  //           control={form.control}
+  //           name="code"
+  //           render={({ field }) => (
+  //             <FormItem>
+  //               {/* <FormLabel>Name</FormLabel> */}
+  //               {/* TODO: add phone number here */}
+  //               <FormControl>
+  //                 <Input placeholder="XXXXXXX" {...field} />
+  //               </FormControl>
+  //               {/* <FormDescription>
+  //                 This is your public display name.
+  //               </FormDescription> */}
+  //               <FormMessage />
+  //             </FormItem>
+  //           )}
+  //         />
+  //       </form>
+  //     </Form>
+  //   </main>
+  // );
 }
 
 // "use client"

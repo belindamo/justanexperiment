@@ -26,70 +26,73 @@ const formSchema = z.object({
 });
 
 export default function Enter() {
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      "phone-number": "",
-    },
-  });
-
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
-
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="text-center">
-        Hi! Let&apos;s see how we can make your day a bit easier 💛 🥰
-      </h1>
-
-      <br />
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                {/* <FormLabel>Name</FormLabel> */}
-                <FormControl>
-                  <Input placeholder="Name" {...field} />
-                </FormControl>
-                {/* <FormDescription>
-                  This is your public display name.
-                </FormDescription> */}
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone-number"
-            render={({ field }) => (
-              <FormItem>
-                {/* <FormLabel>Name</FormLabel> */}
-                <FormControl>
-                  <Input placeholder="Phone Number" {...field} />
-                </FormControl>
-                {/* <FormDescription>
-                  This is your public display name.
-                </FormDescription> */}
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" style={{ float: "right" }}>
-            ➡
-          </Button>
-        </form>
-      </Form>
-    </main>
+    <div></div>
   );
+  // // 1. Define your form.
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: {
+  //     name: "",
+  //     "phone-number": "",
+  //   },
+  // });
+
+  // // 2. Define a submit handler.
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   // Do something with the form values.
+  //   // ✅ This will be type-safe and validated.
+  //   console.log(values);
+  // }
+
+  // return (
+  //   <main className="flex min-h-screen flex-col items-center p-24">
+  //     <h1 className="text-center">
+  //       Hi! Let&apos;s see how we can make your day a bit easier 💛 🥰
+  //     </h1>
+
+  //     <br />
+  //     <Form {...form}>
+  //       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+  //         <FormField
+  //           control={form.control}
+  //           name="name"
+  //           render={({ field }) => (
+  //             <FormItem>
+  //               {/* <FormLabel>Name</FormLabel> */}
+  //               <FormControl>
+  //                 <Input placeholder="Name" {...field} />
+  //               </FormControl>
+  //               {/* <FormDescription>
+  //                 This is your public display name.
+  //               </FormDescription> */}
+  //               <FormMessage />
+  //             </FormItem>
+  //           )}
+  //         />
+  //         <FormField
+  //           control={form.control}
+  //           name="phone-number"
+  //           render={({ field }) => (
+  //             <FormItem>
+  //               {/* <FormLabel>Name</FormLabel> */}
+  //               <FormControl>
+  //                 <Input placeholder="Phone Number" {...field} />
+  //               </FormControl>
+  //               {/* <FormDescription>
+  //                 This is your public display name.
+  //               </FormDescription> */}
+  //               <FormMessage />
+  //             </FormItem>
+  //           )}
+  //         />
+  //         <Button type="submit" style={{ float: "right" }}>
+  //           ➡
+  //         </Button>
+  //       </form>
+  //     </Form>
+  //   </main>
+  // );
 }
 
 // "use client"
