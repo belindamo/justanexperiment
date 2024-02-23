@@ -1,14 +1,14 @@
 // Used only for Novel editor
 
-import OpenAI from 'openai';
+import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 const openai = new OpenAI({
-  apiKey: process.env['OPENAI_API_KEY'],
-})
+  apiKey: process.env["OPENAI_API_KEY"],
+});
 
 export const runtime = "edge";
 
@@ -42,11 +42,11 @@ export async function POST(req: Request): Promise<Response> {
 
   try {
     let { prompt: content } = await req.json();
-  
+
     // remove trailing slash,
     // slice the content from the end to prioritize later characters
     content = content.replace(/\/$/, "").slice(-5000);
-  
+
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -71,13 +71,12 @@ export async function POST(req: Request): Promise<Response> {
       stream: true,
       n: 1,
     });
-  
+
     // Convert the response into a friendly text-stream
     const stream = OpenAIStream(response);
 
     // Respond with the stream
     return new StreamingTextResponse(stream);
-
   } catch (error) {
     // Check if the error is an APIError
     if (error instanceof OpenAI.APIError) {

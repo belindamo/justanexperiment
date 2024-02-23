@@ -1,15 +1,15 @@
 export interface Preset {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 const options = [
-  'Blog post',
-  'Documentation',
-  'Landing page',
-  'Research markdown',
-  'Research proposal',
-'Literature review',
+  "Blog post",
+  "Documentation",
+  "Landing page",
+  "Research markdown",
+  "Research proposal",
+  "Literature review",
   // 'Research proposal',
   // 'Marketing copy',
   // 'Product description',
@@ -18,9 +18,12 @@ const options = [
   // 'English'
   // 'Spanish as spoken locally in Mexico'
   // Probs like more filters that are action oriented like: shorten, summarize, expand, etc.
-]
+];
 
-export const presets: Preset[] = options.map((option, i) => ({id: i.toString(), name: option}));
+export const presets: Preset[] = options.map((option, i) => ({
+  id: i.toString(),
+  name: option,
+}));
 
 // export const presets: Preset[] = [
 //   {

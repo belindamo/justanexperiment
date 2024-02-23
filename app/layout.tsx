@@ -5,16 +5,14 @@ import { Providers } from "./providers";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 
-const title =
-  "Just an Experiment";
-const description =
-  "AI, knowledge, and distribution experiments";
+const title = "Just an Experiment";
+const description = "AI, knowledge, and distribution experiments";
 const image = "https://justanexperiment.com/thumbnail.png";
 
 export const metadata: Metadata = {
   title,
   description,
-  icons: ["https://justanexperiment.com/favicon.ico"], 
+  icons: ["https://justanexperiment.com/favicon.ico"],
   openGraph: {
     title,
     description,

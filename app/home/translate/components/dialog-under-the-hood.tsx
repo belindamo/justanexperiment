@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,9 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export function DialogUnderTheHood() {
   return (
@@ -20,9 +20,7 @@ export function DialogUnderTheHood() {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit System Settings</DialogTitle>
-          <DialogDescription>
-            Edit the translation settings
-          </DialogDescription>
+          <DialogDescription>Edit the translation settings</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
@@ -51,5 +49,5 @@ export function DialogUnderTheHood() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

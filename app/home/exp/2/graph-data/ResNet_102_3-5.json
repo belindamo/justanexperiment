@@ -1,919 +1,919 @@
 {
   "nodes": [
-      {
-          "id": "0 - ResNet",
-          "name": "ResNet"
-      },
-      {
-          "id": "1 - Convolutional Neural Network",
-          "name": "Convolutional Neural Network",
-          "description": "A type of neural network that is designed for processing grid-like data, such as images."
-      },
-      {
-          "id": "2 - Deep Learning",
-          "name": "Deep Learning",
-          "description": "A subfield of machine learning that focuses on artificial neural networks and their multi-layer architectures."
-      },
-      {
-          "id": "3 - Image Classification",
-          "name": "Image Classification",
-          "description": "The task of assigning a label or category to an image based on its visual content."
-      },
-      {
-          "id": "4 - Feature Extraction",
-          "name": "Feature Extraction",
-          "description": "The process of obtaining relevant information or features from raw data."
-      },
-      {
-          "id": "5 - Training",
-          "name": "Training",
-          "description": "The process of teaching a machine learning model to make predictions or classify data by optimization algorithms."
-      },
-      {
-          "id": "6 - Convolutional Layer",
-          "name": "Convolutional Layer",
-          "description": "A layer in a convolutional neural network that applies a convolution operation to the input."
-      },
-      {
-          "id": "7 - Activation Function",
-          "name": "Activation Function",
-          "description": "A mathematical function used in neural networks to introduce non-linearities and enable complex mappings between the input and output."
-      },
-      {
-          "id": "8 - Residual Learning",
-          "name": "Residual Learning",
-          "description": "A learning technique that handles training of deep neural networks by using residual connections."
-      },
-      {
-          "id": "9 - Convolutional Layer",
-          "name": "Convolutional Layer",
-          "description": "The primary building block of a Convolutional Neural Network (CNN), responsible for applying a convolution operation to the input data."
-      },
-      {
-          "id": "10 - Pooling Layer",
-          "name": "Pooling Layer",
-          "description": "A layer in a CNN that reduces the spatial dimensions of the input data, helping to reduce the number of parameters and the computational complexity of the network."
-      },
-      {
-          "id": "11 - Activation Function",
-          "name": "Activation Function",
-          "description": "A function applied to the output of a neuron or a layer in a CNN, responsible for introducing non-linearity to the network and allowing it to learn complex patterns."
-      },
-      {
-          "id": "12 - Fully Connected Layer",
-          "name": "Fully Connected Layer",
-          "description": "A layer in a CNN that connects every neuron from the previous layer to the current layer, used for classification or regression tasks."
-      },
-      {
-          "id": "13 - Loss Function",
-          "name": "Loss Function",
-          "description": "A function that measures the discrepancy between the predicted output and the true output in a CNN, used for training the network and updating the weights."
-      },
-      {
-          "id": "14 - Gradient Descent",
-          "name": "Gradient Descent",
-          "description": "An optimization algorithm used in training a CNN, which iteratively adjusts the network's weights in the direction of steepest descent of the loss function."
-      },
-      {
-          "id": "15 - Backpropagation",
-          "name": "Backpropagation",
-          "description": "A technique used in training a CNN to calculate the gradient of the loss function with respect to each weight in the network, allowing for efficient weight updates."
-      },
-      {
-          "id": "16 - Kernel",
-          "name": "Kernel",
-          "description": "A small matrix used in the convolutional layer of a CNN to extract features from the input data by performing a dot product with the input data."
-      },
-      {
-          "id": "17 - Epoch",
-          "name": "Epoch",
-          "description": "A complete pass through the entire training dataset in training a CNN, where each input sample has been processed forward and backward through the network."
-      },
-      {
-          "id": "18 - Batch Normalization",
-          "name": "Batch Normalization",
-          "description": "A technique used in training a CNN to normalize the activations of each layer, improving the stability and convergence speed of the network."
-      },
-      {
-          "id": "19 - Artificial Neural Networks",
-          "name": "Artificial Neural Networks",
-          "description": "A computational model inspired by the biological neural networks in the human brain"
-      },
-      {
-          "id": "20 - Backpropagation",
-          "name": "Backpropagation",
-          "description": "An algorithm used to train artificial neural networks by iteratively adjusting the weights of the network"
-      },
-      {
-          "id": "21 - Convolutional Neural Networks",
-          "name": "Convolutional Neural Networks",
-          "description": "A type of artificial neural network commonly used for image recognition and processing"
-      },
-      {
-          "id": "22 - Recurrent Neural Networks",
-          "name": "Recurrent Neural Networks",
-          "description": "A type of artificial neural network with feedback connections, making it capable of processing sequential data"
-      },
-      {
-          "id": "23 - Generative Adversarial Networks",
-          "name": "Generative Adversarial Networks",
-          "description": "A class of neural networks that use a generative and discriminative model in a two-player minimax game"
-      },
-      {
-          "id": "24 - Transfer Learning",
-          "name": "Transfer Learning",
-          "description": "A technique in machine learning where a model trained on one task is repurposed on a new related task"
-      },
-      {
-          "id": "25 - Autoencoders",
-          "name": "Autoencoders",
-          "description": "A type of artificial neural network used for unsupervised learning by training an encoder and a decoder model"
-      },
-      {
-          "id": "26 - Deep Reinforcement Learning",
-          "name": "Deep Reinforcement Learning",
-          "description": "A combination of deep learning and reinforcement learning used to train agents in an environment"
-      },
-      {
-          "id": "27 - Long Short-Term Memory",
-          "name": "Long Short-Term Memory",
-          "description": "A type of recurrent neural network cell designed to capture long-term dependencies in sequential data"
-      },
-      {
-          "id": "28 - Attention Mechanism",
-          "name": "Attention Mechanism",
-          "description": "A mechanism that allows neural networks to focus on specific parts of an input sequence"
-      },
-      {
-          "id": "29 - Image Processing",
-          "name": "Image Processing",
-          "description": "The use of algorithms and techniques to enhance and manipulate images"
-      },
-      {
-          "id": "30 - Computer Vision",
-          "name": "Computer Vision",
-          "description": "The field of study that focuses on enabling computers to see and interpret visual information"
-      },
-      {
-          "id": "31 - Pattern Recognition",
-          "name": "Pattern Recognition",
-          "description": "The identification of regularities or patterns in data"
-      },
-      {
-          "id": "32 - Machine Learning",
-          "name": "Machine Learning",
-          "description": "The scientific study of algorithms and statistical models that computer systems use to perform a specific task without explicit instructions"
-      },
-      {
-          "id": "33 - Deep Learning",
-          "name": "Deep Learning",
-          "description": "A subfield of machine learning that focuses on artificial neural networks with multiple layers"
-      },
-      {
-          "id": "34 - Convolutional Neural Networks (CNNs)",
-          "name": "Convolutional Neural Networks (CNNs)",
-          "description": "A type of deep neural network specifically designed for image processing and classification"
-      },
-      {
-          "id": "35 - Feature Extraction",
-          "name": "Feature Extraction",
-          "description": "The process of selecting and transforming raw data into a set of features that represent the original data"
-      },
-      {
-          "id": "36 - Image Segmentation",
-          "name": "Image Segmentation",
-          "description": "The partitioning of an image into multiple segments with the goal of simplifying or changing the representation of the image"
-      },
-      {
-          "id": "37 - Data Augmentation",
-          "name": "Data Augmentation",
-          "description": "The technique of generating new training examples by applying random transformations to existing data"
-      },
-      {
-          "id": "38 - Labeling",
-          "name": "Labeling",
-          "description": "The process of assigning one or more semantic labels or categories to an image"
-      },
-      {
-          "id": "39 - Dimensionality Reduction",
-          "name": "Dimensionality Reduction",
-          "description": "Techniques to reduce the number of input variables or features"
-      },
-      {
-          "id": "40 - Feature Selection",
-          "name": "Feature Selection",
-          "description": "Methods to select a subset of relevant features from the original feature set"
-      },
-      {
-          "id": "41 - Feature Scaling",
-          "name": "Feature Scaling",
-          "description": "Techniques to scale the values of features to a specified range"
-      },
-      {
-          "id": "42 - Feature Extraction",
-          "name": "Feature Extraction",
-          "description": "Methods to transform the original high-dimensional feature space into a lower-dimensional space"
-      },
-      {
-          "id": "43 - Principal Component Analysis",
-          "name": "Principal Component Analysis",
-          "description": "A technique to transform a set of correlated variables into a set of uncorrelated variables"
-      },
-      {
-          "id": "44 - Linear Discriminant Analysis",
-          "name": "Linear Discriminant Analysis",
-          "description": "A technique to find a linear combination of features that maximizes class separability"
-      },
-      {
-          "id": "45 - Independent Component Analysis",
-          "name": "Independent Component Analysis",
-          "description": "A technique to separate a set of source signals into statistically independent components"
-      },
-      {
-          "id": "46 - Non-negative Matrix Factorization",
-          "name": "Non-negative Matrix Factorization",
-          "description": "A technique to factorize a non-negative matrix into two non-negative matrices"
-      },
-      {
-          "id": "47 - Wavelet Transform",
-          "name": "Wavelet Transform",
-          "description": "A technique to decompose a signal into different frequency components using wavelets"
-      },
-      {
-          "id": "48 - Sparse Coding",
-          "name": "Sparse Coding",
-          "description": "A technique to represent a signal as a sparse linear combination of basis functions"
-      },
-      {
-          "id": "49 - Instruction",
-          "name": "Instruction",
-          "description": "The act of imparting knowledge or skills to someone through systematic guidance and explanation."
-      },
-      {
-          "id": "50 - Practice",
-          "name": "Practice",
-          "description": "The act of repeatedly performing an activity or task to improve proficiency and gain practical experience."
-      },
-      {
-          "id": "51 - Assessment",
-          "name": "Assessment",
-          "description": "The process of evaluating the learning progress, knowledge, or skills of a person through tests, exams, or other methods."
-      },
-      {
-          "id": "52 - Feedback",
-          "name": "Feedback",
-          "description": "Information provided to a person regarding their performance, understanding, or outcome in order to facilitate improvement."
-      },
-      {
-          "id": "53 - Learning Objectives",
-          "name": "Learning Objectives",
-          "description": "Clear, specific, and measurable statements that describe what a learner is expected to achieve as a result of a learning experience."
-      },
-      {
-          "id": "54 - Convolutional filters",
-          "name": "Convolutional filters",
-          "description": "Small matrices used to detect specific features in the input data"
-      },
-      {
-          "id": "55 - Stride",
-          "name": "Stride",
-          "description": "The step size at which the convolutional filters are applied to the input data"
-      },
-      {
-          "id": "56 - Padding",
-          "name": "Padding",
-          "description": "The technique of adding extra border pixels to the input data to preserve spatial dimensions"
-      },
-      {
-          "id": "57 - Activation function",
-          "name": "Activation function",
-          "description": "A mathematical function applied to the output of the convolutional layer to introduce non-linearity"
-      },
-      {
-          "id": "58 - Pooling",
-          "name": "Pooling",
-          "description": "A downsampling operation that reduces the spatial dimensions of the input data"
-      },
-      {
-          "id": "59 - Sigmoid Function",
-          "name": "Sigmoid Function",
-          "description": "A type of activation function that maps the input values to a range between 0 and 1."
-      },
-      {
-          "id": "60 - ReLU Function",
-          "name": "ReLU Function",
-          "description": "A type of activation function that sets all negative input values to zero and keeps the positive input values unchanged."
-      },
-      {
-          "id": "61 - Hyperbolic Tangent Function",
-          "name": "Hyperbolic Tangent Function",
-          "description": "A type of activation function that maps the input values to a range between -1 and 1."
-      },
-      {
-          "id": "62 - Step Function",
-          "name": "Step Function",
-          "description": "A type of activation function that outputs a binary value based on whether the input is greater or less than a certain threshold."
-      },
-      {
-          "id": "63 - Softmax Function",
-          "name": "Softmax Function",
-          "description": "A type of activation function used in multi-class classification problems to produce probabilities for each class."
-      },
-      {
-          "id": "64 - Linear Function",
-          "name": "Linear Function",
-          "description": "A simple activation function that outputs the input value without any transformation."
-      },
-      {
-          "id": "65 - Gaussian Function",
-          "name": "Gaussian Function",
-          "description": "A type of activation function that models the probability density of a normal distribution."
-      },
-      {
-          "id": "66 - Piecewise Linear Function",
-          "name": "Piecewise Linear Function",
-          "description": "An activation function that consists of multiple linear segments with different slopes and intercepts."
-      },
-      {
-          "id": "67 - Exponential Linear Unit (ELU)",
-          "name": "Exponential Linear Unit (ELU)",
-          "description": "A type of activation function that approximates the identity function for positive input values and saturates to a negative value for negative input values."
-      },
-      {
-          "id": "68 - Softplus Function",
-          "name": "Softplus Function",
-          "description": "A type of activation function that is a smooth approximation of the ReLU function."
-      },
-      {
-          "id": "69 - Identity Function",
-          "name": "Identity Function",
-          "description": "A type of activation function that outputs the same value as the input."
-      },
-      {
-          "id": "70 - Residual blocks",
-          "name": "Residual blocks",
-          "description": "Building blocks of residual learning models"
-      },
-      {
-          "id": "71 - Skip connections",
-          "name": "Skip connections",
-          "description": "Connections that bypass one or more layers in a neural network"
-      },
-      {
-          "id": "72 - Shortcut connections",
-          "name": "Shortcut connections",
-          "description": "Connections that directly connect two layers in a neural network"
-      },
-      {
-          "id": "73 - Identity mapping",
-          "name": "Identity mapping",
-          "description": "Learning an identity function using skip connections"
-      },
-      {
-          "id": "74 - Deep residual learning",
-          "name": "Deep residual learning",
-          "description": "Learning deep neural networks using residual connections"
-      },
-      {
-          "id": "75 - Residual learning frameworks",
-          "name": "Residual learning frameworks",
-          "description": "Frameworks that facilitate the implementation of residual learning"
-      },
-      {
-          "id": "76 - Input Feature Map",
-          "name": "Input Feature Map",
-          "description": "The input to the convolutional layer which is a 3-dimensional matrix representing the image or feature map."
-      },
-      {
-          "id": "77 - Kernel/Filter",
-          "name": "Kernel/Filter",
-          "description": "A small matrix of weights used for the convolution operation to extract features from the input feature map."
-      },
-      {
-          "id": "78 - Convolution Operation",
-          "name": "Convolution Operation",
-          "description": "The mathematical operation applied to the input feature map and kernel to produce the convolutional output."
-      },
-      {
-          "id": "79 - Stride",
-          "name": "Stride",
-          "description": "The step size used to slide the kernel over the input feature map during the convolution operation."
-      },
-      {
-          "id": "80 - Padding",
-          "name": "Padding",
-          "description": "The technique of adding additional rows and columns of zeros to the input feature map to control the size of the output."
-      },
-      {
-          "id": "81 - Feature Map",
-          "name": "Feature Map",
-          "description": "The output of the convolutional layer which represents the extracted features from the input feature map."
-      },
-      {
-          "id": "82 - Activation Function",
-          "name": "Activation Function",
-          "description": "A non-linear function applied element-wise to the feature map to introduce non-linearity and enhance the expressiveness of the model."
-      },
-      {
-          "id": "83 - Pooling",
-          "name": "Pooling",
-          "description": "A down-sampling operation applied to the feature map to reduce its spatial dimensions and retain the most important features."
-      },
-      {
-          "id": "84 - Stride",
-          "name": "Stride",
-          "description": "The step size used to slide the pooling window over the feature map during the pooling operation."
-      },
-      {
-          "id": "85 - Pooling Method (Max/Average)",
-          "name": "Pooling Method (Max/Average)",
-          "description": "The method used to aggregate values within the pooling window, either by taking the maximum value (max pooling) or average value (average pooling)."
-      },
-      {
-          "id": "86 - Max Pooling",
-          "name": "Max Pooling",
-          "description": "A pooling operation that selects the maximum value within a region of the input."
-      },
-      {
-          "id": "87 - Average Pooling",
-          "name": "Average Pooling",
-          "description": "A pooling operation that calculates the average value within a region of the input."
-      },
-      {
-          "id": "88 - Global Pooling",
-          "name": "Global Pooling",
-          "description": "A pooling operation that reduces the spatial dimensions of the input to a single value."
-      },
-      {
-          "id": "89 - Stride",
-          "name": "Stride",
-          "description": "The step size used to slide the pooling window across the input."
-      },
-      {
-          "id": "90 - Padding",
-          "name": "Padding",
-          "description": "The process of adding extra values around the borders of the input to preserve spatial dimensions."
-      },
-      {
-          "id": "91 - Sigmoid Function",
-          "name": "Sigmoid Function",
-          "description": "A sigmoid function is a mathematical function having a characteristic S-shaped curve or sigmoid curve. It is commonly used as an activation function in artificial neural networks."
-      },
-      {
-          "id": "92 - ReLU Function",
-          "name": "ReLU Function",
-          "description": "ReLU, or Rectified Linear Unit, is an activation function that transforms the input data by setting all negative values to zero, while the positive values remain unchanged."
-      },
-      {
-          "id": "93 - Softmax Function",
-          "name": "Softmax Function",
-          "description": "The softmax function is an activation function that takes as input a vector of real numbers and normalizes it into a probability distribution, where the sum of the values in the output vector is equal to 1."
-      },
-      {
-          "id": "94 - Tanh Function",
-          "name": "Tanh Function",
-          "description": "The hyperbolic tangent function, also known as the tanh function, is an activation function that maps input values to the range [-1, 1]. It is similar to the sigmoid function but centered at zero."
-      },
-      {
-          "id": "95 - Identity Function",
-          "name": "Identity Function",
-          "description": "The identity function is the simplest activation function, where the output is equal to the input without any transformation. It is commonly used in linear regression and other cases where the output should directly reflect the input."
-      },
-      {
-          "id": "96 - Neural Network",
-          "name": "Neural Network",
-          "description": "A computational model inspired by the human brain, typically consisting of interconnected nodes (neurons) organized in layers."
-      },
-      {
-          "id": "97 - Artificial Neural Network",
-          "name": "Artificial Neural Network",
-          "description": "A type of neural network that is designed to simulate the behavior of biological neural networks, with artificial neurons (nodes) and weighted connections between them."
-      },
-      {
-          "id": "98 - Deep Learning",
-          "name": "Deep Learning",
-          "description": "A subfield of machine learning that focuses on building and training deep neural networks, i.e., neural networks with multiple hidden layers."
-      },
-      {
-          "id": "99 - Feedforward Neural Network",
-          "name": "Feedforward Neural Network",
-          "description": "A type of artificial neural network where the connections between nodes do not form a cycle, and information flows forward from the input layer to the output layer."
-      },
-      {
-          "id": "100 - Layer",
-          "name": "Layer",
-          "description": "A component of a neural network that consists of one or more nodes (neurons) arranged in a specific way, and performs a specific computation on the input data."
-      },
-      {
-          "id": "101 - Fully Connected Layer",
-          "name": "Fully Connected Layer",
-          "description": "A type of layer in a neural network where each neuron is connected to every neuron in the previous and next layers, creating a fully connected graph structure."
-      }
+    {
+      "id": "0 - ResNet",
+      "name": "ResNet"
+    },
+    {
+      "id": "1 - Convolutional Neural Network",
+      "name": "Convolutional Neural Network",
+      "description": "A type of neural network that is designed for processing grid-like data, such as images."
+    },
+    {
+      "id": "2 - Deep Learning",
+      "name": "Deep Learning",
+      "description": "A subfield of machine learning that focuses on artificial neural networks and their multi-layer architectures."
+    },
+    {
+      "id": "3 - Image Classification",
+      "name": "Image Classification",
+      "description": "The task of assigning a label or category to an image based on its visual content."
+    },
+    {
+      "id": "4 - Feature Extraction",
+      "name": "Feature Extraction",
+      "description": "The process of obtaining relevant information or features from raw data."
+    },
+    {
+      "id": "5 - Training",
+      "name": "Training",
+      "description": "The process of teaching a machine learning model to make predictions or classify data by optimization algorithms."
+    },
+    {
+      "id": "6 - Convolutional Layer",
+      "name": "Convolutional Layer",
+      "description": "A layer in a convolutional neural network that applies a convolution operation to the input."
+    },
+    {
+      "id": "7 - Activation Function",
+      "name": "Activation Function",
+      "description": "A mathematical function used in neural networks to introduce non-linearities and enable complex mappings between the input and output."
+    },
+    {
+      "id": "8 - Residual Learning",
+      "name": "Residual Learning",
+      "description": "A learning technique that handles training of deep neural networks by using residual connections."
+    },
+    {
+      "id": "9 - Convolutional Layer",
+      "name": "Convolutional Layer",
+      "description": "The primary building block of a Convolutional Neural Network (CNN), responsible for applying a convolution operation to the input data."
+    },
+    {
+      "id": "10 - Pooling Layer",
+      "name": "Pooling Layer",
+      "description": "A layer in a CNN that reduces the spatial dimensions of the input data, helping to reduce the number of parameters and the computational complexity of the network."
+    },
+    {
+      "id": "11 - Activation Function",
+      "name": "Activation Function",
+      "description": "A function applied to the output of a neuron or a layer in a CNN, responsible for introducing non-linearity to the network and allowing it to learn complex patterns."
+    },
+    {
+      "id": "12 - Fully Connected Layer",
+      "name": "Fully Connected Layer",
+      "description": "A layer in a CNN that connects every neuron from the previous layer to the current layer, used for classification or regression tasks."
+    },
+    {
+      "id": "13 - Loss Function",
+      "name": "Loss Function",
+      "description": "A function that measures the discrepancy between the predicted output and the true output in a CNN, used for training the network and updating the weights."
+    },
+    {
+      "id": "14 - Gradient Descent",
+      "name": "Gradient Descent",
+      "description": "An optimization algorithm used in training a CNN, which iteratively adjusts the network's weights in the direction of steepest descent of the loss function."
+    },
+    {
+      "id": "15 - Backpropagation",
+      "name": "Backpropagation",
+      "description": "A technique used in training a CNN to calculate the gradient of the loss function with respect to each weight in the network, allowing for efficient weight updates."
+    },
+    {
+      "id": "16 - Kernel",
+      "name": "Kernel",
+      "description": "A small matrix used in the convolutional layer of a CNN to extract features from the input data by performing a dot product with the input data."
+    },
+    {
+      "id": "17 - Epoch",
+      "name": "Epoch",
+      "description": "A complete pass through the entire training dataset in training a CNN, where each input sample has been processed forward and backward through the network."
+    },
+    {
+      "id": "18 - Batch Normalization",
+      "name": "Batch Normalization",
+      "description": "A technique used in training a CNN to normalize the activations of each layer, improving the stability and convergence speed of the network."
+    },
+    {
+      "id": "19 - Artificial Neural Networks",
+      "name": "Artificial Neural Networks",
+      "description": "A computational model inspired by the biological neural networks in the human brain"
+    },
+    {
+      "id": "20 - Backpropagation",
+      "name": "Backpropagation",
+      "description": "An algorithm used to train artificial neural networks by iteratively adjusting the weights of the network"
+    },
+    {
+      "id": "21 - Convolutional Neural Networks",
+      "name": "Convolutional Neural Networks",
+      "description": "A type of artificial neural network commonly used for image recognition and processing"
+    },
+    {
+      "id": "22 - Recurrent Neural Networks",
+      "name": "Recurrent Neural Networks",
+      "description": "A type of artificial neural network with feedback connections, making it capable of processing sequential data"
+    },
+    {
+      "id": "23 - Generative Adversarial Networks",
+      "name": "Generative Adversarial Networks",
+      "description": "A class of neural networks that use a generative and discriminative model in a two-player minimax game"
+    },
+    {
+      "id": "24 - Transfer Learning",
+      "name": "Transfer Learning",
+      "description": "A technique in machine learning where a model trained on one task is repurposed on a new related task"
+    },
+    {
+      "id": "25 - Autoencoders",
+      "name": "Autoencoders",
+      "description": "A type of artificial neural network used for unsupervised learning by training an encoder and a decoder model"
+    },
+    {
+      "id": "26 - Deep Reinforcement Learning",
+      "name": "Deep Reinforcement Learning",
+      "description": "A combination of deep learning and reinforcement learning used to train agents in an environment"
+    },
+    {
+      "id": "27 - Long Short-Term Memory",
+      "name": "Long Short-Term Memory",
+      "description": "A type of recurrent neural network cell designed to capture long-term dependencies in sequential data"
+    },
+    {
+      "id": "28 - Attention Mechanism",
+      "name": "Attention Mechanism",
+      "description": "A mechanism that allows neural networks to focus on specific parts of an input sequence"
+    },
+    {
+      "id": "29 - Image Processing",
+      "name": "Image Processing",
+      "description": "The use of algorithms and techniques to enhance and manipulate images"
+    },
+    {
+      "id": "30 - Computer Vision",
+      "name": "Computer Vision",
+      "description": "The field of study that focuses on enabling computers to see and interpret visual information"
+    },
+    {
+      "id": "31 - Pattern Recognition",
+      "name": "Pattern Recognition",
+      "description": "The identification of regularities or patterns in data"
+    },
+    {
+      "id": "32 - Machine Learning",
+      "name": "Machine Learning",
+      "description": "The scientific study of algorithms and statistical models that computer systems use to perform a specific task without explicit instructions"
+    },
+    {
+      "id": "33 - Deep Learning",
+      "name": "Deep Learning",
+      "description": "A subfield of machine learning that focuses on artificial neural networks with multiple layers"
+    },
+    {
+      "id": "34 - Convolutional Neural Networks (CNNs)",
+      "name": "Convolutional Neural Networks (CNNs)",
+      "description": "A type of deep neural network specifically designed for image processing and classification"
+    },
+    {
+      "id": "35 - Feature Extraction",
+      "name": "Feature Extraction",
+      "description": "The process of selecting and transforming raw data into a set of features that represent the original data"
+    },
+    {
+      "id": "36 - Image Segmentation",
+      "name": "Image Segmentation",
+      "description": "The partitioning of an image into multiple segments with the goal of simplifying or changing the representation of the image"
+    },
+    {
+      "id": "37 - Data Augmentation",
+      "name": "Data Augmentation",
+      "description": "The technique of generating new training examples by applying random transformations to existing data"
+    },
+    {
+      "id": "38 - Labeling",
+      "name": "Labeling",
+      "description": "The process of assigning one or more semantic labels or categories to an image"
+    },
+    {
+      "id": "39 - Dimensionality Reduction",
+      "name": "Dimensionality Reduction",
+      "description": "Techniques to reduce the number of input variables or features"
+    },
+    {
+      "id": "40 - Feature Selection",
+      "name": "Feature Selection",
+      "description": "Methods to select a subset of relevant features from the original feature set"
+    },
+    {
+      "id": "41 - Feature Scaling",
+      "name": "Feature Scaling",
+      "description": "Techniques to scale the values of features to a specified range"
+    },
+    {
+      "id": "42 - Feature Extraction",
+      "name": "Feature Extraction",
+      "description": "Methods to transform the original high-dimensional feature space into a lower-dimensional space"
+    },
+    {
+      "id": "43 - Principal Component Analysis",
+      "name": "Principal Component Analysis",
+      "description": "A technique to transform a set of correlated variables into a set of uncorrelated variables"
+    },
+    {
+      "id": "44 - Linear Discriminant Analysis",
+      "name": "Linear Discriminant Analysis",
+      "description": "A technique to find a linear combination of features that maximizes class separability"
+    },
+    {
+      "id": "45 - Independent Component Analysis",
+      "name": "Independent Component Analysis",
+      "description": "A technique to separate a set of source signals into statistically independent components"
+    },
+    {
+      "id": "46 - Non-negative Matrix Factorization",
+      "name": "Non-negative Matrix Factorization",
+      "description": "A technique to factorize a non-negative matrix into two non-negative matrices"
+    },
+    {
+      "id": "47 - Wavelet Transform",
+      "name": "Wavelet Transform",
+      "description": "A technique to decompose a signal into different frequency components using wavelets"
+    },
+    {
+      "id": "48 - Sparse Coding",
+      "name": "Sparse Coding",
+      "description": "A technique to represent a signal as a sparse linear combination of basis functions"
+    },
+    {
+      "id": "49 - Instruction",
+      "name": "Instruction",
+      "description": "The act of imparting knowledge or skills to someone through systematic guidance and explanation."
+    },
+    {
+      "id": "50 - Practice",
+      "name": "Practice",
+      "description": "The act of repeatedly performing an activity or task to improve proficiency and gain practical experience."
+    },
+    {
+      "id": "51 - Assessment",
+      "name": "Assessment",
+      "description": "The process of evaluating the learning progress, knowledge, or skills of a person through tests, exams, or other methods."
+    },
+    {
+      "id": "52 - Feedback",
+      "name": "Feedback",
+      "description": "Information provided to a person regarding their performance, understanding, or outcome in order to facilitate improvement."
+    },
+    {
+      "id": "53 - Learning Objectives",
+      "name": "Learning Objectives",
+      "description": "Clear, specific, and measurable statements that describe what a learner is expected to achieve as a result of a learning experience."
+    },
+    {
+      "id": "54 - Convolutional filters",
+      "name": "Convolutional filters",
+      "description": "Small matrices used to detect specific features in the input data"
+    },
+    {
+      "id": "55 - Stride",
+      "name": "Stride",
+      "description": "The step size at which the convolutional filters are applied to the input data"
+    },
+    {
+      "id": "56 - Padding",
+      "name": "Padding",
+      "description": "The technique of adding extra border pixels to the input data to preserve spatial dimensions"
+    },
+    {
+      "id": "57 - Activation function",
+      "name": "Activation function",
+      "description": "A mathematical function applied to the output of the convolutional layer to introduce non-linearity"
+    },
+    {
+      "id": "58 - Pooling",
+      "name": "Pooling",
+      "description": "A downsampling operation that reduces the spatial dimensions of the input data"
+    },
+    {
+      "id": "59 - Sigmoid Function",
+      "name": "Sigmoid Function",
+      "description": "A type of activation function that maps the input values to a range between 0 and 1."
+    },
+    {
+      "id": "60 - ReLU Function",
+      "name": "ReLU Function",
+      "description": "A type of activation function that sets all negative input values to zero and keeps the positive input values unchanged."
+    },
+    {
+      "id": "61 - Hyperbolic Tangent Function",
+      "name": "Hyperbolic Tangent Function",
+      "description": "A type of activation function that maps the input values to a range between -1 and 1."
+    },
+    {
+      "id": "62 - Step Function",
+      "name": "Step Function",
+      "description": "A type of activation function that outputs a binary value based on whether the input is greater or less than a certain threshold."
+    },
+    {
+      "id": "63 - Softmax Function",
+      "name": "Softmax Function",
+      "description": "A type of activation function used in multi-class classification problems to produce probabilities for each class."
+    },
+    {
+      "id": "64 - Linear Function",
+      "name": "Linear Function",
+      "description": "A simple activation function that outputs the input value without any transformation."
+    },
+    {
+      "id": "65 - Gaussian Function",
+      "name": "Gaussian Function",
+      "description": "A type of activation function that models the probability density of a normal distribution."
+    },
+    {
+      "id": "66 - Piecewise Linear Function",
+      "name": "Piecewise Linear Function",
+      "description": "An activation function that consists of multiple linear segments with different slopes and intercepts."
+    },
+    {
+      "id": "67 - Exponential Linear Unit (ELU)",
+      "name": "Exponential Linear Unit (ELU)",
+      "description": "A type of activation function that approximates the identity function for positive input values and saturates to a negative value for negative input values."
+    },
+    {
+      "id": "68 - Softplus Function",
+      "name": "Softplus Function",
+      "description": "A type of activation function that is a smooth approximation of the ReLU function."
+    },
+    {
+      "id": "69 - Identity Function",
+      "name": "Identity Function",
+      "description": "A type of activation function that outputs the same value as the input."
+    },
+    {
+      "id": "70 - Residual blocks",
+      "name": "Residual blocks",
+      "description": "Building blocks of residual learning models"
+    },
+    {
+      "id": "71 - Skip connections",
+      "name": "Skip connections",
+      "description": "Connections that bypass one or more layers in a neural network"
+    },
+    {
+      "id": "72 - Shortcut connections",
+      "name": "Shortcut connections",
+      "description": "Connections that directly connect two layers in a neural network"
+    },
+    {
+      "id": "73 - Identity mapping",
+      "name": "Identity mapping",
+      "description": "Learning an identity function using skip connections"
+    },
+    {
+      "id": "74 - Deep residual learning",
+      "name": "Deep residual learning",
+      "description": "Learning deep neural networks using residual connections"
+    },
+    {
+      "id": "75 - Residual learning frameworks",
+      "name": "Residual learning frameworks",
+      "description": "Frameworks that facilitate the implementation of residual learning"
+    },
+    {
+      "id": "76 - Input Feature Map",
+      "name": "Input Feature Map",
+      "description": "The input to the convolutional layer which is a 3-dimensional matrix representing the image or feature map."
+    },
+    {
+      "id": "77 - Kernel/Filter",
+      "name": "Kernel/Filter",
+      "description": "A small matrix of weights used for the convolution operation to extract features from the input feature map."
+    },
+    {
+      "id": "78 - Convolution Operation",
+      "name": "Convolution Operation",
+      "description": "The mathematical operation applied to the input feature map and kernel to produce the convolutional output."
+    },
+    {
+      "id": "79 - Stride",
+      "name": "Stride",
+      "description": "The step size used to slide the kernel over the input feature map during the convolution operation."
+    },
+    {
+      "id": "80 - Padding",
+      "name": "Padding",
+      "description": "The technique of adding additional rows and columns of zeros to the input feature map to control the size of the output."
+    },
+    {
+      "id": "81 - Feature Map",
+      "name": "Feature Map",
+      "description": "The output of the convolutional layer which represents the extracted features from the input feature map."
+    },
+    {
+      "id": "82 - Activation Function",
+      "name": "Activation Function",
+      "description": "A non-linear function applied element-wise to the feature map to introduce non-linearity and enhance the expressiveness of the model."
+    },
+    {
+      "id": "83 - Pooling",
+      "name": "Pooling",
+      "description": "A down-sampling operation applied to the feature map to reduce its spatial dimensions and retain the most important features."
+    },
+    {
+      "id": "84 - Stride",
+      "name": "Stride",
+      "description": "The step size used to slide the pooling window over the feature map during the pooling operation."
+    },
+    {
+      "id": "85 - Pooling Method (Max/Average)",
+      "name": "Pooling Method (Max/Average)",
+      "description": "The method used to aggregate values within the pooling window, either by taking the maximum value (max pooling) or average value (average pooling)."
+    },
+    {
+      "id": "86 - Max Pooling",
+      "name": "Max Pooling",
+      "description": "A pooling operation that selects the maximum value within a region of the input."
+    },
+    {
+      "id": "87 - Average Pooling",
+      "name": "Average Pooling",
+      "description": "A pooling operation that calculates the average value within a region of the input."
+    },
+    {
+      "id": "88 - Global Pooling",
+      "name": "Global Pooling",
+      "description": "A pooling operation that reduces the spatial dimensions of the input to a single value."
+    },
+    {
+      "id": "89 - Stride",
+      "name": "Stride",
+      "description": "The step size used to slide the pooling window across the input."
+    },
+    {
+      "id": "90 - Padding",
+      "name": "Padding",
+      "description": "The process of adding extra values around the borders of the input to preserve spatial dimensions."
+    },
+    {
+      "id": "91 - Sigmoid Function",
+      "name": "Sigmoid Function",
+      "description": "A sigmoid function is a mathematical function having a characteristic S-shaped curve or sigmoid curve. It is commonly used as an activation function in artificial neural networks."
+    },
+    {
+      "id": "92 - ReLU Function",
+      "name": "ReLU Function",
+      "description": "ReLU, or Rectified Linear Unit, is an activation function that transforms the input data by setting all negative values to zero, while the positive values remain unchanged."
+    },
+    {
+      "id": "93 - Softmax Function",
+      "name": "Softmax Function",
+      "description": "The softmax function is an activation function that takes as input a vector of real numbers and normalizes it into a probability distribution, where the sum of the values in the output vector is equal to 1."
+    },
+    {
+      "id": "94 - Tanh Function",
+      "name": "Tanh Function",
+      "description": "The hyperbolic tangent function, also known as the tanh function, is an activation function that maps input values to the range [-1, 1]. It is similar to the sigmoid function but centered at zero."
+    },
+    {
+      "id": "95 - Identity Function",
+      "name": "Identity Function",
+      "description": "The identity function is the simplest activation function, where the output is equal to the input without any transformation. It is commonly used in linear regression and other cases where the output should directly reflect the input."
+    },
+    {
+      "id": "96 - Neural Network",
+      "name": "Neural Network",
+      "description": "A computational model inspired by the human brain, typically consisting of interconnected nodes (neurons) organized in layers."
+    },
+    {
+      "id": "97 - Artificial Neural Network",
+      "name": "Artificial Neural Network",
+      "description": "A type of neural network that is designed to simulate the behavior of biological neural networks, with artificial neurons (nodes) and weighted connections between them."
+    },
+    {
+      "id": "98 - Deep Learning",
+      "name": "Deep Learning",
+      "description": "A subfield of machine learning that focuses on building and training deep neural networks, i.e., neural networks with multiple hidden layers."
+    },
+    {
+      "id": "99 - Feedforward Neural Network",
+      "name": "Feedforward Neural Network",
+      "description": "A type of artificial neural network where the connections between nodes do not form a cycle, and information flows forward from the input layer to the output layer."
+    },
+    {
+      "id": "100 - Layer",
+      "name": "Layer",
+      "description": "A component of a neural network that consists of one or more nodes (neurons) arranged in a specific way, and performs a specific computation on the input data."
+    },
+    {
+      "id": "101 - Fully Connected Layer",
+      "name": "Fully Connected Layer",
+      "description": "A type of layer in a neural network where each neuron is connected to every neuron in the previous and next layers, creating a fully connected graph structure."
+    }
   ],
   "links": [
-      {
-          "source": "0 - ResNet",
-          "target": "1 - Convolutional Neural Network"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "2 - Deep Learning"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "3 - Image Classification"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "4 - Feature Extraction"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "5 - Training"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "6 - Convolutional Layer"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "7 - Activation Function"
-      },
-      {
-          "source": "0 - ResNet",
-          "target": "8 - Residual Learning"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "9 - Convolutional Layer"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "10 - Pooling Layer"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "11 - Activation Function"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "12 - Fully Connected Layer"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "13 - Loss Function"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "14 - Gradient Descent"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "15 - Backpropagation"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "16 - Kernel"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "17 - Epoch"
-      },
-      {
-          "source": "1 - Convolutional Neural Network",
-          "target": "18 - Batch Normalization"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "19 - Artificial Neural Networks"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "20 - Backpropagation"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "21 - Convolutional Neural Networks"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "22 - Recurrent Neural Networks"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "23 - Generative Adversarial Networks"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "24 - Transfer Learning"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "25 - Autoencoders"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "26 - Deep Reinforcement Learning"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "27 - Long Short-Term Memory"
-      },
-      {
-          "source": "2 - Deep Learning",
-          "target": "28 - Attention Mechanism"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "29 - Image Processing"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "30 - Computer Vision"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "31 - Pattern Recognition"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "32 - Machine Learning"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "33 - Deep Learning"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "34 - Convolutional Neural Networks (CNNs)"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "35 - Feature Extraction"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "36 - Image Segmentation"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "37 - Data Augmentation"
-      },
-      {
-          "source": "3 - Image Classification",
-          "target": "38 - Labeling"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "39 - Dimensionality Reduction"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "40 - Feature Selection"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "41 - Feature Scaling"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "42 - Feature Extraction"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "43 - Principal Component Analysis"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "44 - Linear Discriminant Analysis"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "45 - Independent Component Analysis"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "46 - Non-negative Matrix Factorization"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "47 - Wavelet Transform"
-      },
-      {
-          "source": "4 - Feature Extraction",
-          "target": "48 - Sparse Coding"
-      },
-      {
-          "source": "5 - Training",
-          "target": "49 - Instruction"
-      },
-      {
-          "source": "5 - Training",
-          "target": "50 - Practice"
-      },
-      {
-          "source": "5 - Training",
-          "target": "51 - Assessment"
-      },
-      {
-          "source": "5 - Training",
-          "target": "52 - Feedback"
-      },
-      {
-          "source": "5 - Training",
-          "target": "53 - Learning Objectives"
-      },
-      {
-          "source": "6 - Convolutional Layer",
-          "target": "54 - Convolutional filters"
-      },
-      {
-          "source": "6 - Convolutional Layer",
-          "target": "55 - Stride"
-      },
-      {
-          "source": "6 - Convolutional Layer",
-          "target": "56 - Padding"
-      },
-      {
-          "source": "6 - Convolutional Layer",
-          "target": "57 - Activation function"
-      },
-      {
-          "source": "6 - Convolutional Layer",
-          "target": "58 - Pooling"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "59 - Sigmoid Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "60 - ReLU Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "61 - Hyperbolic Tangent Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "62 - Step Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "63 - Softmax Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "64 - Linear Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "65 - Gaussian Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "66 - Piecewise Linear Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "67 - Exponential Linear Unit (ELU)"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "68 - Softplus Function"
-      },
-      {
-          "source": "7 - Activation Function",
-          "target": "69 - Identity Function"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "70 - Residual blocks"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "71 - Skip connections"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "72 - Shortcut connections"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "73 - Identity mapping"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "74 - Deep residual learning"
-      },
-      {
-          "source": "8 - Residual Learning",
-          "target": "75 - Residual learning frameworks"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "76 - Input Feature Map"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "77 - Kernel/Filter"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "78 - Convolution Operation"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "79 - Stride"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "80 - Padding"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "81 - Feature Map"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "82 - Activation Function"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "83 - Pooling"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "84 - Stride"
-      },
-      {
-          "source": "9 - Convolutional Layer",
-          "target": "85 - Pooling Method (Max/Average)"
-      },
-      {
-          "source": "10 - Pooling Layer",
-          "target": "86 - Max Pooling"
-      },
-      {
-          "source": "10 - Pooling Layer",
-          "target": "87 - Average Pooling"
-      },
-      {
-          "source": "10 - Pooling Layer",
-          "target": "88 - Global Pooling"
-      },
-      {
-          "source": "10 - Pooling Layer",
-          "target": "89 - Stride"
-      },
-      {
-          "source": "10 - Pooling Layer",
-          "target": "90 - Padding"
-      },
-      {
-          "source": "11 - Activation Function",
-          "target": "91 - Sigmoid Function"
-      },
-      {
-          "source": "11 - Activation Function",
-          "target": "92 - ReLU Function"
-      },
-      {
-          "source": "11 - Activation Function",
-          "target": "93 - Softmax Function"
-      },
-      {
-          "source": "11 - Activation Function",
-          "target": "94 - Tanh Function"
-      },
-      {
-          "source": "11 - Activation Function",
-          "target": "95 - Identity Function"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "96 - Neural Network"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "97 - Artificial Neural Network"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "98 - Deep Learning"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "99 - Feedforward Neural Network"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "100 - Layer"
-      },
-      {
-          "source": "12 - Fully Connected Layer",
-          "target": "101 - Fully Connected Layer"
-      }
+    {
+      "source": "0 - ResNet",
+      "target": "1 - Convolutional Neural Network"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "2 - Deep Learning"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "3 - Image Classification"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "4 - Feature Extraction"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "5 - Training"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "6 - Convolutional Layer"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "7 - Activation Function"
+    },
+    {
+      "source": "0 - ResNet",
+      "target": "8 - Residual Learning"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "9 - Convolutional Layer"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "10 - Pooling Layer"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "11 - Activation Function"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "12 - Fully Connected Layer"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "13 - Loss Function"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "14 - Gradient Descent"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "15 - Backpropagation"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "16 - Kernel"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "17 - Epoch"
+    },
+    {
+      "source": "1 - Convolutional Neural Network",
+      "target": "18 - Batch Normalization"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "19 - Artificial Neural Networks"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "20 - Backpropagation"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "21 - Convolutional Neural Networks"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "22 - Recurrent Neural Networks"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "23 - Generative Adversarial Networks"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "24 - Transfer Learning"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "25 - Autoencoders"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "26 - Deep Reinforcement Learning"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "27 - Long Short-Term Memory"
+    },
+    {
+      "source": "2 - Deep Learning",
+      "target": "28 - Attention Mechanism"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "29 - Image Processing"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "30 - Computer Vision"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "31 - Pattern Recognition"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "32 - Machine Learning"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "33 - Deep Learning"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "34 - Convolutional Neural Networks (CNNs)"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "35 - Feature Extraction"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "36 - Image Segmentation"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "37 - Data Augmentation"
+    },
+    {
+      "source": "3 - Image Classification",
+      "target": "38 - Labeling"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "39 - Dimensionality Reduction"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "40 - Feature Selection"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "41 - Feature Scaling"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "42 - Feature Extraction"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "43 - Principal Component Analysis"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "44 - Linear Discriminant Analysis"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "45 - Independent Component Analysis"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "46 - Non-negative Matrix Factorization"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "47 - Wavelet Transform"
+    },
+    {
+      "source": "4 - Feature Extraction",
+      "target": "48 - Sparse Coding"
+    },
+    {
+      "source": "5 - Training",
+      "target": "49 - Instruction"
+    },
+    {
+      "source": "5 - Training",
+      "target": "50 - Practice"
+    },
+    {
+      "source": "5 - Training",
+      "target": "51 - Assessment"
+    },
+    {
+      "source": "5 - Training",
+      "target": "52 - Feedback"
+    },
+    {
+      "source": "5 - Training",
+      "target": "53 - Learning Objectives"
+    },
+    {
+      "source": "6 - Convolutional Layer",
+      "target": "54 - Convolutional filters"
+    },
+    {
+      "source": "6 - Convolutional Layer",
+      "target": "55 - Stride"
+    },
+    {
+      "source": "6 - Convolutional Layer",
+      "target": "56 - Padding"
+    },
+    {
+      "source": "6 - Convolutional Layer",
+      "target": "57 - Activation function"
+    },
+    {
+      "source": "6 - Convolutional Layer",
+      "target": "58 - Pooling"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "59 - Sigmoid Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "60 - ReLU Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "61 - Hyperbolic Tangent Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "62 - Step Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "63 - Softmax Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "64 - Linear Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "65 - Gaussian Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "66 - Piecewise Linear Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "67 - Exponential Linear Unit (ELU)"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "68 - Softplus Function"
+    },
+    {
+      "source": "7 - Activation Function",
+      "target": "69 - Identity Function"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "70 - Residual blocks"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "71 - Skip connections"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "72 - Shortcut connections"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "73 - Identity mapping"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "74 - Deep residual learning"
+    },
+    {
+      "source": "8 - Residual Learning",
+      "target": "75 - Residual learning frameworks"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "76 - Input Feature Map"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "77 - Kernel/Filter"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "78 - Convolution Operation"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "79 - Stride"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "80 - Padding"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "81 - Feature Map"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "82 - Activation Function"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "83 - Pooling"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "84 - Stride"
+    },
+    {
+      "source": "9 - Convolutional Layer",
+      "target": "85 - Pooling Method (Max/Average)"
+    },
+    {
+      "source": "10 - Pooling Layer",
+      "target": "86 - Max Pooling"
+    },
+    {
+      "source": "10 - Pooling Layer",
+      "target": "87 - Average Pooling"
+    },
+    {
+      "source": "10 - Pooling Layer",
+      "target": "88 - Global Pooling"
+    },
+    {
+      "source": "10 - Pooling Layer",
+      "target": "89 - Stride"
+    },
+    {
+      "source": "10 - Pooling Layer",
+      "target": "90 - Padding"
+    },
+    {
+      "source": "11 - Activation Function",
+      "target": "91 - Sigmoid Function"
+    },
+    {
+      "source": "11 - Activation Function",
+      "target": "92 - ReLU Function"
+    },
+    {
+      "source": "11 - Activation Function",
+      "target": "93 - Softmax Function"
+    },
+    {
+      "source": "11 - Activation Function",
+      "target": "94 - Tanh Function"
+    },
+    {
+      "source": "11 - Activation Function",
+      "target": "95 - Identity Function"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "96 - Neural Network"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "97 - Artificial Neural Network"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "98 - Deep Learning"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "99 - Feedforward Neural Network"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "100 - Layer"
+    },
+    {
+      "source": "12 - Fully Connected Layer",
+      "target": "101 - Fully Connected Layer"
+    }
   ]
 }

@@ -1,191 +1,191 @@
 {
   "nodes": [
-      {
-          "id": "0 - Science",
-          "name": "Science",
-          "description": "Science is a systematic process that builds and organizes knowledge in the form of testable explanations and predictions about the universe."
-      },
-      {
-          "id": "1 - Physics",
-          "name": "Physics",
-          "description": "The study of matter and energy and the interactions between them."
-      },
-      {
-          "id": "2 - Chemistry",
-          "name": "Chemistry",
-          "description": "The study of the composition, properties, and behavior of substances."
-      },
-      {
-          "id": "3 - Biology",
-          "name": "Biology",
-          "description": "The study of living organisms, including their structure, function, growth, evolution, and distribution."
-      },
-      {
-          "id": "4 - Geology",
-          "name": "Geology",
-          "description": "The study of the Earth's solid materials, including rocks, minerals, and the processes that shape the Earth's surface."
-      },
-      {
-          "id": "5 - Astronomy",
-          "name": "Astronomy",
-          "description": "The study of celestial objects and phenomena that originate outside the Earth's atmosphere."
-      },
-      {
-          "id": "6 - Environmental Science",
-          "name": "Environmental Science",
-          "description": "The study of the environment and how living organisms interact with it."
-      },
-      {
-          "id": "7 - Mathematics",
-          "name": "Mathematics",
-          "description": "The study of numbers, quantities, shapes, and patterns."
-      },
-      {
-          "id": "8 - Computer Science",
-          "name": "Computer Science",
-          "description": "The study of computation and computer systems."
-      },
-      {
-          "id": "9 - Statistics",
-          "name": "Statistics",
-          "description": "The study of the collection, analysis, interpretation, presentation, and organization of data."
-      },
-      {
-          "id": "10 - Psychology",
-          "name": "Psychology",
-          "description": "The scientific study of the mind and behavior."
-      },
-      {
-          "id": "11 - Sociology",
-          "name": "Sociology",
-          "description": "The study of society, its structure, functions, and development."
-      },
-      {
-          "id": "12 - Anthropology",
-          "name": "Anthropology",
-          "description": "The study of humans, past and present, and their societies."
-      },
-      {
-          "id": "13 - Political Science",
-          "name": "Political Science",
-          "description": "The study of government, political behavior, systems, and policies."
-      },
-      {
-          "id": "14 - Economics",
-          "name": "Economics",
-          "description": "The study of the production, distribution, and consumption of goods and services."
-      },
-      {
-          "id": "15 - History",
-          "name": "History",
-          "description": "The study of past events, particularly human affairs."
-      },
-      {
-          "id": "16 - Philosophy",
-          "name": "Philosophy",
-          "description": "The study of fundamental questions about existence, knowledge, values, reason, and more."
-      },
-      {
-          "id": "17 - Linguistics",
-          "name": "Linguistics",
-          "description": "The scientific study of language and its structure."
-      },
-      {
-          "id": "18 - Literature",
-          "name": "Literature",
-          "description": "The study of written works, such as novels, poems, plays, and essays."
-      },
-      {
-          "id": "19 - Art",
-          "name": "Art",
-          "description": "The study and creation of visual, auditory, or performing works that express human emotions and ideas."
-      },
-      {
-          "id": "20 - Music",
-          "name": "Music",
-          "description": "The study and enjoyment of sounds organized in time."
-      }
+    {
+      "id": "0 - Science",
+      "name": "Science",
+      "description": "Science is a systematic process that builds and organizes knowledge in the form of testable explanations and predictions about the universe."
+    },
+    {
+      "id": "1 - Physics",
+      "name": "Physics",
+      "description": "The study of matter and energy and the interactions between them."
+    },
+    {
+      "id": "2 - Chemistry",
+      "name": "Chemistry",
+      "description": "The study of the composition, properties, and behavior of substances."
+    },
+    {
+      "id": "3 - Biology",
+      "name": "Biology",
+      "description": "The study of living organisms, including their structure, function, growth, evolution, and distribution."
+    },
+    {
+      "id": "4 - Geology",
+      "name": "Geology",
+      "description": "The study of the Earth's solid materials, including rocks, minerals, and the processes that shape the Earth's surface."
+    },
+    {
+      "id": "5 - Astronomy",
+      "name": "Astronomy",
+      "description": "The study of celestial objects and phenomena that originate outside the Earth's atmosphere."
+    },
+    {
+      "id": "6 - Environmental Science",
+      "name": "Environmental Science",
+      "description": "The study of the environment and how living organisms interact with it."
+    },
+    {
+      "id": "7 - Mathematics",
+      "name": "Mathematics",
+      "description": "The study of numbers, quantities, shapes, and patterns."
+    },
+    {
+      "id": "8 - Computer Science",
+      "name": "Computer Science",
+      "description": "The study of computation and computer systems."
+    },
+    {
+      "id": "9 - Statistics",
+      "name": "Statistics",
+      "description": "The study of the collection, analysis, interpretation, presentation, and organization of data."
+    },
+    {
+      "id": "10 - Psychology",
+      "name": "Psychology",
+      "description": "The scientific study of the mind and behavior."
+    },
+    {
+      "id": "11 - Sociology",
+      "name": "Sociology",
+      "description": "The study of society, its structure, functions, and development."
+    },
+    {
+      "id": "12 - Anthropology",
+      "name": "Anthropology",
+      "description": "The study of humans, past and present, and their societies."
+    },
+    {
+      "id": "13 - Political Science",
+      "name": "Political Science",
+      "description": "The study of government, political behavior, systems, and policies."
+    },
+    {
+      "id": "14 - Economics",
+      "name": "Economics",
+      "description": "The study of the production, distribution, and consumption of goods and services."
+    },
+    {
+      "id": "15 - History",
+      "name": "History",
+      "description": "The study of past events, particularly human affairs."
+    },
+    {
+      "id": "16 - Philosophy",
+      "name": "Philosophy",
+      "description": "The study of fundamental questions about existence, knowledge, values, reason, and more."
+    },
+    {
+      "id": "17 - Linguistics",
+      "name": "Linguistics",
+      "description": "The scientific study of language and its structure."
+    },
+    {
+      "id": "18 - Literature",
+      "name": "Literature",
+      "description": "The study of written works, such as novels, poems, plays, and essays."
+    },
+    {
+      "id": "19 - Art",
+      "name": "Art",
+      "description": "The study and creation of visual, auditory, or performing works that express human emotions and ideas."
+    },
+    {
+      "id": "20 - Music",
+      "name": "Music",
+      "description": "The study and enjoyment of sounds organized in time."
+    }
   ],
   "links": [
-      {
-          "source": "0 - Science",
-          "target": "1 - Physics"
-      },
-      {
-          "source": "0 - Science",
-          "target": "2 - Chemistry"
-      },
-      {
-          "source": "0 - Science",
-          "target": "3 - Biology"
-      },
-      {
-          "source": "0 - Science",
-          "target": "4 - Geology"
-      },
-      {
-          "source": "0 - Science",
-          "target": "5 - Astronomy"
-      },
-      {
-          "source": "0 - Science",
-          "target": "6 - Environmental Science"
-      },
-      {
-          "source": "0 - Science",
-          "target": "7 - Mathematics"
-      },
-      {
-          "source": "0 - Science",
-          "target": "8 - Computer Science"
-      },
-      {
-          "source": "0 - Science",
-          "target": "9 - Statistics"
-      },
-      {
-          "source": "0 - Science",
-          "target": "10 - Psychology"
-      },
-      {
-          "source": "0 - Science",
-          "target": "11 - Sociology"
-      },
-      {
-          "source": "0 - Science",
-          "target": "12 - Anthropology"
-      },
-      {
-          "source": "0 - Science",
-          "target": "13 - Political Science"
-      },
-      {
-          "source": "0 - Science",
-          "target": "14 - Economics"
-      },
-      {
-          "source": "0 - Science",
-          "target": "15 - History"
-      },
-      {
-          "source": "0 - Science",
-          "target": "16 - Philosophy"
-      },
-      {
-          "source": "0 - Science",
-          "target": "17 - Linguistics"
-      },
-      {
-          "source": "0 - Science",
-          "target": "18 - Literature"
-      },
-      {
-          "source": "0 - Science",
-          "target": "19 - Art"
-      },
-      {
-          "source": "0 - Science",
-          "target": "20 - Music"
-      }
+    {
+      "source": "0 - Science",
+      "target": "1 - Physics"
+    },
+    {
+      "source": "0 - Science",
+      "target": "2 - Chemistry"
+    },
+    {
+      "source": "0 - Science",
+      "target": "3 - Biology"
+    },
+    {
+      "source": "0 - Science",
+      "target": "4 - Geology"
+    },
+    {
+      "source": "0 - Science",
+      "target": "5 - Astronomy"
+    },
+    {
+      "source": "0 - Science",
+      "target": "6 - Environmental Science"
+    },
+    {
+      "source": "0 - Science",
+      "target": "7 - Mathematics"
+    },
+    {
+      "source": "0 - Science",
+      "target": "8 - Computer Science"
+    },
+    {
+      "source": "0 - Science",
+      "target": "9 - Statistics"
+    },
+    {
+      "source": "0 - Science",
+      "target": "10 - Psychology"
+    },
+    {
+      "source": "0 - Science",
+      "target": "11 - Sociology"
+    },
+    {
+      "source": "0 - Science",
+      "target": "12 - Anthropology"
+    },
+    {
+      "source": "0 - Science",
+      "target": "13 - Political Science"
+    },
+    {
+      "source": "0 - Science",
+      "target": "14 - Economics"
+    },
+    {
+      "source": "0 - Science",
+      "target": "15 - History"
+    },
+    {
+      "source": "0 - Science",
+      "target": "16 - Philosophy"
+    },
+    {
+      "source": "0 - Science",
+      "target": "17 - Linguistics"
+    },
+    {
+      "source": "0 - Science",
+      "target": "18 - Literature"
+    },
+    {
+      "source": "0 - Science",
+      "target": "19 - Art"
+    },
+    {
+      "source": "0 - Science",
+      "target": "20 - Music"
+    }
   ]
 }

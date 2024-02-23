@@ -107,8 +107,8 @@ export default async function SiteHomePage({
               {posts.map((metadata: any, index: number) => (
                 <BlogCard key={index} data={metadata} />
               ))}
+            </div>
           </div>
-        </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-20">
             <Image
@@ -131,7 +131,6 @@ export default async function SiteHomePage({
           </div>
         )}
       </div>
-
     </>
   );
 }
