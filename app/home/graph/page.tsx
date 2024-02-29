@@ -6,7 +6,7 @@ import ForceGraph, {
   Node,
   Link,
   GraphProps,
-} from "@/components/exp/2/d3-graph";
+} from "@/components/graph/d3-graph"
 import example_data from "./graph-data/ResNet_102_3-5.json";
 
 // Constants
@@ -62,7 +62,7 @@ async function generateKnowledgeTree(firstNode: Node): Promise<GraphProps> {
     while (nodes.length < TEST_STOP_LENGTH && interim_nodes.length > 0) {
       const n: Node = interim_nodes.shift()!;
 
-      const response = await fetch("/api/functions", {
+      const response = await fetch("/api/function-calling", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({

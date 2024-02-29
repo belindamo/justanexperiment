@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-import CTA from "@/components/old-but-probably-useful/cta";
-import ReportAbuse from "@/components/old-but-probably-useful/report-abuse";
+import CTA from "@/components/app/cta";
+import ReportAbuse from "@/components/app/report-abuse";
 import { notFound, redirect } from "next/navigation";
 import { getSiteData } from "@/lib/fetchers";
 import { fontMapper } from "@/styles/fonts";

@@ -20,7 +20,7 @@ export interface Link extends d3.SimulationLinkDatum<Node> {
   target: string;
   name?: string;
 
-  // These populate thorugh d3
+  // These populate through d3
   // index?: number;
 }
 

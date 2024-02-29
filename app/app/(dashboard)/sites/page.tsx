@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import Sites from "@/components/old-but-probably-useful/sites";
-import PlaceholderCard from "@/components/old-but-probably-useful/placeholder-card";
-import CreateSiteButton from "@/components/old-but-probably-useful/create-site-button";
+import Sites from "@/components/app/sites";
+import PlaceholderCard from "@/components/app/placeholder-card";
+import CreateSiteButton from "@/components/app/create-site-button";
 import CreateSiteModal from "@/components/modal/create-site";
 
 export default function AllSites({ params }: { params: { id: string } }) {

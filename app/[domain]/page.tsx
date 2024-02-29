@@ -1,9 +1,9 @@
 import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
-import BlurImage from "@/components/old-but-probably-useful/blur-image";
+import BlurImage from "@/components/app/blur-image";
 import { placeholderBlurhash, toDateString } from "@/lib/utils";
-import BlogCard from "@/components/old-but-probably-useful/blog-card";
+import BlogCard from "@/components/app/blog-card";
 import { getPostsForSite, getSiteData } from "@/lib/fetchers";
 import Image from "next/image";
 

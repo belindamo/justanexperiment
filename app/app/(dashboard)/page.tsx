@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import Sites from "@/components/old-but-probably-useful/sites";
-import OverviewStats from "@/components/old-but-probably-useful/overview-stats";
-import Posts from "@/components/old-but-probably-useful/posts";
+import Sites from "@/components/app/sites";
+import OverviewStats from "@/components/app/overview-stats";
+import Posts from "@/components/app/posts";
 import Link from "next/link";
-import PlaceholderCard from "@/components/old-but-probably-useful/placeholder-card";
-import OverviewSitesCTA from "@/components/old-but-probably-useful/overview-sites-cta";
+import PlaceholderCard from "@/components/app/placeholder-card";
+import OverviewSitesCTA from "@/components/app/overview-sites-cta";
 
 export default function Overview() {
   return (

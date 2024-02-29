@@ -49,12 +49,6 @@ export default function Translate() {
     .filter((message) => message.role === "assistant")
     .pop();
 
-  // const sourceColumn = useRef<HTMLDivElement | null>(null)
-  // const targetTable = useRef<HTMLDivElement | null>(null)
-  // const [models , setModels] = useState<string[]>([ modelOptions[0].value ])
-  // const [sourceCell, setSourceCell] = useState<CellData>()
-  // const [targetCells, setTargetCells] = useState<TargetCellsData[]>([])
-
   const handleSubmitWrapper = (e: React.FormEvent<HTMLFormElement>) => {
     setError(null);
     setIsLoading(true);
@@ -92,7 +86,7 @@ export default function Translate() {
           format
           <div className="pt-4 *:mb-4">
             <div>
-              Generate with <InlineSnippet>Cmd / Ctrl + Enter</InlineSnippet>
+              Generate with <InlineSnippet>⌘ / Ctrl + Enter</InlineSnippet>
             </div>
             <form
               id="translate-form"
@@ -174,7 +168,7 @@ export default function Translate() {
         </ResizablePanel>
       </ResizablePanelGroup>
       {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
-      {"For debugging: \n" + JSON.stringify(messages)}
+      {/* {"GPT logs: \n" + JSON.stringify(messages)} */}
       {error != null ?? (
         <div>
           Oops, looks like there was an error from the model provider. Try

@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/home/playground",
-    "components/exp/d3-graph"
+    "components/graph/d3-graph"
   ],
   "exclude": ["node_modules"]
 }

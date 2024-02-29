@@ -4,11 +4,16 @@
 
 # Just an Experiment
 
-Welcome! Experiments are all written in this monorepo. 
+Welcome! AI experiments are written in this monorepo. 
 
 - Try experiments at https://justanexperiment.com
 - Create an account to customize https://app.justanexperiment.com
 - View experiment write-ups at https://write.justanexperiment.com
+
+## Run
+(asdfasdf)
+1. Install: `npm install`
+2. Run in development: `npm run dev` 
 
 ## Built on open source
 
