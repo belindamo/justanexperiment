@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col items-center px-16 text-center">
       <br />
-      <div>Choose an experiment to try out 👆🏻 </div>
+      <div>👆🏼 Choose an experiment to try out 👆🏼 </div>
       <br />
       {/* <Link href="/what" className="font-medium text-primary underline underline-offset-4">Getting started</Link> */}
       <Link

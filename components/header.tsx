@@ -46,7 +46,7 @@ export default function Header() {
     <header className="flex w-full justify-between items-center relative">
       <div className="flex flex-row">
         <Link href="/" className="mx-8 my-8 font-medium text-primary">
-          Just an Experiment
+          🧚🏼‍♀️ Just an Experiment
         </Link>
         {/* <NavigationMenu className="my-4 mx-2" alignMenu="left">
         <NavigationMenuList>
