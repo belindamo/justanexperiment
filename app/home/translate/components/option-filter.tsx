@@ -2,7 +2,7 @@ import * as React from "react";
 import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 import { Column } from "@tanstack/react-table";
 
-import { cn } from "@/lib/utils";
+import { cn, remove, add } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,48 +21,43 @@ import {
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
 
-export interface TranslateFilterOptionProps {
-  value: string;
-  label: string;
-  icon?: React.ComponentType;
-}
-export type TranslateFilterOptionsProps = TranslateFilterOptionProps[];
-
-export function TranslateFilter({
+export function OptionFilter({
   title,
   options,
+  selectedOptions,
+  setSelectedOptions,
 }: {
   title: string;
-  options: TranslateFilterOptionsProps;
+  options: string[];
+  selectedOptions: string[];
+  setSelectedOptions: (selectedOptions: string[]) => void;
 }) {
-  const selectedValues = new Set(options.map((option) => option.value));
-
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8 border-dashed">
           <PlusCircledIcon className="mr-2 h-4 w-4" />
           {title}
-          {selectedValues?.size > 0 && (
+          {selectedOptions?.length > 0 && (
             <>
               <Separator orientation="vertical" className="mx-2 h-4" />
               <Badge
                 variant="secondary"
                 className="rounded-sm px-1 font-normal lg:hidden"
               >
-                {selectedValues.size}
+                {selectedOptions.length}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
-                {selectedValues.size > 4 ? (
+                {/* {selectedOptions.size > 4 ? ( */}
                   <Badge
                     variant="secondary"
                     className="rounded-sm px-1 font-normal"
                   >
-                    {selectedValues.size} selected
+                    {selectedOptions.length} selected
                   </Badge>
-                ) : (
+                {/* ) : (
                   options
-                    .filter((option) => selectedValues.has(option.value))
+                    .filter((option) => selectedOptions.has(option.value))
                     .map((option) => (
                       <Badge
                         variant="secondary"
@@ -72,7 +67,7 @@ export function TranslateFilter({
                         {option.label}
                       </Badge>
                     ))
-                )}
+                )} */}
               </div>
             </>
           )}
@@ -85,20 +80,20 @@ export function TranslateFilter({
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
               {options.map((option) => {
-                const isSelected = selectedValues.has(option.value);
+                const isSelected = selectedOptions.includes(option);
                 return (
                   <CommandItem
-                    key={option.value}
+                    key={option}
                     onSelect={() => {
                       if (isSelected) {
-                        selectedValues.delete(option.value);
+                        if (selectedOptions.length > 1) {
+                          selectedOptions = remove(selectedOptions, option);
+                          setSelectedOptions(selectedOptions);
+                        }
                       } else {
-                        selectedValues.add(option.value);
+                        selectedOptions = add(selectedOptions, option);
+                        setSelectedOptions(selectedOptions);
                       }
-                      // const filterValues = Array.from(selectedValues)
-                      // column?.setFilterValue(
-                      //   filterValues.length ? filterValues : undefined
-                      // )
                     }}
                   >
                     <div
@@ -111,10 +106,10 @@ export function TranslateFilter({
                     >
                       <CheckIcon className={cn("h-4 w-4")} />
                     </div>
-                    {option.icon && (
+                    {/* {option.icon && (
                       <option.icon />
-                    )}
-                    <span>{option.label}</span>
+                    )} */}
+                    <span>{option}</span>
                     {/* {facets?.get(option.value) && (
                     <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
                       {facets.get(option.value)}
@@ -124,7 +119,7 @@ export function TranslateFilter({
                 );
               })}
             </CommandGroup>
-            {selectedValues.size > 0 && (
+            {/* {selectedOptions.length > 0 && (
               <>
                 <CommandSeparator />
                 <CommandGroup>
@@ -134,11 +129,11 @@ export function TranslateFilter({
                     }}
                     className="justify-center text-center"
                   >
-                    Clear filters
+                    Add
                   </CommandItem>
                 </CommandGroup>
               </>
-            )}
+            )} */}
           </CommandList>
         </Command>
       </PopoverContent>

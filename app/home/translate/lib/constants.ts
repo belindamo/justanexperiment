@@ -2,10 +2,27 @@ import { FileTextIcon, FlaskRound, FlaskConical } from "lucide-react";
 import { BotIcon } from "lucide-react";
 import { Template } from "./types";
 
-export const templates: Template[] = [
+export const TEMPLATES: Template[] = [
+  { title: "Blog post", format: "markdown" },
+  { title: "Documentation", format: "markdown" },
+  { title: "Landing page", format: "html" },
+  { title: "Research markdown", format: "string" },
+  { title: "Research proposal", format: "string" },
+  { title: "Literature review", format: "string" },
+  { title: "Research proposal", format: "string" },
+  { title: "Marketing copy", format: "string" },
+  { title: "Product description", format: "string" },
+  { title: "Tweet", format: "string" },
+  { title: "Instagram caption post", format: "string" },
+  { title: "English", format: "string" },
+  { title: "Spanish", format: "string" },
+  { title: "Chinese", format: "string" },
+  { title: "Spanish as spoken locally in Mexico", format: "string" },
+  { title: "Grammatical standard English", format: "string" },
+  { title: "Expand", format: "string" },
+  { title: "Shorten", format: "string" },
   {
-    id: "frontmatter",
-    title: "Frontmatter  for experiments",
+    title: "Frontmatter for experiments",
     icon: FileTextIcon,
     audience: "self",
     format: "yaml",
@@ -56,16 +73,7 @@ export const templates: Template[] = [
       },
     ],
   },
-  // {
-  //   id: "self-writeup",
-  //   title: "Experiment writeup for self",
-  //   icon: FlaskRound,
-  //   sampleTexts: [{
-  //     text:
-  //   }]
-  // },
   {
-    id: "others-writeup",
     title: "Experiment writeup for others",
     icon: FlaskConical,
     format: "markdown",
@@ -170,15 +178,9 @@ export const templates: Template[] = [
   },
 ];
 
-export const modelOptions = [
-  {
-    value: "gpt-4",
-    label: "GPT-4",
-    icon: BotIcon,
-  },
-  {
-    value: "gpt-3.5-turbo",
-    label: "gpt-3.5-turbo",
-    icon: BotIcon,
-  },
+export const MODELS = [ 
+  "gpt-4", 
+  "gpt-4-turbo-preview",
+  "gpt-4-0125-preview",
+  "gpt-3.5-turbo-1106",
 ];

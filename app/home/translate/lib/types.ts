@@ -1,19 +1,9 @@
 import { Message } from "ai/react";
 
 export interface Template {
-  id: string;
   title: string;
-  audience: string;
-  sampleTexts: [
-    {
-      text: string;
-      chatHistory?: Message[];
-      systemPrompt?: string;
-      model?: string;
-    },
-  ];
   format:
-    | "natural language text"
+    | "string"
     | "markdown"
     | "html"
     | "json"
@@ -27,24 +17,15 @@ export interface Template {
     | "csv"
     | "tsv"
     | "xml";
+  audience?: string;
+  sampleTexts?: [
+    {
+      text: string;
+      chatHistory?: Message[];
+      systemPrompt?: string;
+      model?: string;
+    },
+  ];
   description?: string;
   icon?: React.ComponentType;
 }
-
-// export interface FewShotTranslation {
-//   systemPrompt?: string;
-//   source: Option;
-//   target: Option;
-// }
-
-// export interface CellData {
-//   title: string,
-//   content: string,
-//   template: string,
-// }
-
-// export interface TargetCellData extends CellData {
-//   message: ChatMessage
-// }
-
-// export type TargetCellsData = TargetCellData[];

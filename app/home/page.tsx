@@ -9,7 +9,9 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col items-center px-16 text-center">
       <br />
-      <div>👆🏼 Choose an experiment to try out 👆🏼 </div>
+      <div>👆🏼 Choose an AI tool to try out 👆🏼 </div>
+      <br />
+      <div>I created these AI tools based on what I personally needed. I hope they're helpful for you too!</div>
       <br />
       {/* <Link href="/what" className="font-medium text-primary underline underline-offset-4">Getting started</Link> */}
       <Link
@@ -17,14 +19,14 @@ export default function HomePage() {
         className="font-medium text-primary underline underline-offset-4"
         target="_blank"
       >
-        Philosophy
+        About
       </Link>
       <Link
         href="https://github.com/justanexperiment/justanexperiment"
         className="font-medium text-primary underline underline-offset-4"
         target="_blank"
       >
-        Source code
+        Github
       </Link>
       <br />
       <br />

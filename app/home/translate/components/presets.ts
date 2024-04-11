@@ -10,14 +10,18 @@ const options = [
   "Research markdown",
   "Research proposal",
   "Literature review",
-  // 'Research proposal',
-  // 'Marketing copy',
-  // 'Product description',
-  // 'Social media post', // breakdown to: Twitter, Facebook, LinkedIn, Instagram, TikTok
-  // 'Custom'
-  // 'English'
-  // 'Spanish as spoken locally in Mexico'
-  // Probs like more filters that are action oriented like: shorten, summarize, expand, etc.
+  'Research proposal',
+  'Marketing copy',
+  'Product description',
+  'Tweet', // breakdown to: Twitter, Facebook, LinkedIn, Instagram, TikTok
+  'Instagram caption post',
+  'English',
+  'Spanish',
+  'Chinese',
+  'Spanish as spoken locally in Mexico',
+  'Grammatical standard English',
+  'Expand',
+  'Shorten' // Probs like more filters that are action oriented like: shorten, summarize, expand, etc.
 ];
 
 export const presets: Preset[] = options.map((option, i) => ({

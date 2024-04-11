@@ -21,12 +21,12 @@ import { Template } from "../lib/types";
 
 export function TemplateCombobox({
   templates,
-  template = null,
+  template,
   setTemplate,
 }: {
   templates: Template[];
-  template: Template | null;
-  setTemplate: (template: Template) => void;
+  template: Template;
+  setTemplate: (oldTemplate: Template, newTemplate: Template) => void;
 }) {
   const [open, setOpen] = React.useState(false);
 
@@ -39,7 +39,7 @@ export function TemplateCombobox({
           aria-expanded={open}
           className="w-[300px] justify-between"
         >
-          {template ? template.title : "Select template..."}
+          {template.title}
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -50,12 +50,12 @@ export function TemplateCombobox({
           <CommandGroup>
             {templates.map((t) => (
               <CommandItem
-                key={t.id}
-                value={t.id}
+                key={t.title}
+                value={t.title}
                 onSelect={(currentValue) => {
-                  const newT = templates.find((t) => t.id === currentValue);
+                  const newT = templates.find((t) => t.title.toLowerCase() === currentValue);
                   if (newT) {
-                    setTemplate(newT);
+                    setTemplate(template, newT);
                   }
                   setOpen(false);
                 }}
@@ -63,7 +63,7 @@ export function TemplateCombobox({
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    t.id === template?.id ? "opacity-100" : "opacity-0",
+                    t.title === template?.title ? "opacity-100" : "opacity-0",
                   )}
                 />
                 {t.title}

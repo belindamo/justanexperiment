@@ -26,6 +26,22 @@ export const truncate = (str: string, num: number) => {
   return str.slice(0, num) + "...";
 };
 
+export const remove = (array: any[], item: any) => {
+  const index = array.indexOf(item);
+  if (index > -1) {
+    array.splice(index, 1);
+  }
+  return array;
+}
+
+export const add = (array: any[], item: any) => {
+  if (!array.includes(item)) {
+    array.push(item);
+  }
+  console.log(array)
+  return array;
+}
+
 export const getBlurDataURL = async (url: string | null) => {
   if (!url) {
     return "data:image/webp;base64,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";

@@ -19,7 +19,7 @@ export const options = [
   {
     title: "Translate",
     href: "/translate",
-    description: `Translation on steroids. Like Transfiguration with Professor McGonagall 🧙🏻‍♀️`,
+    description: `Translation across more than just languages 🧙🏻‍♀️`,
   },
   { title: 'Concept Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'RAG', href: '/rag', description: 'Chat with your documents' },
@@ -43,39 +43,14 @@ export default function Header() {
   const currentUrl = usePathname();
 
   return (
-    <header className="flex w-full justify-between items-center relative">
+    <header className="flex w-full justify-between items-center relative py-2">
       <div className="flex flex-row">
-        <Link href="/" className="mx-8 my-8 font-medium text-primary">
+        <Link href="/" className="mx-8 font-medium text-primary">
           🧚🏼‍♀️ Just an Experiment
         </Link>
-        {/* <NavigationMenu className="my-4 mx-2" alignMenu="left">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>
-              <div>
-                Who are you?
-              </div>
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid w-[400px] p-2">
-                {whoAreYou.map((who, i) => (
-                <NavigationMenuLink asChild key={`who-${i}`}>
-                  <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-white p-4 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                    href="#"
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">{who}</div>
-                  </Link>
-                </NavigationMenuLink>
-                ))}  
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu> */}
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2">
-        <NavigationMenu className="mx-2 my-4">
+        <NavigationMenu className="mx-2">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
@@ -88,7 +63,7 @@ export default function Header() {
                 />
                 <Label className="hidden md:block">
                   {currentUrl === "/"
-                    ? "Experiments"
+                    ? "AI Tools"
                     : options.find((option) => option.href === currentUrl)
                           ?.title}
                 </Label>
@@ -117,35 +92,9 @@ export default function Header() {
         </NavigationMenu>
       </div>
       <div className="flex flex-row justify-end">
-        <Link href="https://write.justanexperiment.com" target="_blank" className="mx-8 my-4 flex items-center py-4">
+        <Link href="https://write.justanexperiment.com" target="_blank" className="mx-8 flex items-center py-4">
           <HelpCircle className="h-4" />
         </Link>
-        {/* <NavigationMenu className="my-4 mr-2"
-      alignMenu="right">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>
-              <div>
-                {models[0]}
-              </div>
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid w-[400px] p-2">
-                {models.map((model, i) => (
-                <NavigationMenuLink asChild key={`model-${i}-${model}`}>
-                  <Link
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-white p-4 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                    href="#"
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">{model}</div>
-                  </Link>
-                </NavigationMenuLink>
-                ))}  
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu> */}
       </div>
     </header>
   );

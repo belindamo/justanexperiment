@@ -1,10 +1,10 @@
 import { Template } from "./types";
 import { Message } from "ai/react";
 
-export const initialMessages = (
+export const getSystemMessage = (
   sourceTemplate: Template,
   targetTemplate: Template,
-): Message[] => {
+): string => {
   let systemMessage = `My messages are written for a ${sourceTemplate.audience} audience and your messages should be written for a ${targetTemplate.audience} audience.`;
 
   if (sourceTemplate.sampleTexts.length > 0) {
@@ -25,5 +25,5 @@ export const initialMessages = (
     }
   }
 
-  return [{ id: "0", role: "system", content: systemMessage }];
+  return systemMessage;
 };

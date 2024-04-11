@@ -11,9 +11,8 @@ Welcome! AI experiments are written in this monorepo.
 - View experiment write-ups at https://write.justanexperiment.com
 
 ## Run
-(asdfasdf)
-1. Install: `npm install`
-2. Run in development: `npm run dev` 
+1. Install: `pnpm install`
+2. Run in development: `pnpm run dev` 
 
 ## Built on open source
 
