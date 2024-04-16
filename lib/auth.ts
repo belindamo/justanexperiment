@@ -1,5 +1,6 @@
 import { getServerSession, type NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 
@@ -17,6 +18,23 @@ export const authOptions: NextAuthOptions = {
           gh_username: profile.login,
           email: profile.email,
           image: profile.avatar_url,
+        };
+      },
+    }),
+    GoogleProvider({
+      idToken: true,  
+      clientId: process.env.AUTH_GOOGLE_ID as string,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
+      authorization: { params: { scope: "openid email profile" } },
+      wellKnown: "https://accounts.google.com/.well-known/openid-configuration",
+      checks: ["pkce", "state"],
+      profile(profile) {
+        console.log(profile);
+        return {
+          id: profile.sub,
+          name: `${profile.given_name} ${profile.family_name}`.trim(),
+          email: profile.email,
+          image: profile.picture,
         };
       },
     }),
