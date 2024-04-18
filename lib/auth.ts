@@ -15,9 +15,9 @@ export const authOptions: NextAuthOptions = {
         return {
           id: profile.id.toString(),
           name: profile.name || profile.login,
-          gh_username: profile.login,
           email: profile.email,
           image: profile.avatar_url,
+          provider: 'github'
         };
       },
     }),
@@ -29,12 +29,12 @@ export const authOptions: NextAuthOptions = {
       wellKnown: "https://accounts.google.com/.well-known/openid-configuration",
       checks: ["pkce", "state"],
       profile(profile) {
-        console.log(profile);
         return {
           id: profile.sub,
           name: `${profile.given_name} ${profile.family_name}`.trim(),
           email: profile.email,
           image: profile.picture,
+          provider: 'google'
         };
       },
     }),
@@ -44,7 +44,7 @@ export const authOptions: NextAuthOptions = {
     verifyRequest: `/login`,
     error: "/login", // Error code passed in query string as ?error=
   },
-  adapter: PrismaAdapter(prisma),
+  adapter: undefined,
   session: { strategy: "jwt" },
   cookies: {
     sessionToken: {
@@ -70,11 +70,7 @@ export const authOptions: NextAuthOptions = {
     },
     session: async ({ session, token }) => {
       session.user = {
-        ...session.user,
-        // @ts-expect-error
-        id: token.sub,
-        // @ts-expect-error
-        username: token?.user?.username || token?.user?.gh_username,
+        ...(token.user as any),
       };
       return session;
     },
