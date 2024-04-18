@@ -7,13 +7,13 @@ import {
   NavigationMenuContent,
   NavigationMenuList,
   NavigationMenu,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import { HelpCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Profile from "./app/profile";
+import { useSession } from "next-auth/react";
 
 export const options = [
   {
@@ -41,8 +41,9 @@ export const options = [
 
 export default function Header() {
   const currentUrl = usePathname();
+  const { data: session } = useSession()
 
-  return (
+  return (session?.user &&
     <header className="flex w-full justify-between items-center relative py-2">
       <div className="flex flex-row">
         <Link href="/" className="mx-8 font-medium text-primary">
@@ -65,7 +66,7 @@ export default function Header() {
                   {currentUrl === "/"
                     ? "AI Tools"
                     : options.find((option) => option.href === currentUrl)
-                          ?.title}
+                      ?.title}
                 </Label>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -92,9 +93,7 @@ export default function Header() {
         </NavigationMenu>
       </div>
       <div className="flex flex-row justify-end">
-        <Link href="https://write.justanexperiment.com" target="_blank" className="mx-8 flex items-center py-4">
-          <HelpCircle className="h-4" />
-        </Link>
+        <Profile />
       </div>
     </header>
   );
