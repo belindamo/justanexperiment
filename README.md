@@ -7,7 +7,7 @@
 Welcome! AI experiments are written in this monorepo. 
 
 - Try experiments at https://justanexperiment.com
-- Create an account to customize https://app.justanexperiment.com
+- Create an account to customize https://justanexperiment.com/login
 - View experiment write-ups at https://write.justanexperiment.com
 
 ## Run
