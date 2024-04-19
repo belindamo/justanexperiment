@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col items-center px-16 text-center">
+    <div className="flex flex-col items-center px-16 text-center">
       <br />
       <div>👆🏼 Choose an AI tool to try out 👆🏼 </div>
       <br />
