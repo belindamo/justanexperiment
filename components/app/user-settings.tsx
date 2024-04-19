@@ -12,23 +12,16 @@ import {
 import { Input } from "@/components/ui/input"
 import UserSettingsModel from "./user-settings-model";
 import { useState } from "react";
-import { PREDEFINED_MODELS } from "@/lib/constants";
 import { AIModel } from "@/lib/types";
+import ModelStorage from "@/lib/models-storage";
 
 
 export default function UserSettings() {
-  const [models, setModels] = useState<AIModel[]>(PREDEFINED_MODELS.map((model) => { return { name: model, enabled: true, canBeDeleted: false }; }))
-  const [modelNames, setModelNames] = useState(PREDEFINED_MODELS);
+  const [models, setModels] = useState<AIModel[]>([])
+  const [modelNames, setModelNames] = useState<string[]>([]);
 
   const [addingModel, setAddingModel] = useState(false);
   const [newModelName, setNewModelName] = useState('');
-
-  /**
-   * Synchronize the models to the storage
-   */
-  const syncModelsOnStorage = () => {
-
-  }
 
 
   /**
@@ -43,7 +36,7 @@ export default function UserSettings() {
     setModels(models.filter((obj) => {
       return obj.name !== name;
     }));
-    syncModelsOnStorage();
+    ModelStorage.delete(name);
   }
 
   /**
@@ -55,10 +48,12 @@ export default function UserSettings() {
   const onModelStatusChange = (name: string, checked: boolean) => {
     const idx = modelNames.indexOf(name);
     if (idx < 0) return;
+    const model = models[idx];
+    model.enabled = checked;
     setModels(models.map((obj) => {
-      return { name: obj.name, canBeDeleted: obj.canBeDeleted, enabled: obj.name === name ? checked : obj.enabled };
+      return obj.name === name ? model : obj;
     }));
-    syncModelsOnStorage();
+    ModelStorage.addUpdate(model);
   }
 
   /**
@@ -90,13 +85,25 @@ export default function UserSettings() {
 
     /* Add the new model */
     setModelNames([...modelNames, trimed]);
-    setModels([...models, { name: trimed, enabled: true, canBeDeleted: true }]);
-    syncModelsOnStorage();
+    const model = { name: trimed, enabled: true, canBeDeleted: true };
+    setModels([...models, model]);
+    ModelStorage.addUpdate(model);
   };
 
+  /**
+   * Load model from DB when dialog is getting opened
+   * @param opened 
+   */
+  const onDialogOpen = async (opened: any) => {
+    if (opened) {
+      const dbModels = await ModelStorage.getAll();
+      setModelNames(dbModels.map((model) => model.name));
+      setModels(dbModels);
+    }
+  }
 
   return (
-    <Dialog>
+    <Dialog onOpenChange={onDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="link">
           <Settings width={16} className="mr-2 h-4 w-4" />

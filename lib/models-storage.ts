@@ -1,3 +1,4 @@
+import { PREDEFINED_MODELS } from "./constants";
 import { AIModel } from "./types";
 
 class ModelStorage {
@@ -11,19 +12,46 @@ class ModelStorage {
   private constructor() {
     const request = indexedDB.open("jae-models", 1);
 
+    /* Check that predefined models are registered on DB */
+    const validateDefaultModels = (db: IDBDatabase) => Promise.all(PREDEFINED_MODELS.map((model) => this.ensureDefaultKey(db, model)))
+
     request.onerror = (event) => {
       console.error("Error opening database");
     };
 
-    request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
+    request.onupgradeneeded = async () => {
+      request.result.createObjectStore("items", { keyPath: "name" });
       this.db = request.result;
-      const objectStore = this.db.createObjectStore("items", { keyPath: "name" });
+      await validateDefaultModels(request.result);
     };
 
-    request.onsuccess = (event) => {
+    request.onsuccess = async () => {
       this.db = request.result;
+      await validateDefaultModels(request.result);
     };
+  }
 
+  /**
+   * Ensure that the default model key exists
+   * @param db 
+   * @param name 
+   * @returns 
+   */
+  private ensureDefaultKey(db: IDBDatabase, name: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const transaction = db.transaction(["items"], "readonly");
+      const objectStore = transaction.objectStore("items");
+      const getRequest = objectStore.get(name);
+
+      getRequest.onsuccess = () => {
+        if (!getRequest.result) {
+          this.addUpdate({ name, enabled: true, canBeDeleted: false }).then(resolve).catch(reject)
+        }
+      };
+      getRequest.onerror = () => {
+        this.addUpdate({ name, enabled: true, canBeDeleted: false }).then(resolve).catch(reject)
+      };
+    });
   }
 
   /**
@@ -102,6 +130,22 @@ class ModelStorage {
           objects.push(cursor.value);
           cursor.continue();
         } else {
+          /* Sort the models to keep the predefined in the top */
+          objects.sort((a: AIModel, b: AIModel) => {
+            if (!a.canBeDeleted && b.canBeDeleted) {
+              return -1;
+            }
+            if (a.canBeDeleted && !b.canBeDeleted) {
+              return 1;
+            }
+            if (!a.canBeDeleted && !b.canBeDeleted) {
+              const idxA = PREDEFINED_MODELS.indexOf(a.name);
+              const idxB = PREDEFINED_MODELS.indexOf(b.name);
+              if (idxA < idxB) return -1;
+              return 1;
+            }
+            return 1;
+          })
           resolve(objects);
         }
       };
