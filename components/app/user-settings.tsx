@@ -102,6 +102,11 @@ export default function UserSettings() {
     }
   }
 
+  const cleanData = async () => {
+    await ModelStorage.clean()
+    await onDialogOpen(true);
+  }
+
   return (
     <Dialog onOpenChange={onDialogOpen}>
       <DialogTrigger asChild>
@@ -166,7 +171,7 @@ export default function UserSettings() {
           </DialogDescription>
         </div>
         <DialogFooter style={{ justifyContent: "center" }}>
-          <Button variant="link">Clear my data</Button>
+          <Button variant="link" onClick={() => cleanData()}>Clean my data</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

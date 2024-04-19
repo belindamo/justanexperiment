@@ -1,6 +1,8 @@
 import { PREDEFINED_MODELS } from "./constants";
 import { AIModel } from "./types";
 
+const DB_NAME = "jae-models";
+
 class ModelStorage {
   private static instance: ModelStorage;
 
@@ -10,26 +12,29 @@ class ModelStorage {
    * Private constructor to initialize singleton instance
    */
   private constructor() {
-    const request = indexedDB.open("jae-models", 1);
+    const request = indexedDB.open(DB_NAME, 1);
 
-    /* Check that predefined models are registered on DB */
-    const validateDefaultModels = (db: IDBDatabase) => Promise.all(PREDEFINED_MODELS.map((model) => this.ensureDefaultKey(db, model)))
-
-    request.onerror = (event) => {
+    request.onerror = () => {
       console.error("Error opening database");
     };
 
     request.onupgradeneeded = async () => {
       request.result.createObjectStore("items", { keyPath: "name" });
       this.db = request.result;
-      await validateDefaultModels(request.result);
+      await this.validateDefaultModels();
     };
 
     request.onsuccess = async () => {
       this.db = request.result;
-      await validateDefaultModels(request.result);
+      await this.validateDefaultModels();
     };
   }
+
+  /* Check that predefined models are registered on DB */
+  private validateDefaultModels() {
+    return Promise.all(PREDEFINED_MODELS.map((model) => this.ensureDefaultKey(model)));
+  }
+
 
   /**
    * Ensure that the default model key exists
@@ -37,9 +42,13 @@ class ModelStorage {
    * @param name 
    * @returns 
    */
-  private ensureDefaultKey(db: IDBDatabase, name: string): Promise<void> {
+  private ensureDefaultKey(name: string): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-      const transaction = db.transaction(["items"], "readonly");
+      if (!this.db) {
+        reject("Database not initialized");
+        return;
+      }
+      const transaction = this.db.transaction(["items"], "readonly");
       const objectStore = transaction.objectStore("items");
       const getRequest = objectStore.get(name);
 
@@ -154,6 +163,28 @@ class ModelStorage {
         reject("Error getting objects");
       };
     })
+  }
+
+  public clean() {
+    return new Promise<void>((resolve, reject) => {
+      if (!this.db) {
+        reject("Database not initialized");
+        return;
+      }
+
+      const transaction = this.db.transaction(["items"], "readwrite");
+      const objectStore = transaction.objectStore("items");
+
+      const clearRequest = objectStore.clear();
+      clearRequest.onsuccess = async () => {
+        await this.validateDefaultModels();
+        resolve();
+      };
+
+      clearRequest.onerror = function (event) {
+        reject("Error cleaning data");
+      };
+    });
   }
 }
 
