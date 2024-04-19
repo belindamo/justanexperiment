@@ -62,3 +62,8 @@ export interface AIModel {
   enabled: boolean,
   canBeDeleted: boolean
 }
+
+export interface AIModelKey {
+  provider: string,
+  key: string
+}
