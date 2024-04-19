@@ -14,6 +14,7 @@ import UserSettingsModel from "./user-settings-model";
 import { useState } from "react";
 import { AIModel } from "@/lib/types";
 import ModelStorage from "@/lib/models-storage";
+import { validateOpenAIKey } from "@/app/home/translate/lib/openai";
 
 
 export default function UserSettings() {
@@ -22,6 +23,10 @@ export default function UserSettings() {
 
   const [addingModel, setAddingModel] = useState(false);
   const [newModelName, setNewModelName] = useState('');
+
+  const [openAIKey, setOpenAIKey] = useState('');
+  const [openAIKeyValid, setOpenAIKeyValid] = useState(true);
+  const [openAIKeySaved, setOpenAIKeySaved] = useState(false);
 
 
   /**
@@ -96,16 +101,59 @@ export default function UserSettings() {
    */
   const onDialogOpen = async (opened: any) => {
     if (opened) {
+      setOpenAIKeySaved(false)
+
+      /* Read the models from DB */
       const dbModels = await ModelStorage.getAll();
       setModelNames(dbModels.map((model) => model.name));
       setModels(dbModels);
+
+      /* Read the keys from DB */
+      const dbKeys = await ModelStorage.getAllKeys();
+      for (const key of dbKeys) {
+        if (key.provider === 'openai') {
+          setOpenAIKey(key.key);
+        }
+      }
     }
   }
 
+  /**
+   * Clean the data from the DB
+   */
   const cleanData = async () => {
+    await ModelStorage.cleanKeys()
+    setOpenAIKey('');
     await ModelStorage.clean()
     await onDialogOpen(true);
+    setOpenAIKeyValid(true);
+    setOpenAIKeySaved(false)
   }
+
+  /**
+   * Track the changes for the OpenAI key
+   * @param evt 
+   */
+  const onOpenAIKeyChange = (evt: any) => {
+    setOpenAIKey(evt.target.value);
+    setOpenAIKeyValid(true);
+  }
+
+  /**
+   * Validate and save the OpenAI key on DB
+   */
+  const validateSaveOpenAIKey = async () => {
+    const isValid = await validateOpenAIKey(openAIKey);
+    if (!isValid) {
+      setOpenAIKeyValid(false);
+      return;
+    }
+    setOpenAIKeyValid(true);
+    ModelStorage.setKey('openai', openAIKey);
+    setOpenAIKeySaved(true);
+    setTimeout(() => setOpenAIKeySaved(false), 3000);
+  };
+
 
   return (
     <Dialog onOpenChange={onDialogOpen}>
@@ -154,7 +202,7 @@ export default function UserSettings() {
         <DialogHeader>
           <DialogTitle>OpenAI key</DialogTitle>
           <DialogDescription>
-            Key will be stored locally on your device.
+            Key will be stored locally on your device. Validate your key to store and use it.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 pb-4">
@@ -163,11 +211,19 @@ export default function UserSettings() {
               id="openai-key"
               placeholder="Enter your OpenAI key"
               className="col-span-3"
+              value={openAIKey}
+              onChange={onOpenAIKeyChange}
             />
-            <Button>Validate</Button>
+            <Button onClick={() => validateSaveOpenAIKey()}>Validate</Button>
           </div>
           <DialogDescription>
-            Validate your key to store and use it.
+            {!openAIKeyValid &&
+              <span className="text-destructive">Invalid OpenAI key</span>
+            }
+            {openAIKeySaved &&
+              <span>OpenAI key saved</span>
+
+            }
           </DialogDescription>
         </div>
         <DialogFooter style={{ justifyContent: "center" }}>

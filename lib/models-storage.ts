@@ -1,5 +1,5 @@
 import { PREDEFINED_MODELS } from "./constants";
-import { AIModel } from "./types";
+import { AIModel, AIModelKey } from "./types";
 
 const DB_NAME = "jae-models";
 
@@ -20,6 +20,7 @@ class ModelStorage {
 
     request.onupgradeneeded = async () => {
       request.result.createObjectStore("items", { keyPath: "name" });
+      request.result.createObjectStore("keys", { keyPath: "provider" });
       this.db = request.result;
       await this.validateDefaultModels();
     };
@@ -185,6 +186,77 @@ class ModelStorage {
         reject("Error cleaning data");
       };
     });
+  }
+
+  public setKey(provider: string, key: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      if (!this.db) {
+        reject("Database not initialized");
+        return;
+      }
+      const transaction = this.db.transaction(["keys"], "readwrite");
+      const objectStore = transaction.objectStore("keys");
+
+      const objectRequest = objectStore.put({ provider, key });
+      objectRequest.onsuccess = () => resolve();
+      objectRequest.onerror = () => {
+        reject(`Error adding key: ${provider}`);
+      };
+    });
+  }
+
+  public cleanKeys() {
+    return new Promise<void>((resolve, reject) => {
+      if (!this.db) {
+        reject("Database not initialized");
+        return;
+      }
+
+      const transaction = this.db.transaction(["keys"], "readwrite");
+      const objectStore = transaction.objectStore("keys");
+
+      const clearRequest = objectStore.clear();
+      clearRequest.onsuccess = async () => {
+        await this.validateDefaultModels();
+        resolve();
+      };
+
+      clearRequest.onerror = function (event) {
+        reject("Error cleaning keys data");
+      };
+    });
+  }
+
+  /**
+   * Get all stored key objects
+   * @returns 
+   */
+  public getAllKeys(): Promise<AIModelKey[]> {
+    return new Promise<AIModelKey[]>((resolve, reject) => {
+      if (!this.db) {
+        reject("Database not initialized");
+        return;
+      }
+
+      const transaction = this.db.transaction(["keys"], "readonly");
+      const objectStore = transaction.objectStore("keys");
+      const cursorRequest = objectStore.openCursor();
+      const objects: AIModelKey[] = [];
+
+      cursorRequest.onsuccess = (event: any) => {
+        const cursor = event.target.result;
+        if (cursor) {
+          objects.push(cursor.value);
+          cursor.continue();
+        } else {
+          resolve(objects);
+        }
+      };
+
+      cursorRequest.onerror = () => {
+        reject("Error getting key objects");
+      };
+    })
   }
 }
 
