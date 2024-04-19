@@ -56,3 +56,9 @@ export interface DomainVerificationResponse {
     reason: string;
   }[];
 }
+
+export interface AIModel {
+  name: string,
+  enabled: boolean,
+  canBeDeleted: boolean
+}
