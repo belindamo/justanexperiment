@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
+import AuthGuard from "./auth-guard";
 
 const title = "Just an Experiment";
 const description = "AI, knowledge, and distribution experiments";
@@ -37,7 +38,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(cal.variable, inter.variable)}>
         <Providers>
-          {children}
+          <AuthGuard>
+            {children}
+          </AuthGuard>
           <Analytics />
         </Providers>
       </body>
