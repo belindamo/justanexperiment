@@ -9,12 +9,12 @@ type Message = {
 };
 
 export const sendMessageToOpenAI = async (
-  inputText: string, 
-  responseCallback: (messageChunk: string) => void, 
+  inputText: string,
+  responseCallback: (messageChunk: string) => void,
   model: string,
   systemMessage?: string,
-  ) => {
-    
+) => {
+
   try {
     const messages: Message[] = [
       { role: 'user', content: inputText }, 
@@ -44,5 +44,19 @@ export const sendMessageToOpenAI = async (
   } catch (error) {
     console.error('Error querying OpenAI:', error);
     throw error;
+  }
+}
+
+export const validateOpenAIKey = async (key: string): Promise<boolean> => {
+  const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true })
+  try {
+    const stream = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: 'Say this is a test' }],
+      stream: true,
+    });
+    return true;
+  } catch {
+    return false;
   }
 }
