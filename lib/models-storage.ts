@@ -1,6 +1,8 @@
 import { PREDEFINED_MODELS } from "./constants";
 import { AIModel, AIModelKey } from "./types";
 
+declare var indexedDB: IDBFactory;
+
 const DB_NAME = "jae-models";
 
 class ModelStorage {
