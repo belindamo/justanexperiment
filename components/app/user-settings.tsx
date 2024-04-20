@@ -1,4 +1,4 @@
-import { Settings, Plus } from "lucide-react";
+import { Settings, Plus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,11 +10,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator";
 import UserSettingsModel from "./user-settings-model";
 import { useState } from "react";
 import { AIModel } from "@/lib/types";
 import ModelStorage from "@/lib/models-storage";
 import { validateOpenAIKey } from "@/app/home/translate/lib/openai";
+import Link from "next/link";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 
 export default function UserSettings() {
@@ -154,6 +157,12 @@ export default function UserSettings() {
     setTimeout(() => setOpenAIKeySaved(false), 3000);
   };
 
+  /**
+   * Go to OpenAI API Keys
+   */
+  const goToOpenAI = () => {
+    window.open("https://platform.openai.com/account/api-keys", "_blank");
+  }
 
   return (
     <Dialog onOpenChange={onDialogOpen}>
@@ -162,17 +171,19 @@ export default function UserSettings() {
           <Settings width={16} className="mr-2 h-4 w-4" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Just an experiment - Settings</DialogTitle>
+      <DialogContent className="max-w-[90%] sm:max-w-[425px] px-0 py-4 sm:m-0">
+        <DialogHeader className="flex-row items-center justify-between px-4" style={{ height: 5 }}>
+          <span className="text-muted-foreground">Settings</span>
+          <DialogClose style={{ margin: 0 }}><X size={14} className="text-muted-foreground" /></DialogClose>
         </DialogHeader>
-        <DialogHeader>
+        <Separator />
+        <DialogHeader className="px-4">
           <DialogTitle>Model names</DialogTitle>
           <DialogDescription>
             Configure the latest OpenAI models.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 pb-4">
+        <div className="grid gap-4 pb-4  px-4">
           {models.map(model => (
             <UserSettingsModel key={model.name} model={model} onStatusChange={onModelStatusChange} onDelete={onModelDelete} />
           ))}
@@ -199,13 +210,15 @@ export default function UserSettings() {
             </div>
           }
         </div>
-        <DialogHeader>
-          <DialogTitle>OpenAI key</DialogTitle>
+        <DialogHeader className="px-4">
+          <DialogTitle>OpenAI API key</DialogTitle>
           <DialogDescription>
-            Key will be stored locally on your device. Validate your key to store and use it.
+            <Button variant="link" className="text-muted-foreground p-0 m-0" onClick={() => goToOpenAI()}>
+              Your OpenAI key
+            </Button> will be stored locally on your device. We will never store your key.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 pb-4">
+        <div className="grid gap-4 pb-4 px-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Input
               id="openai-key"
@@ -226,8 +239,8 @@ export default function UserSettings() {
             }
           </DialogDescription>
         </div>
-        <DialogFooter style={{ justifyContent: "center" }}>
-          <Button variant="link" onClick={() => cleanData()}>Clean my data</Button>
+        <DialogFooter style={{ justifyContent: "start" }} className="px-4">
+          <Button className="text-muted-foreground ps-0" variant="link" onClick={() => cleanData()}>Clean my locally stored data</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
