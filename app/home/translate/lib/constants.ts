@@ -3,16 +3,15 @@ import { BotIcon } from "lucide-react";
 import { Template } from "./types";
 
 export const TEMPLATES: Template[] = [
-  { title: "Blog post", format: "markdown" },
-  { title: "Documentation", format: "markdown" },
-  { title: "Landing page", format: "html" },
+  { title: "Markdown note", format: "markdown" },
+  { title: "Tweet", format: "string" },
+  { title: "Documentation page", format: "markdown" },
+  { title: "Simple HTML landing page", format: "html" },
   { title: "Research markdown", format: "string" },
   { title: "Research proposal", format: "string" },
   { title: "Literature review", format: "string" },
-  { title: "Research proposal", format: "string" },
   { title: "Marketing copy", format: "string" },
   { title: "Product description", format: "string" },
-  { title: "Tweet", format: "string" },
   { title: "Instagram caption post", format: "string" },
   { title: "English", format: "string" },
   { title: "Spanish", format: "string" },

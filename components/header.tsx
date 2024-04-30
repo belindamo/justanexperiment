@@ -17,17 +17,19 @@ import { usePathname } from "next/navigation";
 
 export const options = [
   {
-    title: "Translate",
-    href: "/translate",
+    title: 'Translate',
+    href: '/translate',
     description: `Translation across more than just languages 🧙🏻‍♀️`,
   },
-  { title: 'Concept Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
+  {
+    title: 'Chat',
+    href: '/chat',
+    description: 'Chat with AI characters that help you get things done',
+  }
+  // { title: 'Concept Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'RAG', href: '/rag', description: 'Chat with your documents' },
-  // { title: 'Agents', href: '/agents', description: 'Create and manage little AI models to do your work for you!' },
   // { title: 'Learn', href: '/learn', description: 'Use AI to help you learn more effectively' },
 ];
-
-// const models = ["GPT-4", "GPT-3.5-turbo"];
 
 // const whoAreYou = [
 //   "Student",

@@ -2,27 +2,17 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { CopyIcon } from "lucide-react";
-import { PresetSelector } from "@/app/home/translate/components/preset-selector";
-import { presets } from "@/app/home/translate/components/presets";
-import { PopoverTranslate } from "@/app/home/translate/components/popover-translate";
-import { DialogUnderTheHood } from "@/app/home/translate/components/dialog-under-the-hood";
 import { OptionFilter } from "@/app/home/translate/components/option-filter";
-import { Toolbar } from "./components/toolbar";
-import { HoverCardDemo } from "./components/hover-cards";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { Separator } from "@/components/ui/separator";
 import { TemplateCombobox } from "./components/template-combobox";
-import { getSystemMessage, initialMessages } from "./lib/ai";
-import { Message } from "ai/react";
+import { getSystemMessage } from "./lib/ai";
 import { TEMPLATES, MODELS } from "./lib/constants";
 import { sendMessageToOpenAI } from "./lib/openai";
 import { Template } from "./lib/types";
-import { toast } from "sonner";
 import RichTextEditor from "./components/rich-text-editor";
 
 interface Target {
@@ -84,11 +74,6 @@ export default function Translate() {
       console.log('finish')
     });
 
-    // setMessages(
-    //   messages
-    //   // initialMessages(sourceTemplate, targetTemplate).concat(messages),
-    // );
-    // handleSubmit(e);
   };
 
   useEffect(() => {
@@ -130,6 +115,7 @@ export default function Translate() {
     })
     setTargets(newTargets);
 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [models, templates])
 
   return (
@@ -137,18 +123,14 @@ export default function Translate() {
       {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
       <ResizablePanelGroup direction="horizontal" className="*:mx-4">
         <ResizablePanel>
-          <div className="grid gap-4 w-full">
-            <div className="flex items-center gap-4">
-              {/* <Label htmlFor="source-language">Source Text</Label> */}
-              {/* <OptionFilter title="Templates" options={templateOptions} /> */}
-            </div>
+          <div className="grid gap-4 mt-4">
             <TemplateCombobox
               templates={allTemplates}
               template={sourceTemplate}
               setTemplate={(oldTemplate, newTemplate) => setSourceTemplate(newTemplate)}
             />
             <div className="rounded-lg border border-gray-200 dark:border-gray-800">
-              <RichTextEditor initialValue='' onUpdate={setSourceContent}/>
+              <RichTextEditor value={sourceContent} onUpdate={setSourceContent}/>
             </div>
             <div className="flex flex-row justify-end pb-8">
               <div className="text-primary">
@@ -183,7 +165,7 @@ export default function Translate() {
                         setTemplates(newTemplates);
                       }}
                       />
-                    {/* <DialogUnderTheHood /> */}
+                      {/* <DialogUnderTheHood /> */}
                     <Button type="submit">{isLoading ? "..." : "Translate"}</Button>
                     {/* <PopoverTranslate title="Add template" /> */}
                     {/* <PresetSelector presets={presets} /> */}
@@ -192,25 +174,27 @@ export default function Translate() {
               </div>
               {/* <div><Toolbar /></div> */}
             </div>
-            <div>Total combinations: 2 models x 2 templates = 4</div>
+            {/* <div>Total combinations: 2 models x 2 templates = 4</div>
             <div>Estimated tokens used: 600</div>
             <div>Sign up to run more than 2 at a time!</div>
-            <div>Sign up to save your templates!</div>
+            <div>Sign up to save your templates!</div> */}
           </div>
           
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel>
-          {models.map((model) => {
+          {models.map((model, i) => {
             const templatesforModel = targets.filter((t) => t.model === model);
             
             return (
-              <div className="flex items-center gap-4">
-                <div className="w-16 font-medium text-primary">{model}</div>
-                {templatesforModel.map((target) => (
-                  <div className="mt-4 grid grid-cols-1">
+              <div className="flex items-start gap-4" key={`model-${model}-${i}`}>
+                {templatesforModel.length > 0 && (
+                  <div className="w-20 font-medium text-primary">{model}</div>
+                )}
+                {templatesforModel.map((target, j) => (
+                  <div className="grid grid-cols-1 w-96" key={`template-${j}`}>
                       <div>
-                        <div className="flex justify-between">
+                        <div className="mt-4 flex justify-between">
                           <TemplateCombobox
                             templates={allTemplates}
                             template={target.template}
@@ -230,7 +214,7 @@ export default function Translate() {
                               setTargets(newTargets)
                             }}
                           />
-                          {target.content.length > 0 && (
+                          {/* {target.content.length > 0 && (
                             <Button variant="ghost">
                               <CopyIcon
                                 className="h-4"
@@ -242,8 +226,16 @@ export default function Translate() {
                                 }}
                               />
                             </Button>
-                          )}
+                          )} */}
                         </div>
+                        {/* <div className="mt-4 rounded-lg border border-gray-200 dark:border-gray-800 min-w-[300px]">
+                          <RichTextEditor value={target.content} onUpdate={(newContent) => {
+                            // target.content = newContent;
+                            // setTargets([...targets])
+
+                            // const targetExists = targets.find((target) => target.model === model && target.template.title === newTemplate.title)
+                          }}/>
+                        </div> */}
                         <div className="mt-4 rounded-lg border border-gray-200 dark:border-gray-800">
                           <div
                             className="min-h-[200px] w-full resize-none border-0 p-4 text-base font-normal"

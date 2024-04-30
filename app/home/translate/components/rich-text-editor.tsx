@@ -7,7 +7,7 @@ import { Bold, Strikethrough, Italic, List, ListOrdered } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
 import { Separator } from "@/components/ui/separator";
 
-const RichTextEditor = ({ initialValue, onUpdate }: { initialValue: string, onUpdate: (value: string) => void }) => {
+const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: string) => void }) => {
   const editor = useEditor({
     editorProps: {
       attributes: {
@@ -40,7 +40,7 @@ const RichTextEditor = ({ initialValue, onUpdate }: { initialValue: string, onUp
         transformCopiedText: true, // Copied text is transformed to markdown
       }),
     ],
-    content: initialValue,
+    content: value,
     onTransaction: () => {
       // @ts-ignore
       const newValue = editor.storage.markdown.getMarkdown();

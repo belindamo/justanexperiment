@@ -1,10 +1,7 @@
-// Load environment variables
-// require('dotenv').config();
 const { OpenAI } = require('openai');
 
 // Initialize OpenAI client with your API key from the environment variables
-const openai = new OpenAI({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, dangerouslyAllowBrowser: true })
-//const openai = new OpenAI(process.env.NEXT_PUBLIC_OPENAI_API_KEY);
+const openai = new OpenAI({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, dangerouslyAllowBrowser: true });
 
 const buildOpenAIPrompt = (messages) => {
   // Ensure the last message is from a "user"

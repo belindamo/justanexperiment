@@ -6,11 +6,6 @@ import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import type { ChatCompletionCreateParams } from "openai/resources/chat";
 
-// Create an OpenAI API client (that's edge friendly!)
-// const openai = new OpenAI({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
-
 type OpenAIBody = Omit<OpenAI.ChatCompletionCreateParams, "model"> & {
   model?: OpenAI.ChatCompletionCreateParams["model"];
 };
@@ -24,25 +19,18 @@ const supportedModels = ["gpt-4", "gpt-3.5-turbo"];
 export const runtime = "edge";
 
 export async function POST(req: Request): Promise<Response> {
-  // const { messages, model = 'gpt-4' } = await req.json();
   const body = await req.json();
   const {
-    // openai_body,
     messages,
     type = "chat",
-    api_key = process.env.OPENAI_API_KEY || "",
+    api_key = process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
     model = "gpt-3.5-turbo",
-    // stream_response,
   }: {
-    // openai_body: OpenAIBody
     messages: ChatCompletionCreateParams["messages"];
     type: "chat" | "vision";
     api_key: string;
     model: string;
-    // stream_response: boolean
   } = body;
-
-  console.log(messages);
 
   const openai = new OpenAI({
     apiKey: api_key,

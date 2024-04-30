@@ -1,6 +1,5 @@
 import * as React from "react";
 import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
-import { Column } from "@tanstack/react-table";
 
 import { cn, remove, add } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +11,6 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from "@/components/ui/command";
 import {
   Popover,
@@ -48,26 +46,12 @@ export function OptionFilter({
                 {selectedOptions.length}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
-                {/* {selectedOptions.size > 4 ? ( */}
                   <Badge
                     variant="secondary"
                     className="rounded-sm px-1 font-normal"
                   >
                     {selectedOptions.length} selected
                   </Badge>
-                {/* ) : (
-                  options
-                    .filter((option) => selectedOptions.has(option.value))
-                    .map((option) => (
-                      <Badge
-                        variant="secondary"
-                        key={option.value}
-                        className="rounded-sm px-1 font-normal"
-                      >
-                        {option.label}
-                      </Badge>
-                    ))
-                )} */}
               </div>
             </>
           )}
@@ -86,14 +70,11 @@ export function OptionFilter({
                     key={option}
                     onSelect={() => {
                       if (isSelected) {
-                        if (selectedOptions.length > 1) {
-                          selectedOptions = remove(selectedOptions, option);
-                          setSelectedOptions(selectedOptions);
-                        }
+                        selectedOptions = remove(selectedOptions, option);
                       } else {
                         selectedOptions = add(selectedOptions, option);
-                        setSelectedOptions(selectedOptions);
                       }
+                      setSelectedOptions(selectedOptions);
                     }}
                   >
                     <div
@@ -106,34 +87,11 @@ export function OptionFilter({
                     >
                       <CheckIcon className={cn("h-4 w-4")} />
                     </div>
-                    {/* {option.icon && (
-                      <option.icon />
-                    )} */}
                     <span>{option}</span>
-                    {/* {facets?.get(option.value) && (
-                    <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
-                      {facets.get(option.value)}
-                    </span>
-                  )} */}
                   </CommandItem>
                 );
               })}
             </CommandGroup>
-            {/* {selectedOptions.length > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={() => {
-                      // column?.setFilterValue(undefined)
-                    }}
-                    className="justify-center text-center"
-                  >
-                    Add
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )} */}
           </CommandList>
         </Command>
       </PopoverContent>

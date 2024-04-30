@@ -1,28 +1,17 @@
 import { Template } from "./types";
-import { Message } from "ai/react";
 
 export const getSystemMessage = (
   sourceTemplate: Template,
   targetTemplate: Template,
 ): string => {
-  let systemMessage = `My messages are written for a ${sourceTemplate.audience} audience and your messages should be written for a ${targetTemplate.audience} audience.`;
+  let systemMessage = `User messages are written as ${sourceTemplate.title} and assistant messages are written as ${targetTemplate.title}.`
 
-  if (sourceTemplate.sampleTexts.length > 0) {
-    systemMessage += `Here's an example of my messages in ${sourceTemplate.format}:\n`;
-
-    for (let i = 0; i < sourceTemplate.sampleTexts.length; i++) {
-      const message = sourceTemplate.sampleTexts[i].text + "\n";
-      systemMessage += `${i + 1}: ${message}\n`;
-    }
+  if (sourceTemplate.format != 'string') {
+    systemMessage += `\nUser messages should be in ${sourceTemplate.format} format.`
   }
 
-  if (targetTemplate.sampleTexts.length > 0) {
-    systemMessage += `\nHere's an example of your messages in ${targetTemplate.format}:\n`;
-
-    for (let i = 0; i < targetTemplate.sampleTexts.length; i++) {
-      const message = targetTemplate.sampleTexts[i].text + "\n";
-      systemMessage += `${i + 1}: ${message}\n`;
-    }
+  if (targetTemplate.format != 'string') {
+    systemMessage += `Assistant messages should be in ${targetTemplate.format} format.`
   }
 
   return systemMessage;
