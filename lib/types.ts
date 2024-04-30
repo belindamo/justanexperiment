@@ -59,8 +59,7 @@ export interface DomainVerificationResponse {
 
 export interface AIModel {
   name: string,
-  enabled: boolean,
-  canBeDeleted: boolean
+  enabled: boolean
 }
 
 export interface AIModelKey {

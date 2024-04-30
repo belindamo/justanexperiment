@@ -1,4 +1,4 @@
-import { Settings, Plus, X } from "lucide-react";
+import { AlertCircle, Settings, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,152 +9,138 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/alert"
+import UserSettingsModel from "./user-settings-model";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator";
-import UserSettingsModel from "./user-settings-model";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AIModel } from "@/lib/types";
-import ModelStorage from "@/lib/models-storage";
 import { validateOpenAIKey } from "@/app/home/translate/lib/openai";
-import Link from "next/link";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { DEFAULT_MODELS, PREDEFINED_MODELS, TOP_MODELS } from "@/lib/constants";
+import { useModelStorageContext } from "../providers/model-storage";
 
 
 export default function UserSettings() {
-  const [models, setModels] = useState<AIModel[]>([])
-  const [modelNames, setModelNames] = useState<string[]>([]);
-
-  const [addingModel, setAddingModel] = useState(false);
-  const [newModelName, setNewModelName] = useState('');
-
-  const [openAIKey, setOpenAIKey] = useState('');
+  const { enabledModels, openAIKey, setOpenAIKey, changeModelStatus, cleanData } = useModelStorageContext()
+  const [gptModels, setGPTModels] = useState<AIModel[]>([]);
+  const [onTopModels, setOnTopModels] = useState<string[]>([]);
+  const [openAIValue, setOpenAIValue] = useState(openAIKey);
   const [openAIKeyValid, setOpenAIKeyValid] = useState(true);
   const [openAIKeySaved, setOpenAIKeySaved] = useState(false);
-
-
-  /**
-   * Delte the given model
-   * @param name 
-   * @returns 
-   */
-  const onModelDelete = (name: string) => {
-    const idx = modelNames.indexOf(name);
-    if (idx < 0 || !models[idx].canBeDeleted) return;
-    console.log("Model delete ", name)
-    setModels(models.filter((obj) => {
-      return obj.name !== name;
-    }));
-    ModelStorage.delete(name);
-  }
+  const [require1ModelError, setRequire1ModelError] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   /**
    * Update the status of the given model
-   * @param name 
-   * @param checked 
+   * @param modelBase 
    * @returns 
    */
   const onModelStatusChange = (name: string, checked: boolean) => {
-    const idx = modelNames.indexOf(name);
+    const idx = PREDEFINED_MODELS.indexOf(name);
     if (idx < 0) return;
-    const model = models[idx];
+
+    /* Prevent removing the last model */
+    if (!checked && enabledModels.length === 1) {
+      setRequire1ModelError(true);
+      setTimeout(() => setRequire1ModelError(false), 8000);
+      return;
+    }
+
+    const model = gptModels[idx];
     model.enabled = checked;
-    setModels(models.map((obj) => {
-      return obj.name === name ? model : obj;
-    }));
-    ModelStorage.addUpdate(model);
+    changeModelStatus(name, checked);
   }
 
   /**
-   * Set to add new model
+   * Reload the list of models and the models on top
    */
-  const addNewModel = () => {
-    setNewModelName('');
-    setAddingModel(true);
-  };
-
-  /**
-   * Track the changes for the new model name
-   * @param evt 
-   */
-  const onModelNameChange = (evt: any) => {
-    setNewModelName(evt.target.value);
-  }
-
-  /**
-   * Register new model
-   * @returns 
-   */
-  const saveNewModel = () => {
-    setAddingModel(false);
-
-    /* Check that model is valid and was not added previously */
-    const trimed = newModelName.trim()
-    if (trimed.length === 0 || modelNames.includes(trimed)) return;
-
-    /* Add the new model */
-    setModelNames([...modelNames, trimed]);
-    const model = { name: trimed, enabled: true, canBeDeleted: true };
-    setModels([...models, model]);
-    ModelStorage.addUpdate(model);
+  const reloadModelsOnTop = (oldTopModels: string[]) => {
+    const newModels = PREDEFINED_MODELS.map((name) => {
+      return {
+        name,
+        enabled: enabledModels?.includes(name) ?? true,
+      };
+    });
+    setGPTModels(newModels);
+    setOnTopModels(newModels.filter(model => model.enabled || oldTopModels.includes(model.name)).map(model => model.name));
   };
 
   /**
    * Load model from DB when dialog is getting opened
    * @param opened 
    */
-  const onDialogOpen = async (opened: any) => {
+  const onDialogOpen = (opened: any) => {
     if (opened) {
-      setOpenAIKeySaved(false)
+      setIsOpen(false);
+      setOpenAIValue(openAIKey);
+      setOpenAIKeySaved(openAIKey !== "");
 
-      /* Read the models from DB */
-      const dbModels = await ModelStorage.getAll();
-      setModelNames(dbModels.map((model) => model.name));
-      setModels(dbModels);
-
-      /* Read the keys from DB */
-      const dbKeys = await ModelStorage.getAllKeys();
-      for (const key of dbKeys) {
-        if (key.provider === 'openai') {
-          setOpenAIKey(key.key);
-        }
-      }
+      /* Reload the active models to keep them on top */
+      reloadModelsOnTop([]);
     }
   }
 
   /**
+   * Reload models everytime that enabled models get updated
+   */
+  useEffect(() => {
+    /* Load the models from local storage when the lsit is closed */
+    if (!isOpen) {
+      reloadModelsOnTop(onTopModels);
+    }
+  }, [enabledModels, isOpen]);
+
+  /**
+   * Reload OpenAI key everytime get updated
+   */
+  useEffect(() => {
+    onDialogOpen(true);
+  }, [openAIKey]);
+
+  /**
    * Clean the data from the DB
    */
-  const cleanData = async () => {
-    await ModelStorage.cleanKeys()
-    setOpenAIKey('');
-    await ModelStorage.clean()
-    await onDialogOpen(true);
+  const callCleanData = () => {
+    cleanData();
+    setOpenAIValue("");
     setOpenAIKeyValid(true);
     setOpenAIKeySaved(false)
-  }
+  };
 
   /**
    * Track the changes for the OpenAI key
    * @param evt 
    */
   const onOpenAIKeyChange = (evt: any) => {
-    setOpenAIKey(evt.target.value);
+    setOpenAIValue(evt.target.value);
     setOpenAIKeyValid(true);
+    setOpenAIKeySaved(false);
   }
 
   /**
    * Validate and save the OpenAI key on DB
    */
   const validateSaveOpenAIKey = async () => {
-    const isValid = await validateOpenAIKey(openAIKey);
+    const isValid = await validateOpenAIKey(openAIValue);
     if (!isValid) {
       setOpenAIKeyValid(false);
+      // setOpenAIKeySaved(false);
       return;
     }
     setOpenAIKeyValid(true);
-    ModelStorage.setKey('openai', openAIKey);
+    setOpenAIKey(openAIValue);
     setOpenAIKeySaved(true);
-    setTimeout(() => setOpenAIKeySaved(false), 3000);
   };
 
   /**
@@ -184,31 +170,35 @@ export default function UserSettings() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 pb-4  px-4">
-          {models.map(model => (
-            <UserSettingsModel key={model.name} model={model} onStatusChange={onModelStatusChange} onDelete={onModelDelete} />
-          ))}
-          {!addingModel &&
-            <Button
-              variant="link"
-              size="sm"
-              style={{ textDecoration: "none" }}
-              onClick={() => addNewModel()}
-            >
-              <Plus className="mr-2" size={16} />Add new model
-            </Button>
-          }
-          {addingModel &&
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Input
-                id="new-model-name"
-                placeholder="New model name"
-                className="col-span-3"
-                value={newModelName}
-                onChange={onModelNameChange}
-              />
-              <Button onClick={() => saveNewModel()}>Add</Button>
+          {require1ModelError && (<Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Can't disable the model</AlertTitle>
+            <AlertDescription>
+              You must have at least one active model.
+            </AlertDescription>
+          </Alert>)}
+          <Collapsible
+            open={isOpen}
+            onOpenChange={setIsOpen}
+            className="space-y-2 text-right"
+          >
+            <div className="grid space-y-2 ps-2 text-left">
+              {gptModels.map(model => (TOP_MODELS.includes(model.name) || onTopModels.includes(model.name)) &&
+                <UserSettingsModel key={`${model.name}-${model.enabled}`} model={model} onStatusChange={onModelStatusChange} />
+              )}
             </div>
-          }
+            <CollapsibleContent className="space-y-2 ps-2 text-left">
+              {gptModels.map(model => (!TOP_MODELS.includes(model.name) && !onTopModels.includes(model.name) &&
+                <UserSettingsModel key={`${model.name}-${model.enabled}`} model={model} onStatusChange={onModelStatusChange} />
+              ))}
+            </CollapsibleContent>
+            <CollapsibleTrigger asChild>
+              <Button className="text-muted-foreground ps-0 mt-0 pt-0 text-right text-xs" variant="link">
+                <span className="mr-2">{isOpen ? "Show less" : "Show more"}</span>
+                {isOpen ? (<ChevronUp className="h-4 w-4" />) : (<ChevronDown className="h-4 w-4" />)}
+              </Button>
+            </CollapsibleTrigger>
+          </Collapsible>
         </div>
         <DialogHeader className="px-4">
           <DialogTitle>OpenAI API key</DialogTitle>
@@ -224,10 +214,10 @@ export default function UserSettings() {
               id="openai-key"
               placeholder="Enter your OpenAI key"
               className="col-span-3"
-              value={openAIKey}
+              value={openAIValue}
               onChange={onOpenAIKeyChange}
             />
-            <Button onClick={() => validateSaveOpenAIKey()}>Validate</Button>
+            <Button onClick={() => validateSaveOpenAIKey()}>{openAIKeySaved ? "..." : "Validate"}</Button>
           </div>
           <DialogDescription>
             {!openAIKeyValid &&
@@ -235,12 +225,11 @@ export default function UserSettings() {
             }
             {openAIKeySaved &&
               <span>OpenAI key saved</span>
-
             }
           </DialogDescription>
         </div>
         <DialogFooter style={{ justifyContent: "start" }} className="px-4">
-          <Button className="text-muted-foreground ps-0" variant="link" onClick={() => cleanData()}>Clean my locally stored data</Button>
+          <Button className="text-muted-foreground ps-0" variant="link" onClick={() => callCleanData()}>Clean my locally stored data</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
