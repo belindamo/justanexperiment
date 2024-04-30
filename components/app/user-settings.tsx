@@ -32,7 +32,7 @@ import { useModelStorageContext } from "../providers/model-storage";
 
 
 export default function UserSettings() {
-  const { enabledModels, openAIKey, setOpenAIKey, changeModelStatus, cleanData } = useModelStorageContext()
+  const { enabledModels, openAIKey, setOpenAIKey, changeModelStatus, clearData } = useModelStorageContext()
   const [gptModels, setGPTModels] = useState<AIModel[]>([]);
   const [onTopModels, setOnTopModels] = useState<string[]>([]);
   const [openAIValue, setOpenAIValue] = useState(openAIKey);
@@ -109,10 +109,10 @@ export default function UserSettings() {
   }, [openAIKey]);
 
   /**
-   * Clean the data from the DB
+   * Clear the data from the DB
    */
-  const callCleanData = () => {
-    cleanData();
+  const callClearData = () => {
+    clearData();
     setOpenAIValue("");
     setOpenAIKeyValid(true);
     setOpenAIKeySaved(false)
@@ -131,7 +131,7 @@ export default function UserSettings() {
   /**
    * Validate and save the OpenAI key on DB
    */
-  const validateSaveOpenAIKey = async () => {
+  const validateAndSaveOpenAIKey = async () => {
     const isValid = await validateOpenAIKey(openAIValue);
     if (!isValid) {
       setOpenAIKeyValid(false);
@@ -217,7 +217,7 @@ export default function UserSettings() {
               value={openAIValue}
               onChange={onOpenAIKeyChange}
             />
-            <Button onClick={() => validateSaveOpenAIKey()}>{openAIKeySaved ? "..." : "Validate"}</Button>
+            <Button onClick={() => validateAndSaveOpenAIKey()}>{openAIKeySaved ? "..." : "Validate"}</Button>
           </div>
           <DialogDescription>
             {!openAIKeyValid &&
@@ -229,7 +229,7 @@ export default function UserSettings() {
           </DialogDescription>
         </div>
         <DialogFooter style={{ justifyContent: "start" }} className="px-4">
-          <Button className="text-muted-foreground ps-0" variant="link" onClick={() => callCleanData()}>Clean my locally stored data</Button>
+          <Button className="text-muted-foreground ps-0" variant="link" onClick={() => callClearData()}>Clear my locally stored data</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

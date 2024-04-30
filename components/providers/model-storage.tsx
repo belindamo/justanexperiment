@@ -8,7 +8,7 @@ interface StateContextType {
   changeModelStatus: (name: string, checked: boolean) => void;
   openAIKey: string;
   setOpenAIKey: (value: string) => void;
-  cleanData: () => void;
+  clearData: () => void;
 }
 
 const StateContext = createContext<StateContextType | undefined>(undefined);
@@ -53,14 +53,14 @@ export const ModelStorageProvider = ({ children }: { children: ReactNode }) => {
   /**
    * Clear the OpenAI key and models
    */
-  const cleanData = () => {
+  const clearData = () => {
     localStorage.setItem('openai-models', DEFAULT_MODELS.join(','));
     setOpenAIKey('');
     setEnabledModels(DEFAULT_MODELS);
   };
 
   return (
-    <StateContext.Provider value={{ enabledModels, setEnabledModels, openAIKey, setOpenAIKey, changeModelStatus, cleanData }}>
+    <StateContext.Provider value={{ enabledModels, setEnabledModels, openAIKey, setOpenAIKey, changeModelStatus, clearData }}>
       {children}
     </StateContext.Provider>
   );
