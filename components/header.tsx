@@ -12,8 +12,8 @@ import {
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import { HelpCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
+import UserSettings from "./app/user-settings";
 
 export const options = [
   {
@@ -94,9 +94,7 @@ export default function Header() {
         </NavigationMenu>
       </div>
       <div className="flex flex-row justify-end">
-        <Link href="https://write.justanexperiment.com" target="_blank" className="mx-8 flex items-center py-4">
-          <HelpCircle className="h-4" />
-        </Link>
+        <UserSettings />
       </div>
     </header>
   );
