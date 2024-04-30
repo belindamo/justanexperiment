@@ -1,6 +1,6 @@
-"use client";
+'use client'
 import { DEFAULT_MODELS } from '@/lib/constants';
-import React, { createContext, useState, useContext, ReactNode, useCallback } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 
 interface StateContextType {
   enabledModels: string[];
@@ -14,14 +14,19 @@ interface StateContextType {
 const StateContext = createContext<StateContextType | undefined>(undefined);
 
 export const ModelStorageProvider = ({ children }: { children: ReactNode }) => {
-  const [enabledModels, setEnabledModels] = useState<string[]>(localStorage.getItem('openai-models')?.split(',') ?? []);
-  const [openAIKey, saveOpenAIKey] = useState(localStorage.getItem('openai-key') ?? '');
+  const [enabledModels, setEnabledModels] = useState<string[]>([]);
+  const [openAIKey, saveOpenAIKey] = useState("");
 
-  /* Ensure at least default models enables */
-  if (enabledModels.length === 0) {
-    setEnabledModels(DEFAULT_MODELS);
-    localStorage.setItem('openai-models', DEFAULT_MODELS.join(','));
-  }
+  useEffect(() => {
+    let models = localStorage.getItem('openai-models')?.split(',') ?? [];
+    /* Ensure at least default models enables */
+    if (models.length === 0) {
+      models = DEFAULT_MODELS;
+      localStorage.setItem('openai-models', DEFAULT_MODELS.join(','));
+    }
+    setEnabledModels(models);
+    setOpenAIKey(localStorage.getItem('openai-key') ?? '');
+  }, []);
 
   /**
    * Change the stored model status

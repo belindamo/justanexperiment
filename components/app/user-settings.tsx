@@ -99,6 +99,7 @@ export default function UserSettings() {
     if (!isOpen) {
       reloadModelsOnTop(onTopModels);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabledModels, isOpen]);
 
   /**
@@ -106,6 +107,7 @@ export default function UserSettings() {
    */
   useEffect(() => {
     onDialogOpen(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openAIKey]);
 
   /**
@@ -172,7 +174,7 @@ export default function UserSettings() {
         <div className="grid gap-4 pb-4  px-4">
           {require1ModelError && (<Alert variant="destructive">
             <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Can't disable the model</AlertTitle>
+            <AlertTitle>Can&apos;t disable the model</AlertTitle>
             <AlertDescription>
               You must have at least one active model.
             </AlertDescription>
