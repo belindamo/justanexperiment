@@ -47,7 +47,7 @@ export default function Header() {
   return (
     <header className="flex w-full justify-between items-center relative py-2">
       <div className="flex flex-row">
-        <Link href="/" className="mx-8 font-medium text-primary">
+        <Link href="/" className="hidden md:block mx-8 font-medium text-primary">
           🧚🏼‍♀️ Just an Experiment
         </Link>
       </div>

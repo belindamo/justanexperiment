@@ -16,6 +16,7 @@ import { sendMessageToOpenAI } from "./lib/openai";
 import { Template } from "./lib/types";
 import RichTextEditor from "./components/rich-text-editor";
 import { useModelStorageContext } from "@/components/providers/model-storage";
+import useWindowSize from '@/lib/hooks/use-window-size';
 
 interface Target {
   model: string;
@@ -26,7 +27,8 @@ interface Target {
 let allTemplates = TEMPLATES;
 
 export default function Translate() {
-  const { enabledModels, openAIKey } = useModelStorageContext()
+  const { enabledModels, openAIKey } = useModelStorageContext();
+  const { isMobile } = useWindowSize();
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -126,8 +128,8 @@ export default function Translate() {
   return (
     <div className="w-full h-full px-8">
       {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
-      <ResizablePanelGroup direction="horizontal" className="*:mx-4">
-        <ResizablePanel>
+      <ResizablePanelGroup direction={isMobile ? "vertical" : "horizontal"} className="*:mx-4">
+        <ResizablePanel style={{ minHeight: '35vh' }}>
           <div className="grid gap-4 mt-4">
             <TemplateCombobox
               templates={allTemplates}
@@ -143,7 +145,7 @@ export default function Translate() {
                   <form
                     id="translate-form"
                     onSubmit={handleSubmit}
-                    className="*:mr-2"
+                    className="*:mr-2 *:mb-2"
                   >
                     <OptionFilter
                       title="Models"
@@ -184,10 +186,9 @@ export default function Translate() {
             <div>Sign up to run more than 2 at a time!</div>
             <div>Sign up to save your templates!</div> */}
           </div>
-
         </ResizablePanel>
         <ResizableHandle />
-        <ResizablePanel>
+        <ResizablePanel style={{ minHeight: '100vh' }}>
           {models.map((model, i) => {
             const templatesforModel = targets.filter((t) => t.model === model);
             return (
