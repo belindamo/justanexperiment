@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { CopyIcon } from "lucide-react";
 import { OptionFilter } from "@/app/home/translate/components/option-filter";
 import {
   ResizableHandle,
@@ -10,10 +11,11 @@ import {
 } from "@/components/ui/resizable";
 import { TemplateCombobox } from "./components/template-combobox";
 import { getSystemMessage } from "./lib/ai";
-import { TEMPLATES, MODELS } from "./lib/constants";
+import { TEMPLATES } from "./lib/constants";
 import { sendMessageToOpenAI } from "./lib/openai";
 import { Template } from "./lib/types";
 import RichTextEditor from "./components/rich-text-editor";
+import { useModelStorageContext } from "@/components/providers/model-storage";
 
 interface Target {
   model: string;
@@ -21,23 +23,25 @@ interface Target {
   content: string;
 }
 
-const INITIAL_TARGETS = [{
-  model: MODELS[0],
-  template: TEMPLATES[1],
-  content: ''
-}] as Target[];
-
 let allTemplates = TEMPLATES;
 
 export default function Translate() {
+  const { enabledModels, openAIKey } = useModelStorageContext()
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sourceContent, setSourceContent] = useState<string>('');
   const [sourceTemplate, setSourceTemplate] = useState<Template>(allTemplates[0]);
-  const [targets, setTargets] = useState<Target[]>(INITIAL_TARGETS);
+  const [targets, setTargets] = useState<Target[]>([{
+    model: enabledModels[0],
+    template: TEMPLATES[1],
+    content: ''
+  }]);
 
   // Current models and templates being used for grid
-  const [models, setModels] = useState<string[]>([MODELS[0]]);
+  const [models, setModels] = useState<string[]>([enabledModels[0]]);
+
+
   const [templates, setTemplates] = useState<Template[]>([allTemplates[1]]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,17 +53,18 @@ export default function Translate() {
         try {
           console.log('here', sourceContent)
           await sendMessageToOpenAI(
-            sourceContent, 
+            openAIKey,
+            sourceContent,
             (messageChunk: string) => {
-               
+
               target.content = messageChunk
-            
+
               setTargets([...targets]);
             },
             target.model,
             getSystemMessage(sourceTemplate, target.template)
-            );
-        } catch(error: any) {
+          );
+        } catch (error: any) {
           console.error('OpenAI error:', error);
           const errorMessage = error.message ? error.message : "An error occurred with OpenAI";
           setError(`OpenAI error: ${errorMessage}`);
@@ -69,10 +74,10 @@ export default function Translate() {
     console.log(promises)
 
     await Promise.all(promises)
-    .then(() => {
-      setIsLoading(false);
-      console.log('finish')
-    });
+      .then(() => {
+        setIsLoading(false);
+        console.log('finish')
+      });
 
   };
 
@@ -100,9 +105,9 @@ export default function Translate() {
     templates.forEach((t) => {
       models.forEach((m) => {
         const o = targets.find((target) => target.model === m && target.template.title === t.title)
-  
+
         if (o === undefined) {
-          targets.push({ model: m, template: t, content: ''})
+          targets.push({ model: m, template: t, content: '' })
         }
       })
     })
@@ -140,17 +145,17 @@ export default function Translate() {
                     onSubmit={handleSubmit}
                     className="*:mr-2"
                   >
-                    <OptionFilter 
-                      title="Models" 
-                      options={MODELS} 
+                    <OptionFilter
+                      title="Models"
+                      options={enabledModels}
                       selectedOptions={models}
                       setSelectedOptions={(selectedOptions) => {
                         setModels([...selectedOptions]);
                       }}
-                      />
-                    <OptionFilter 
-                      title="Target Templates" 
-                      options={allTemplates.map((t) => t.title)} 
+                    />
+                    <OptionFilter
+                      title="Target Templates"
+                      options={allTemplates.map((t) => t.title)}
                       selectedOptions={templates.map(t => t.title)}
                       setSelectedOptions={async (selectedOptions) => {
                         let newTemplates: Template[] = [];
@@ -179,13 +184,12 @@ export default function Translate() {
             <div>Sign up to run more than 2 at a time!</div>
             <div>Sign up to save your templates!</div> */}
           </div>
-          
+
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel>
           {models.map((model, i) => {
             const templatesforModel = targets.filter((t) => t.model === model);
-            
             return (
               <div className="flex items-start gap-4" key={`model-${model}-${i}`}>
                 {templatesforModel.length > 0 && (
@@ -201,15 +205,15 @@ export default function Translate() {
                             setTemplate={(oldTemplate, newTemplate) => {
                               const targetExists = targets.find((target) => target.model === model && target.template.title === newTemplate.title) != undefined;
 
-                              let newTargets = [...targets];
-                              if (targetExists) {
-                                newTargets = newTargets.filter(target => !(target.model === model && target.template.title === oldTemplate.title));
-                              } else {
-                                const targetIndex = newTargets.findIndex(target => target.model === model && target.template.title === oldTemplate.title);
-                                if (targetIndex !== -1) {
-                                  newTargets[targetIndex].template = newTemplate;
-                                }
+                            let newTargets = [...targets];
+                            if (targetExists) {
+                              newTargets = newTargets.filter(target => !(target.model === model && target.template.title === oldTemplate.title));
+                            } else {
+                              const targetIndex = newTargets.findIndex(target => target.model === model && target.template.title === oldTemplate.title);
+                              if (targetIndex !== -1) {
+                                newTargets[targetIndex].template = newTemplate;
                               }
+                            }
 
                               setTargets(newTargets)
                             }}
@@ -245,12 +249,12 @@ export default function Translate() {
                           </div>
                         </div>
                       </div>
-                  </div>
+                    </div>
                 ))}
               </div>
             )
           })}
-          
+
         </ResizablePanel>
       </ResizablePanelGroup>
       {/* <div className="hidden lg:block pl-8 self-center"><Button>+</Button></div> */}
