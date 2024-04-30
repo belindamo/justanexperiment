@@ -3,17 +3,9 @@ const { OpenAI } = require('openai');
 // Initialize OpenAI client with your API key from the environment variables
 const openai = new OpenAI({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, dangerouslyAllowBrowser: true });
 
-const buildOpenAIPrompt = (messages) => {
-  // Ensure the last message is from a "user"
-  if (messages.length === 0 || messages[messages.length - 1].role !== 'user') {
-    throw new Error("The last message in the prompt must be from the 'user'.");
-  }
-
-  // OpenAI's chat completion endpoint expects a slightly different format
-  return messages.map(message => ({
-    role: message.role,
-    content: message.content
-  }));
+type Message = {
+  role: 'user' | 'system' | 'assistant',
+  content: string,
 };
 
 export const sendMessageToOpenAI = async (
@@ -24,7 +16,7 @@ export const sendMessageToOpenAI = async (
   ) => {
     
   try {
-    const messages = [
+    const messages: Message[] = [
       { role: 'user', content: inputText }, 
     ];
     if (systemMessage) {
@@ -34,7 +26,6 @@ export const sendMessageToOpenAI = async (
       });
     }
     console.log(model, messages)
-    // const prompt = buildOpenAIPrompt(messages);
     const completion = await openai.chat.completions.create({
       model: model,
       messages: messages,

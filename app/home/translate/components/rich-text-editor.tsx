@@ -16,6 +16,7 @@ const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: 
       },
     },
     extensions: [
+      // @ts-ignore
       StarterKit.configure({
         orderedList: {
           HTMLAttributes: {
@@ -62,6 +63,7 @@ const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
       <Toggle
         size="sm"
         pressed={editor.isActive("bold")}
+        // @ts-ignore
         onPressedChange={() => editor.chain().focus().toggleBold().run()}
       >
         <Bold className="h-4 w-4" />
@@ -69,6 +71,7 @@ const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
       <Toggle
         size="sm"
         pressed={editor.isActive("italic")}
+        // @ts-ignore
         onPressedChange={() => editor.chain().focus().toggleItalic().run()}
       >
         <Italic className="h-4 w-4" />
@@ -76,6 +79,7 @@ const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
       <Toggle
         size="sm"
         pressed={editor.isActive("strike")}
+        // @ts-ignore
         onPressedChange={() => editor.chain().focus().toggleStrike().run()}
       >
         <Strikethrough className="h-4 w-4" />
@@ -84,6 +88,7 @@ const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
       <Toggle
         size="sm"
         pressed={editor.isActive("bulletList")}
+        // @ts-ignore
         onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
       >
         <List className="h-4 w-4" />
@@ -91,6 +96,7 @@ const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
       <Toggle
         size="sm"
         pressed={editor.isActive("orderedList")}
+        // @ts-ignore
         onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
       >
         <ListOrdered className="h-4 w-4" />
