@@ -9,8 +9,13 @@
   "description": "I created these AI tools based on what I personally needed. I hope they're helpful for you too!",
   "icons": [
     {
-      "src": "/logo.png",
-      "sizes": "72x72",
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
