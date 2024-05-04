@@ -1,6 +1,16 @@
+'use client';
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function HomePage() {
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/worker.js');
+      });
+    }
+  }, []);
+
   return (
     <div className="flex flex-col items-center px-16 text-center">
       <br />
