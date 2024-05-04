@@ -99,7 +99,7 @@ export default function UserSettings() {
     if (!isOpen) {
       reloadModelsOnTop(onTopModels);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabledModels, isOpen]);
 
   /**
@@ -107,8 +107,16 @@ export default function UserSettings() {
    */
   useEffect(() => {
     onDialogOpen(true);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openAIKey]);
+
+  /**
+   * Clear only the OpenAI key
+   */
+  const clearKey = () => {
+    setOpenAIKey("");
+    setOpenAIValue("");
+  };
 
   /**
    * Clear the data from the DB
@@ -211,14 +219,16 @@ export default function UserSettings() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 pb-4 px-4">
-          <div className="grid grid-cols-4 items-center gap-4">
+          <div className="grid grid-cols-4 items-center gap-4 relative">
             <Input
               id="openai-key"
               placeholder="Enter your OpenAI key"
               className="col-span-3"
               value={openAIValue}
               onChange={onOpenAIKeyChange}
+              style={{ paddingRight: 30 }}
             />
+            {openAIValue.length > 0 && <X size={14} onClick={clearKey} className="text-muted-foreground absolute cursor-pointer" style={{ right: 110 }} />}
             <Button onClick={() => validateAndSaveOpenAIKey()}>{openAIKeySaved ? "..." : "Validate"}</Button>
           </div>
           <DialogDescription>
