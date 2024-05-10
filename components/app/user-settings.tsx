@@ -224,6 +224,7 @@ export default function UserSettings() {
               id="openai-key"
               placeholder="Enter your OpenAI key"
               className="col-span-3"
+              type={openAIKeySaved ? "password" : "text"}
               value={openAIValue}
               onChange={onOpenAIKeyChange}
               style={{ paddingRight: 30 }}
