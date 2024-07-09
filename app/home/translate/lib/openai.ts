@@ -16,7 +16,7 @@ export const sendMessageToOpenAI = async (
   const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true })
   try {
     const messages: Message[] = [
-      { role: 'user', content: inputText }, 
+      { role: 'user', content: inputText },
     ];
     if (systemMessage) {
       messages.unshift({
@@ -48,9 +48,12 @@ export const sendMessageToOpenAI = async (
 export const validateOpenAIKey = async (key: string): Promise<boolean> => {
   const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true })
   try {
+    const messages: Message[] = [
+      { role: 'user', content: 'Say this is a test' },
+    ];
     const stream = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: 'Say this is a test' }],
+      messages,
       stream: true,
     });
     return true;
