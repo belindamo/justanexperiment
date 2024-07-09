@@ -47,8 +47,8 @@ export default function Header() {
   return (
     <header className="flex w-full justify-between items-center relative py-2">
       <div className="flex flex-row">
-        <Link href="/" className="hidden md:block mx-8 font-medium text-primary">
-          🧚🏼‍♀️ Just an Experiment
+        <Link href="/" className="sm:block mx-8 font-medium text-primary">
+          🧚🏼‍♀️ JaE
         </Link>
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2">
@@ -56,14 +56,14 @@ export default function Header() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Image
+                {/* <Image
                   src="/logo.png"
                   width={30}
                   height={30}
                   alt="Just an Experiment"
                   className="h-6 w-auto pr-2"
-                />
-                <Label className="hidden md:block">
+                /> */}
+                <Label className="sm:block">
                   {currentUrl === "/"
                     ? "AI Tools"
                     : options.find((option) => option.href === currentUrl)
