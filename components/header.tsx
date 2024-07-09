@@ -25,7 +25,13 @@ export const options = [
     title: 'Chat',
     href: '/chat',
     description: 'Chat with AI characters that help you get things done',
-  }
+  },
+  {
+    title: 'Converse',
+    href: '/convo',
+    description: 'Converse with an AI!'
+  },
+  { title: 'Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'Concept Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'RAG', href: '/rag', description: 'Chat with your documents' },
   // { title: 'Learn', href: '/learn', description: 'Use AI to help you learn more effectively' },
