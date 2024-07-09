@@ -25,7 +25,13 @@ export const options = [
     title: 'Chat',
     href: '/chat',
     description: 'Chat with AI characters that help you get things done',
-  }
+  },
+  {
+    title: 'Converse',
+    href: '/convo',
+    description: 'Converse with an AI!'
+  },
+  { title: 'Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'Concept Graph', href: '/graph', description: 'Explore a concept graph on a topic of your choice.' },
   // { title: 'RAG', href: '/rag', description: 'Chat with your documents' },
   // { title: 'Learn', href: '/learn', description: 'Use AI to help you learn more effectively' },
@@ -47,8 +53,8 @@ export default function Header() {
   return (
     <header className="flex w-full justify-between items-center relative py-2">
       <div className="flex flex-row">
-        <Link href="/" className="hidden md:block mx-8 font-medium text-primary">
-          🧚🏼‍♀️ Just an Experiment
+        <Link href="/" className="sm:block mx-8 font-medium text-primary">
+          🧚🏼‍♀️ JaE
         </Link>
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2">
@@ -56,14 +62,14 @@ export default function Header() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Image
+                {/* <Image
                   src="/logo.png"
                   width={30}
                   height={30}
                   alt="Just an Experiment"
                   className="h-6 w-auto pr-2"
-                />
-                <Label className="hidden md:block">
+                /> */}
+                <Label className="sm:block">
                   {currentUrl === "/"
                     ? "AI Tools"
                     : options.find((option) => option.href === currentUrl)
