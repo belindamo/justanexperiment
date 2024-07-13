@@ -40,7 +40,7 @@ export function TemplateCombobox({
           className="w-[300px] justify-between"
         >
           {template.title}
-          <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronDown className="ml-2 h-4 w-4 shrink-0" style={{ 'color': 'lightgray' }} />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0">

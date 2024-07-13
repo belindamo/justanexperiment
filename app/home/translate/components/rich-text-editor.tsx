@@ -12,7 +12,8 @@ const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: 
     editorProps: {
       attributes: {
         class:
-          "min-h-[80px] max-h-[180px] w-full rounded-md rounded-br-none rounded-bl-none border border-input bg-transparent px-3 py-2 border-b-0 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
+          "min-h-[80px] max-h-[180px] w-full bg-transparent px-3 py-2 border-b-0 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
+        style: "position: unset;"
       },
     },
     extensions: [
@@ -51,7 +52,7 @@ const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: 
 
   return (
     <>
-      <EditorContent editor={editor} />
+      <EditorContent style={{ 'position': 'unset' }} editor={editor} />
       {editor ? <RichTextEditorToolbar editor={editor} /> : null}
     </>
   );
@@ -59,7 +60,7 @@ const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: 
 
 const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
   return (
-    <div className="border border-input bg-transparent rounded-br-md rounded-bl-md p-1 flex flex-row items-center gap-1">
+    <div className="border-input rounded-br-md rounded-bl-md p-1 bg-transparent flex flex-row items-center gap-1" style={{ 'borderTop': '1px solid hsl(var(--input))' }}>
       <Toggle
         size="sm"
         pressed={editor.isActive("bold")}
