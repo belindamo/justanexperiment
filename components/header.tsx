@@ -7,13 +7,13 @@ import {
   NavigationMenuContent,
   NavigationMenuList,
   NavigationMenu,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import UserSettings from "./app/user-settings";
+import { useModelStorageContext } from "./providers/model-storage";
+import { SingleSelect } from "@/app/home/translate/components/single-select";
 
 export const options = [
   {
@@ -49,6 +49,7 @@ export const options = [
 
 export default function Header() {
   const currentUrl = usePathname();
+  const { enabledModels, selectedModel, setSelectedModel } = useModelStorageContext();
 
   return (
     <header className="flex w-full justify-between items-center relative py-2">
@@ -73,7 +74,7 @@ export default function Header() {
                   {currentUrl === "/"
                     ? "AI Tools"
                     : options.find((option) => option.href === currentUrl)
-                          ?.title}
+                      ?.title}
                 </Label>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -99,8 +100,17 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="flex flex-row justify-end">
+      <div className="flex flex-row justify-end items-center">
         <UserSettings />
+        <SingleSelect
+          className="mr-6 w-[150px]"
+          title="Select model..."
+          options={enabledModels}
+          selectedOption={selectedModel}
+          setSelectedOption={(selectedOption) => {
+            setSelectedModel(selectedOption);
+          }}
+        />
       </div>
     </header>
   );

@@ -1,21 +1,23 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
-// Create an OpenAI API client (that's edge friendly!)
-const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
-});
-
 // Set the runtime to edge
 export const runtime = "edge";
 
 // And use it like this:
 export async function POST(req: Request) {
   try {
-    const { messages, functions } = await req.json();
+    const { messages, functions, model, api_key } = await req.json();
+
+    if (!api_key)
+      return new Response("Invalid API key", { status: 401 });
+
+    const openai = new OpenAI({
+      apiKey: api_key,
+    });
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model,
       messages,
       functions,
     });

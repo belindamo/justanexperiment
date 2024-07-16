@@ -8,6 +8,8 @@ import ForceGraph, {
   GraphProps,
 } from "@/components/graph/d3-graph"
 import example_data from "./graph-data/ResNet_102_3-5.json";
+import { useModelStorageContext } from "@/components/providers/model-storage";
+import { toast } from "sonner"
 
 // Constants
 const TEST_STOP_LENGTH: number = 1000; // may go over a few
@@ -52,7 +54,7 @@ const functions: ChatCompletionCreateParams.Function[] = [
 ];
 
 // Breadth-first Generation
-async function generateKnowledgeTree(firstNode: Node): Promise<GraphProps> {
+async function generateKnowledgeTree(firstNode: Node, selectedModel?: string, enabledModels: string[] = [], openAIKey?: string): Promise<GraphProps> {
   let nodes: Node[] = [firstNode];
   let links: Link[] = [];
   let interim_nodes: Node[] = [firstNode];
@@ -66,6 +68,8 @@ async function generateKnowledgeTree(firstNode: Node): Promise<GraphProps> {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
+          model: selectedModel ?? enabledModels[0] ?? 'gpt-3.5-turbo',
+          api_key: openAIKey,
           messages: [
             {
               role: "user",
@@ -117,6 +121,7 @@ async function generateKnowledgeTree(firstNode: Node): Promise<GraphProps> {
 export default function KnowledgeTree() {
   const [firstNode, setFirstNode] = useState("");
   const [graphData, setGraphData] = useState<GraphProps>(EXAMPLE_GRAPH_DATA);
+  const { enabledModels, selectedModel, openAIKey } = useModelStorageContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstNode(e.target.value);
@@ -135,12 +140,20 @@ export default function KnowledgeTree() {
           style={{ display: "inline-block", textAlign: "center" }}
           onSubmit={async (e) => {
             e.preventDefault();
+            if (!openAIKey) {
+              toast.error("Before using the tool, please enter an OpenAI key in the settings.")
+              return;
+            }
             const node =
               firstNode === ""
                 ? EXAMPLE_FIRST_NODE
                 : ({ id: `0 - ${firstNode}`, name: firstNode } as Node);
-            const graph = await generateKnowledgeTree(node);
-            setGraphData(graph);
+            try {
+              const graph = await generateKnowledgeTree(node, selectedModel, enabledModels, openAIKey);
+              setGraphData(graph);
+            } catch {
+              toast.error("An error occurred while sending the message to the model.");
+            }
           }}
         >
           <input

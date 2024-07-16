@@ -1,10 +1,12 @@
 'use client'
 import { DEFAULT_MODELS } from '@/lib/constants';
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 interface StateContextType {
   enabledModels: string[];
+  selectedModel?: string;
   setEnabledModels: (value: string[]) => void;
+  setSelectedModel: (value?: string) => void;
   changeModelStatus: (name: string, checked: boolean) => void;
   openAIKey: string;
   setOpenAIKey: (value: string) => void;
@@ -15,6 +17,7 @@ const StateContext = createContext<StateContextType | undefined>(undefined);
 
 export const ModelStorageProvider = ({ children }: { children: ReactNode }) => {
   const [enabledModels, setEnabledModels] = useState<string[]>([]);
+  const [selectedModel, setSelectedModel] = useState<string>();
   const [openAIKey, saveOpenAIKey] = useState("");
 
   useEffect(() => {
@@ -26,6 +29,14 @@ export const ModelStorageProvider = ({ children }: { children: ReactNode }) => {
     }
     setEnabledModels(models);
     setOpenAIKey(localStorage.getItem('openai-key') ?? '');
+
+    /* Load the selected model */
+    let modelValue = localStorage.getItem('selected-model');
+    if (!modelValue) {
+      modelValue = models[0];
+      localStorage.setItem('selected-model', modelValue);
+    }
+    setSelectedModel(modelValue ?? '');
   }, []);
 
   /**
@@ -65,7 +76,7 @@ export const ModelStorageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <StateContext.Provider value={{ enabledModels, setEnabledModels, openAIKey, setOpenAIKey, changeModelStatus, clearData }}>
+    <StateContext.Provider value={{ enabledModels, setEnabledModels, openAIKey, setOpenAIKey, changeModelStatus, clearData, selectedModel, setSelectedModel }}>
       {children}
     </StateContext.Provider>
   );

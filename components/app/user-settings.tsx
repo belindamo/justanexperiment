@@ -164,7 +164,7 @@ export default function UserSettings() {
     <Dialog onOpenChange={onDialogOpen}>
       <DialogTrigger asChild>
         <Button variant="link">
-          <Settings width={16} className="mr-2 h-4 w-4" />
+          <Settings width={16} className="h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[90%] sm:max-w-[425px] px-0 py-4 sm:m-0">
