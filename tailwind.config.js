@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -146,6 +147,12 @@ module.exports = {
       width: {
         1536: "1536px",
       },
+      minWidth: {
+        '9/12': '75%',
+      },
+      maxWidth: {
+        '9/12': '75%',
+      },
       height: {
         150: "37.5rem",
       },
@@ -211,6 +218,10 @@ module.exports = {
           to: { height: "0" },
         },
       },
+    },
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens,
     },
   },
   safelist: [
