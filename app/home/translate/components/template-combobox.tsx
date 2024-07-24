@@ -18,6 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Template } from "../lib/types";
+import useWindowSize from "@/lib/hooks/use-window-size";
 
 export function TemplateCombobox({
   templates,
@@ -29,6 +30,7 @@ export function TemplateCombobox({
   setTemplate: (oldTemplate: Template, newTemplate: Template) => void;
 }) {
   const [open, setOpen] = React.useState(false);
+  const { isXS } = useWindowSize();
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -37,13 +39,13 @@ export function TemplateCombobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[300px] justify-between"
+          className={`${isXS ? 'w-full' : 'w-[300px]'} justify-between`}
         >
           {template.title}
           <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className={`${isXS ? 'w-full' : 'w-[300px]'} p-0`}>
         <Command>
           {/* <CommandInput placeholder="Search template..." /> */}
           {/* <CommandEmpty>No template found.</CommandEmpty> */}
