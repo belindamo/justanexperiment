@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "prisma generate && next dev",
+    "next-dev": "prisma generate && next dev",
+    "fastapi-dev": "cd ./app/api-py && poetry run uvicorn main:app --reload",
+    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
     "build": "prisma generate && prisma db push && next build",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",
@@ -45,6 +47,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
+    "concurrently": "^8.2.2",
     "d3": "^7.8.5",
     "date-fns": "^2.30.0",
     "focus-trap-react": "^10.2.3",

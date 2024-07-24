@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "api-py"
+version = "0.1.0"
+description = ""
+authors = ["justanexperiment <justanexperimentpark@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.111.1"
+
+[tool.poetry.group.dev.dependencies]
+uvicorn = "^0.30.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
