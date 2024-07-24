@@ -43,6 +43,7 @@ const RichTextEditor = ({ value, onUpdate }: { value: string, onUpdate: (value: 
     ],
     content: value,
     onTransaction: () => {
+      if (!editor) return;
       // @ts-ignore
       const newValue = editor.storage.markdown.getMarkdown();
       onUpdate(newValue);
