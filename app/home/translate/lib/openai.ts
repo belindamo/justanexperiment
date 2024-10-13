@@ -1,5 +1,3 @@
-const { OpenAI } = require('openai');
-
 type Message = {
   role: 'user' | 'system' | 'assistant',
   content: string,
@@ -7,13 +5,12 @@ type Message = {
 
 export const sendMessageToOpenAI = async (
   key: string,
+  model: string,
   inputText: string,
   responseCallback: (messageChunk: string) => void,
-  model: string,
   systemMessage?: string,
-) => {
-  // Initialize OpenAI client with user API key from the settings
-  const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true })
+): Promise<string> => {
+  // Prepare the message to be sent to OpenAI
   try {
     const messages: Message[] = [
       { role: 'user', content: inputText },
@@ -24,21 +21,34 @@ export const sendMessageToOpenAI = async (
         content: systemMessage
       });
     }
-    console.log(model, messages)
-    const completion = await openai.chat.completions.create({
-      model: model,
-      messages: messages,
-      stream: true,
+
+    // Call backend api for OpenAI chat
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      body: JSON.stringify({
+        api_key: key,
+        model: model,
+        messages
+      })
     });
 
+    // Check for valid response
+    if (response.status !== 200 || !response.body) throw new Error("No readable stream available.");
+
+    // Read the response stream and call the responseCallback
     let fullMessage = '';
-    for await (const chunk of completion) {
-      const messageChunk = chunk.choices[0].delta.content;
-      if (messageChunk) { // Skip empty or undefined message chunks
-        fullMessage += messageChunk;
-        responseCallback(fullMessage); // Changed onMessagePart to responseCallback
-      }
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder('utf-8');
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      const chunk = decoder.decode(value);
+      fullMessage += chunk;
+      responseCallback(fullMessage); // Changed onMessagePart to responseCallback
     }
+    reader.releaseLock();
+
+    return fullMessage;
   } catch (error) {
     console.error('Error querying OpenAI:', error);
     throw error;
@@ -46,16 +56,8 @@ export const sendMessageToOpenAI = async (
 }
 
 export const validateOpenAIKey = async (key: string): Promise<boolean> => {
-  const openai = new OpenAI({ apiKey: key, dangerouslyAllowBrowser: true })
   try {
-    const messages: Message[] = [
-      { role: 'user', content: 'Say this is a test' },
-    ];
-    const stream = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages,
-      stream: true,
-    });
+    await sendMessageToOpenAI(key, 'gpt-3.5-turbo', 'Say this is a test', () => { });
     return true;
   } catch {
     return false;

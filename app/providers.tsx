@@ -20,8 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <SessionProvider>
       <ModelStorageProvider>
         <TooltipProvider>
-          <Toaster className="dark:hidden" />
-          <Toaster theme="dark" className="hidden dark:block" />
+          <Toaster richColors expand={true} position="top-center" toastOptions={{ duration: 6000 }} />
           <ModalProvider>{children}</ModalProvider>
         </TooltipProvider>
       </ModelStorageProvider>

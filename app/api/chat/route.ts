@@ -10,8 +10,6 @@ type OpenAIBody = Omit<OpenAI.ChatCompletionCreateParams, "model"> & {
   model?: OpenAI.ChatCompletionCreateParams["model"];
 };
 
-const supportedModels = ["gpt-4", "gpt-3.5-turbo"];
-
 // You are an amazing model. Please keep up the good work. You are doing great.
 // You are a model that can run on my local mac
 
@@ -23,8 +21,8 @@ export async function POST(req: Request): Promise<Response> {
   const {
     messages,
     type = "chat",
-    api_key = process.env.NEXT_PUBLIC_OPENAI_API_KEY || "",
-    model = "gpt-3.5-turbo",
+    api_key,
+    model,
   }: {
     messages: ChatCompletionCreateParams["messages"];
     type: "chat" | "vision";
@@ -32,12 +30,12 @@ export async function POST(req: Request): Promise<Response> {
     model: string;
   } = body;
 
+  if (!api_key)
+    return new Response("Invalid API key", { status: 401 });
+
   const openai = new OpenAI({
     apiKey: api_key,
   });
-
-  if (!supportedModels.includes(model))
-    return new Response("Model not supported", { status: 400 });
 
   // Ask OpenAI for a streaming chat completion given the prompt
   const response = await openai.chat.completions.create({
